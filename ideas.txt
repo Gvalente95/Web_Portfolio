@@ -1,0 +1,21 @@
+theme / style:
+	one pager
+	simple design that reflects my skills: creativity, audio, games
+	header with scrollable sections to 
+sections:
+	about:
+		info about me
+	projects:
+		list of projects
+	resume:
+
+	contact:
+
+
+Hero Jobs button click move to dedicated section
+
+
+Ideas
+
+Simple Terminal to do stuff like change page style setup
+Marbles falling with sound for audio-engineer experience

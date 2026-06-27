@@ -1,0 +1,79 @@
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  height: calc(100vh - 120px);
+  padding: 20px;
+}
+
+.hero-section > div {
+  flex: 1;
+}
+
+.hero-section .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 120px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.left > :first-child {
+  color: var(--hero-clr-1);
+  transition: color 0.3s ease;
+}
+
+.left > :nth-child(2) {
+  color: var(--hero-clr-2);
+  transition: color 0.3s ease;
+}
+
+.right > :first-child {
+  color: var(--hero-clr-2);
+  transition: color 0.3s ease;
+}
+
+.right > :nth-child(2) {
+  color: var(--hero-clr-1);
+  transition: color 0.3s ease;
+}
+
+.right > :nth-child(3) {
+  color: var(--hero-clr-3);
+  transition: color 0.3s ease;
+}
+
+.hero-section .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 40px;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+}
+
+.hero-name,
+.hero-job {
+  text-shadow:
+    0 0 8px var(--text-glow_1),
+    0 0 24px var(--text-glow_2);
+  transition: text-shadow 2s ease;
+
+  display: block;
+  line-height: 0.95;
+}
+
+.char-line {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}

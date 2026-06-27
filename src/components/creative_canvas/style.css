@@ -1,0 +1,18 @@
+.creative-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.creative-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

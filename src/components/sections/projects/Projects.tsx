@@ -1,0 +1,41 @@
+import { SpotifyContainer } from "./spotifyContainer/SpotifyContainer";
+import { Carousel } from "./carousel/Carousel";
+import { useRef } from "react";
+import webAppsData from "../../../data/web-apps.json";
+import audioAppsData from "../../../data/audio-apps.json";
+import cAppsData from "../../../data/c_apps.json";
+
+import "./style.css";
+
+export type ProjectData = {
+  info: string;
+  image?: string | null;
+  url?: string | null;
+  video?: string | null;
+  language?: string;
+  tags?: string;
+};
+
+export const Projects = () => {
+  const webApps = Object.entries(webAppsData as Record<string, ProjectData>);
+  const audioApps = Object.entries(audioAppsData as Record<string, ProjectData>);
+  const cApps = Object.entries(cAppsData as Record<string, ProjectData>);
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  return (
+    <section ref={ref} id="projects" className="projects-section">
+      <div className="title">Projects</div>
+
+      <div className="projects-content">
+        <Carousel titlePosition="center" title="Interactive Web Applications" items={webApps} />
+        <Carousel titlePosition="right" title="Audio Applications" items={audioApps} />
+        <Carousel titlePosition="right" title="C Programs" items={cApps} />
+        <div>
+          <div className="sub-title left">My musical journey</div>
+          <SpotifyContainer />
+        </div>
+      </div>
+    </section>
+  );
+};

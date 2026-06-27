@@ -1,0 +1,8 @@
+.animated-sprite {
+  position: absolute;
+  white-space: pre;
+  margin: 0;
+  font-family: monospace;
+  line-height: 1em;
+  color: var(--text);
+}
