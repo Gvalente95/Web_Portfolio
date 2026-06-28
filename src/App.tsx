@@ -7,7 +7,7 @@ import { Contact } from "./components/sections/contact/Contact";
 import { HeroSection } from "./components/sections/hero/Hero";
 import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
-import { WavyBackground } from "./components/creative_canvas/wavy-background/Wavy_background";
+import { WavyBackground } from "./components/wavy-background/Wavy_background";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <AsciiElements />
-      <CreativeCanvas />
 
+      <CreativeCanvas />
       <WavyBackground />
 
       <Header setIsDark={setIsDark} isDark={isDark} />

@@ -1,6 +1,8 @@
 :root {
   --cyan: #44d9e6;
   --green: #3ddc97;
+  --hero-clr-audio: #e68a00;
+  --hero-clr-game: rgb(61, 220, 151);
 }
 
 .App {
@@ -40,9 +42,7 @@ body,
 
   --projects-bgr: rgba(13, 13, 13, 0.9);
 
-  --hero-clr-1: rgb(207, 207, 207);
-  --hero-clr-2: rgb(255, 184, 77);
-  --hero-clr-3: var(--cyan);
+  --hero-clr-web: rgb(207, 207, 207);
 }
 
 [data-theme="light"] {
@@ -66,9 +66,7 @@ body,
 
   --projects-bgr: #eef3ffc5;
 
-  --hero-clr-1: #1f2937;
-  --hero-clr-2: #e68a00;
-  --hero-clr-3: var(--cyan);
+  --hero-clr-web: #1f2937;
 }
 
 html,

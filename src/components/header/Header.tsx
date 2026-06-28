@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { SwitchButton } from "../../shared/ui/switchButton/SwitchButton";
-import { openPage } from "../../utils/navigation";
+import { openPage, scrollToSection } from "../../utils/navigation";
+import darkModeOnIcon from "../../assets/icons/white/night.png";
+import darkModeOffIcon from "../../assets/icons/black/sun.png";
 
 import "./style.css";
 
@@ -11,12 +13,9 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
   const timeoutRef = useRef<number | null>(null);
   const lastScrollY = useRef(window.scrollY);
 
-  const scrollToSection = (page: string) => {
-    if (page === "Resume") {
-      openPage("/resume_gvalente.pdf");
-      return;
-    }
-    document.getElementById(page.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+  const tryScrollTo = (page: string) => {
+    if (page === "Resume") openPage("/resume_gvalente.pdf");
+    else scrollToSection(page);
   };
 
   const reloadPage = () => {
@@ -50,13 +49,13 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
         </div>
         <nav>
           {pages.map((page) => (
-            <button key={page} onClick={() => scrollToSection(page)}>
+            <button key={page} onClick={() => tryScrollTo(page)}>
               {page}
             </button>
           ))}
         </nav>
         <div className="header-theme-toggle">
-          <SwitchButton onSwitch={setIsDark} state={isDark} />
+          <SwitchButton onSwitch={setIsDark} state={isDark} on_url={darkModeOnIcon} off_url={darkModeOffIcon} />
         </div>
       </div>
     </header>

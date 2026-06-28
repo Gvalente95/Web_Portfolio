@@ -68,11 +68,11 @@ export const WavyBackground = () => {
   const y = 800;
   const sections: WaveSection[] = [
     { h: 160, color: "rgb(68, 217, 230)", amp: 32 },
-    { h: 800, color: "rgb(53, 170, 181)", amp: 64 },
+    { h: 900, color: "rgb(53, 170, 181)", amp: 64 },
 
-    { h: 840, color: "rgb(255, 184, 77)", amp: 32 },
-    { h: 840, color: "rgb(61, 220, 151)", amp: 128 },
-    { h: 1000, color: "rgb(165, 52, 207)", amp: 128 },
+    { h: 900, color: "rgb(255, 184, 77)", amp: 128 },
+    { h: 900, color: "rgb(61, 220, 151)", amp: 256 },
+    { h: 750, color: "rgb(165, 52, 207)", amp: 128 },
   ];
 
   const padding = getMaxAmp(sections);

@@ -10,7 +10,7 @@
   "Cube": {
     "info": "Part of the 42 Cursus. Cube3d is a program that implements Raycasting to render a fake 3D map.",
     "image": "",
-    "video": "video/cube.mp4",
+    "video": "video/Cube.mp4",
     "url": "https://github.com/Gvalente95/Cub3d_42",
     "language": "C",
     "tags": "Raycasting Game-Engine"

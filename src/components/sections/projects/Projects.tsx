@@ -29,8 +29,8 @@ export const Projects = () => {
 
       <div className="projects-content">
         <Carousel titlePosition="center" title="Interactive Web Applications" items={webApps} />
-        <Carousel titlePosition="right" title="Audio Applications" items={audioApps} />
-        <Carousel titlePosition="right" title="C Programs" items={cApps} />
+        <Carousel titlePosition="center" title="Audio Applications" items={audioApps} />
+        <Carousel titlePosition="center" title="C Programs" items={cApps} />
         <div>
           <div className="sub-title left">My musical journey</div>
           <SpotifyContainer />

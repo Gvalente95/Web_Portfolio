@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./style.css";
+import { scrollToSection } from "../../../utils/navigation";
 
 const splitChars = (text: string) => (
   <span className="char-line">
@@ -103,9 +104,15 @@ export const HeroSection = () => {
       </div>
 
       <div className="right">
-        <div className="hero-job">{splitChars("Audio Engineer")}</div>
-        <div className="hero-job">{splitChars("Web Developer")}</div>
-        <div className="hero-job">{splitChars("Game Programmer")}</div>
+        <div onClick={() => scrollToSection("interactive-web-applications")} className="hero-job">
+          {splitChars("Web-Developer")}
+        </div>
+        <div onClick={() => scrollToSection("audio-applications")} className="hero-job">
+          {splitChars("Audio-Engineer")}
+        </div>
+        <div onClick={() => scrollToSection("c-programs")} className="hero-job">
+          {splitChars("Game-Programmer")}
+        </div>
       </div>
     </section>
   );

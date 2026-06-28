@@ -25,20 +25,22 @@ export const CreativeCanvas = () => {
   }, []);
 
   return (
-    <div className="creative-layer" style={{ opacity, position: "absolute", width: "100%", height: "100%" }}>
-      <svg className="creative-canvas" viewBox={`0 0 ${size.width} ${size.height}`} preserveAspectRatio="none">
-        <defs>
-          <filter id="blob-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="soft" />
-            <feGaussianBlur in="soft" stdDeviation="5" result="glow" />
-            <feMerge>
-              <feMergeNode in="glow" />
-              <feMergeNode in="soft" />
-            </feMerge>
-          </filter>
-        </defs>
-        <path d={blobPath} fill="none" stroke={curClr} strokeWidth="26" strokeLinecap="round" strokeLinejoin="round" filter="url(#blob-glow)" />
-      </svg>
+    <div className="creative-blur-zone">
+      <div className="creative-layer" style={{ opacity, position: "absolute", width: "100%", height: "100%" }}>
+        <svg className="creative-canvas" viewBox={`0 0 ${size.width} ${size.height}`} preserveAspectRatio="none">
+          <defs>
+            <filter id="blob-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="soft" />
+              <feGaussianBlur in="soft" stdDeviation="5" result="glow" />
+              <feMerge>
+                <feMergeNode in="glow" />
+                <feMergeNode in="soft" />
+              </feMerge>
+            </filter>
+          </defs>
+          <path d={blobPath} fill="none" stroke={curClr} strokeWidth="26" strokeLinecap="round" strokeLinejoin="round" filter="url(#blob-glow)" />
+        </svg>
+      </div>
     </div>
   );
 };

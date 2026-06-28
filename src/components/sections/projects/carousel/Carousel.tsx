@@ -3,6 +3,7 @@ import { CarouselTrack } from "./carouselTrack/CarouselTrack";
 import type { ProjectData } from "../Projects";
 
 import "./style.css";
+import { slugify } from "../../../../utils/navigation";
 
 interface CarouselProps {
   title: string;
@@ -32,7 +33,7 @@ export const Carousel = ({ title, items, titlePosition }: CarouselProps) => {
   }, [activeIndex]);
 
   return (
-    <div key={title}>
+    <section id={slugify(title)} key={title}>
       <div className={`sub-title title_one ${titlePosition}`}>{title}</div>
       <div className="carousel">
         <div className="carousel-track">
@@ -41,6 +42,6 @@ export const Carousel = ({ title, items, titlePosition }: CarouselProps) => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };

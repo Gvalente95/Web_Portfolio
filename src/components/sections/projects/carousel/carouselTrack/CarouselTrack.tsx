@@ -1,7 +1,7 @@
 import { openPage } from "../../../../../utils/navigation";
 import type { ProjectData } from "../../Projects";
 import { CarouselOverlay } from "./overlay/CarouselOverlay";
-import playButtonImage from "../../../../../assets/play-button.png";
+import playButtonImage from "../../../../../assets/icons/white/play-button.png";
 
 import "./style.css";
 
