@@ -12,14 +12,22 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
   const [isScrolling, setIsScrolling] = useState(false);
   const timeoutRef = useRef<number | null>(null);
   const lastScrollY = useRef(window.scrollY);
+  const clickSound = useRef(new Audio("audio/flashlight.wav"));
 
   const tryScrollTo = (page: string) => {
-    if (page === "Resume") openPage("/resume_gvalente.pdf");
+    if (page === "Resume") openPage("resume_gvalente.pdf");
     else scrollToSection(page);
   };
 
   const reloadPage = () => {
     window.location.href = "/";
+  };
+
+  const handleSwitchClick = (v: boolean) => {
+    clickSound.current.currentTime = 0;
+    clickSound.current.play();
+
+    setIsDark(v);
   };
 
   useEffect(() => {
@@ -55,7 +63,7 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
           ))}
         </nav>
         <div className="header-theme-toggle">
-          <SwitchButton onSwitch={setIsDark} state={isDark} on_url={darkModeOnIcon} off_url={darkModeOffIcon} />
+          <SwitchButton onSwitch={handleSwitchClick} state={isDark} on_url={darkModeOnIcon} off_url={darkModeOffIcon} />
         </div>
       </div>
     </header>

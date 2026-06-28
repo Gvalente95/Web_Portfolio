@@ -7,10 +7,12 @@ import { Contact } from "./components/sections/contact/Contact";
 import { HeroSection } from "./components/sections/hero/Hero";
 import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
-import { WavyBackground } from "./components/wavy-background/Wavy_background";
+import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
+import { SlidingElement } from "./components/wavy-background/SlidingElement/slidingElement";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  const wave = useWaveData();
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
@@ -19,10 +21,9 @@ function App() {
   return (
     <div className="App">
       <AsciiElements />
-
       <CreativeCanvas />
-      <WavyBackground />
-
+      <SlidingElement paths={wave.paths} />
+      <WavyBackground sections={wave.sections} svgTop={wave.svgTop} totalHeight={wave.totalHeight} padding={wave.padding} />
       <Header setIsDark={setIsDark} isDark={isDark} />
 
       <div className="page-content">

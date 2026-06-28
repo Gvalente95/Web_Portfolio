@@ -9,7 +9,7 @@ export const CreativeCanvas = () => {
   const scrollYNorm = window.scrollY / document.body.scrollHeight;
   const curClr = lerpColor("rgba(255, 184, 77, 0.35)", "rgba(0, 255, 132, 0.35)", scrollYNorm);
 
-  const [opacity, setOpacity] = useState(1);
+  const [opacity, setOpacity] = useState(0);
   useEffect(() => {
     function increaseOpacity() {
       if (opacity >= 1) {

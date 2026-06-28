@@ -1,97 +1,138 @@
-type WaveSection = {
+export type SectionShapeType = "wave" | "zigzag" | "square";
+
+type ShapeSection = {
   h: number;
   color: string;
   amp?: number;
   phase?: number;
+  shape: SectionShapeType;
 };
 
-type PositionedWaveSection = WaveSection & {
+export type PositionedShapeSection = ShapeSection & {
   top: number;
   bottom: number;
   topAmp: number;
   bottomAmp: number;
   topPhase: number;
   bottomPhase: number;
+  topShape: SectionShapeType;
+  bottomShape: SectionShapeType;
 };
 
+export type PathData = {
+  path: string;
+  y: number;
+  height: number;
+  viewBoxMinY: number;
+  viewBoxHeight: number;
+  startY: number;
+  endY: number;
+  points: { x: number; y: number }[];
+  color: string;
+  shape: SectionShapeType;
+};
+export type WaveData = {
+  sections: PositionedShapeSection[];
+  paths: PathData[];
+  svgTop: number;
+  totalHeight: number;
+  padding: number;
+};
+
+import { bakePath, shapeLRSliding, shapeSegment } from "./path";
 import "./style.css";
 
-const getMaxAmp = (sections: WaveSection[]) => Math.max(...sections.map((section) => section.amp ?? 8));
-
-const getSectionPositions = (sections: WaveSection[]): PositionedWaveSection[] => {
-  let y = 0;
-
-  return sections.map((section, index) => {
-    const next = sections[index + 1];
-    const top = y;
-    const bottom = y + section.h;
-    y = bottom;
-    return {
-      ...section,
-      top,
-      bottom,
-      topAmp: section.amp ?? 8,
-      bottomAmp: next?.amp ?? section.amp ?? 8,
-      topPhase: section.phase ?? 0,
-      bottomPhase: next?.phase ?? section.phase ?? 0,
-    };
-  });
-};
-
-const waveLR = (y: number, amp = 8, phase = 0) => {
-  const p = phase;
-
-  return `
-    M0,${y}
-    C${20 + p},${y - amp} ${35 + p},${y + amp} 55,${y}
-    C${75 + p},${y - amp} ${90 + p},${y + amp} 100,${y}
-  `;
-};
-
-const waveBack = (y: number, amp = 8, phase = 0) => {
-  const p = phase;
-
-  return `
-    C${90 + p},${y + amp} ${75 + p},${y - amp} 55,${y}
-    C${35 + p},${y + amp} ${20 + p},${y - amp} 0,${y}
-  `;
-};
-
-const waveSegment = (top: number, bottom: number, topAmp = 8, bottomAmp = 8, topPhase = 0, bottomPhase = 0) => `
-  ${waveLR(top, topAmp, topPhase)}
-  L100,${bottom}
-  ${waveBack(bottom, bottomAmp, bottomPhase)}
-  Z
-`;
-
-export const WavyBackground = () => {
+export const useWaveData = (): WaveData => {
   const y = 800;
-  const sections: WaveSection[] = [
-    { h: 160, color: "rgb(68, 217, 230)", amp: 32 },
-    { h: 900, color: "rgb(53, 170, 181)", amp: 64 },
+  const sections: ShapeSection[] = [
+    { h: 160, color: "rgb(22, 74, 79)", amp: 32, shape: "wave" },
+    { h: 900, color: "rgb(53, 170, 181)", amp: 64, shape: "wave" },
 
-    { h: 900, color: "rgb(255, 184, 77)", amp: 128 },
-    { h: 900, color: "rgb(61, 220, 151)", amp: 256 },
-    { h: 750, color: "rgb(165, 52, 207)", amp: 128 },
+    { h: 900, color: "rgb(255, 184, 77)", amp: 64, shape: "wave" },
+    { h: 900, color: "rgb(61, 220, 151)", amp: 64, shape: "zigzag" },
+    { h: 750, color: "rgb(165, 52, 207)", amp: 64, shape: "wave" },
+    { h: 0, color: "var(--text)", amp: 64, shape: "wave" },
   ];
 
   const padding = getMaxAmp(sections);
+  const svgTop = y - padding;
   const positionedSections = getSectionPositions(sections);
   const contentHeight = sections.reduce((sum, section) => sum + section.h, 0);
   const totalHeight = contentHeight + padding * 2;
 
+  const paths = positionedSections.map((section) => {
+    const path = shapeLRSliding(section.topShape, section.top, section.topAmp, section.topPhase);
+    return {
+      path,
+      y: svgTop,
+      height: totalHeight,
+      color: section.color,
+      viewBoxMinY: -padding,
+      viewBoxHeight: totalHeight,
+      shape: section.shape,
+      startY: svgTop + section.top,
+      endY: svgTop + section.bottom,
+      points: bakePath(path),
+    };
+  });
+
+  return {
+    sections: positionedSections,
+    paths,
+    svgTop: y - padding,
+    totalHeight,
+    padding,
+  };
+};
+
+const getMaxAmp = (sections: ShapeSection[]) => Math.max(...sections.map((section) => section.amp ?? 8));
+
+const getSectionPositions = (sections: ShapeSection[]): PositionedShapeSection[] => {
+  let y = 0;
+
+  return sections.map((section, index) => {
+    const next = sections[index + 1];
+
+    const top = y;
+    const bottom = y + section.h;
+    y = bottom;
+
+    return {
+      ...section,
+      top,
+      bottom,
+
+      topAmp: section.amp ?? 8,
+      bottomAmp: next?.amp ?? section.amp ?? 8,
+
+      topPhase: section.phase ?? 0,
+      bottomPhase: next?.phase ?? section.phase ?? 0,
+
+      topShape: section.shape ?? "wave",
+      bottomShape: next?.shape ?? section.shape ?? "wave",
+    };
+  });
+};
+
+interface WavybackgroundProps {
+  sections: PositionedShapeSection[];
+  svgTop: number;
+  totalHeight: number;
+  padding: number;
+}
+export const WavyBackground = ({ sections, svgTop, totalHeight, padding }: WavybackgroundProps) => {
   return (
     <svg
       className="wave-bg"
       style={{
-        top: y - padding,
+        top: svgTop,
         height: totalHeight,
       }}
       viewBox={`0 ${-padding} 100 ${totalHeight}`}
       preserveAspectRatio="none"
     >
-      {positionedSections.map((section, index) => (
-        <path key={index} fill={section.color} d={waveSegment(section.top, section.bottom, section.topAmp, section.bottomAmp, section.topPhase, section.bottomPhase)} />
+      {sections.map((section, index) => (
+        <path key={index} fill={section.color} d={shapeSegment(section)} />
       ))}
     </svg>
   );

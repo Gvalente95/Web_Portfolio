@@ -2,7 +2,7 @@ import "./style.css";
 
 type SwitchButtonProps = {
   state: boolean;
-  onSwitch: React.Dispatch<React.SetStateAction<boolean>>;
+  onSwitch: (v: boolean) => void;
   on_url?: string;
   off_url?: string;
 };

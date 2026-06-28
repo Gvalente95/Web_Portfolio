@@ -31,8 +31,10 @@ export const Projects = () => {
         <Carousel titlePosition="center" title="Interactive Web Applications" items={webApps} />
         <Carousel titlePosition="center" title="Audio Applications" items={audioApps} />
         <Carousel titlePosition="center" title="C Programs" items={cApps} />
-        <div>
-          <div className="sub-title left">My musical journey</div>
+        <div style={{ width: "60%", height: "100%" }}>
+          <div style={{ marginBottom: "40px" }} className="sub-title left">
+            My musical journey
+          </div>
           <SpotifyContainer />
         </div>
       </div>

@@ -1,7 +1,6 @@
 .spotify-container {
   display: flex;
   gap: 40px;
-  width: 90%;
   height: 400px;
 }
 
