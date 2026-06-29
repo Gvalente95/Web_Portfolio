@@ -9,6 +9,7 @@ import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
 import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
 import { SlidingElement } from "./components/wavy-background/SlidingElement/slidingElement";
+import { isMobile } from "./utils/navigation";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -21,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <AsciiElements />
-      <CreativeCanvas />
+      {!isMobile() && <CreativeCanvas />}
       <SlidingElement paths={wave.paths} />
       <WavyBackground sections={wave.sections} svgTop={wave.svgTop} totalHeight={wave.totalHeight} padding={wave.padding} />
       <Header setIsDark={setIsDark} isDark={isDark} />
