@@ -1,5 +1,12 @@
+.spotify-section {
+  width: 60%;
+  height: 100%;
+}
+
 .spotify-container {
+  margin-top: 30px;
   display: flex;
+  flex-direction: row;
   gap: 40px;
   height: 400px;
 }
@@ -8,4 +15,15 @@
   flex: 1 1 0;
   min-width: 0;
   min-height: 0;
+}
+
+@media (max-width: 700px) {
+  .spotify-container {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .spotify-section {
+    width: 90%;
+  }
 }

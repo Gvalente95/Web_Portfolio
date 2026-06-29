@@ -2,8 +2,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 128px;
-  height: 128px;
+  width: 64px;
+  height: 64px;
   z-index: 1;
   pointer-events: none;
   will-change: transform;

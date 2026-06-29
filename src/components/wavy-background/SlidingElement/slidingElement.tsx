@@ -4,7 +4,7 @@ import { clamp } from "../../../utils/math";
 
 import "./style.css";
 
-export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData[]; ballRef: React.RefObject<HTMLDivElement | null> }) => {
+export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsData: PathData[]; ballRef: React.RefObject<HTMLDivElement | null>; ballRadius: number }) => {
   const rotationRef = useRef(0);
   const lastPointRef = useRef<{ x: number; y: number } | null>(null);
   const lastScrollRef = useRef(0);
@@ -13,7 +13,7 @@ export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData
   const updateBall = () => {
     if (!ballRef.current) return;
 
-    const viewportTrigger = window.scrollY + window.innerHeight * 0.9;
+    const viewportTrigger = window.scrollY + window.innerHeight * 0.99;
 
     const index = pathsData.findIndex((path, i) => {
       const isLast = i === pathsData.length - 1;
@@ -34,6 +34,7 @@ export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData
     const isLastSection = index === pathsData.length - 1;
     const referenceHeight = isLastSection ? window.innerHeight : data.endY - data.startY;
     const sectionProgress = clamp((viewportTrigger - data.startY) / referenceHeight, 0, 1);
+    const inner = ballRef.current.firstElementChild as HTMLDivElement | null;
 
     const scrollDelta = window.scrollY - lastScrollRef.current;
     const isRevScroll = scrollDelta < 0;
@@ -42,6 +43,17 @@ export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData
 
     if (index !== prevIndex.current) {
       if (isRevScroll) reverse = !reverse;
+      if (inner) {
+        let nextColor = index >= pathsData.length - 1 ? "white" : pathsData[index + 1].color;
+        inner.style.background = `
+linear-gradient(135deg,
+  ${data.color} 25%,
+  ${nextColor} 25% 50%,
+  ${data.color} 50% 75%,
+  ${nextColor} 75%
+)`;
+        inner.style.backgroundSize = "24px 24px";
+      }
     }
 
     const progress = reverse ? 1 - sectionProgress : sectionProgress;
@@ -52,11 +64,10 @@ export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData
 
     const normalizedY = (point.y - data.viewBoxMinY) / data.viewBoxHeight;
     const pageY = data.y + normalizedY * data.height;
-    const bugOffsetY = 64;
 
     const pagePoint = {
       x: (point.x / 100) * window.innerWidth,
-      y: pageY - bugOffsetY,
+      y: pageY - ballRadius,
     };
 
     const lastPoint = lastPointRef.current;
@@ -72,10 +83,8 @@ export const useSlidingPosition = ({ pathsData, ballRef }: { pathsData: PathData
 
     lastPointRef.current = pagePoint;
 
-    const inner = ballRef.current.firstElementChild as HTMLDivElement | null;
-
     if (inner) {
-      inner.style.background = data.color;
+      //   inner.style.backgroundColor = data.color;
       inner.style.transform = `rotate(${rotationRef.current}deg)`;
       inner.style.borderRadius = "50%";
     }
@@ -112,14 +121,12 @@ export const SlidingElement = ({ paths }: { paths: PathData[] }) => {
   useSlidingPosition({
     pathsData: paths,
     ballRef,
+    ballRadius: 32,
   });
 
   return (
     <div ref={ballRef} className="sliding-element">
-      <div className="sliding-element-inner">
-        <div className="bar_0"></div>
-        {/* <div className="bar_1"></div> */}
-      </div>
+      <div className="sliding-element-inner">{/* <div className="bar_0"></div> */}</div>
     </div>
   );
 };

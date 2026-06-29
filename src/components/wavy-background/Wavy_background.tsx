@@ -39,13 +39,16 @@ export type WaveData = {
   padding: number;
 };
 
+import { useIsMobile } from "../../shared/hooks/useIsMobile";
 import { bakePath, shapeLRSliding, shapeSegment } from "./path";
 import "./style.css";
 
 export const useWaveData = (): WaveData => {
-  const y = 800;
+  const mobile = useIsMobile();
+
+  const y = mobile ? 840 : 960;
   const sections: ShapeSection[] = [
-    { h: 160, color: "rgb(22, 74, 79)", amp: 32, shape: "wave" },
+    // { h: 160, color: "rgb(22, 74, 79)", amp: 32, shape: "wave" },
     { h: 900, color: "rgb(53, 170, 181)", amp: 64, shape: "wave" },
 
     { h: 900, color: "rgb(255, 184, 77)", amp: 64, shape: "wave" },

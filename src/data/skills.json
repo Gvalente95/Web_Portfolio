@@ -1,0 +1,16 @@
+{
+  "c": { "image": "image/badge/c.svg", "stars": 4 },
+  "c++": { "image": "image/badge/c++.svg", "stars": 4 },
+  "c#": { "image": "image/badge/csharp.svg", "stars": 4 },
+  "js": { "image": "image/badge/js.svg", "stars": 5 },
+  "ts": { "image": "image/badge/ts.svg", "stars": 5 },
+  "py": { "image": "image/badge/py.svg", "stars": 3 },
+  "css": { "image": "image/badge/css.svg", "stars": 3 },
+  "git": { "image": "image/badge/git.svg", "stars": 4 },
+  "html": { "image": "image/badge/html.svg", "stars": 4 },
+  "docker": { "image": "image/badge/docker.svg", "stars": 3 },
+  "react": { "image": "image/badge/react.svg", "stars": 5 },
+  "unity": { "image": "image/badge/unity.svg", "stars": 5 },
+  "ps": { "image": "image/badge/ps.svg", "stars": 4 },
+  "blender": { "image": "image/badge/blender.svg", "stars": 3 }
+}

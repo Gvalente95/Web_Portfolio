@@ -89,3 +89,21 @@
   transform-origin: bottom center;
   will-change: transform, opacity;
 }
+
+@media (max-width: 700px) {
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .hero-section .left {
+    font-size: 60px;
+  }
+
+  .hero-section {
+    height: calc(100vh - 200px);
+  }
+
+  .hero-section .right {
+    font-size: 30px;
+  }
+}

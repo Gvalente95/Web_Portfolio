@@ -9,6 +9,7 @@ import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
 import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
 import { SlidingElement } from "./components/wavy-background/SlidingElement/slidingElement";
+import { Skills } from "./components/sections/skills/Skills";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -29,6 +30,7 @@ function App() {
       <div className="page-content">
         <HeroSection />
         <Projects />
+        <Skills />
         <About />
         <Contact />
       </div>

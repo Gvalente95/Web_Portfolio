@@ -38,7 +38,7 @@ export const Carousel = ({ title, items, titlePosition }: CarouselProps) => {
       <div className="carousel">
         <div className="carousel-track">
           {items.map(([key, value], index) => {
-            return <CarouselTrack videoRef={videoRef} projectKey={key} value={value} index={index} transitionIndex={transitionIndex} activeIndex={activeIndex} onMove={move} items={items} />;
+            return <CarouselTrack key={key} videoRef={videoRef} projectKey={key} value={value} index={index} transitionIndex={transitionIndex} activeIndex={activeIndex} onMove={move} items={items} />;
           })}
         </div>
       </div>

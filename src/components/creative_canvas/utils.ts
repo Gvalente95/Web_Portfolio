@@ -63,7 +63,7 @@ function interp(a: Point, b: Point, va: number, vb: number, threshold: number): 
 // }
 
 export function marchingSquaresPath(width: number, height: number, blobs: Blob[], time: number, scrollY: number) {
-  const cell = 16;
+  const cell = 32;
   const threshold = 1;
   const margin = 400;
 
