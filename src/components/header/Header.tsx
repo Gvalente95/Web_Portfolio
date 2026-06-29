@@ -54,7 +54,7 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
       <div className={`header-content ${isScrolling ? "scrolling" : ""}`}>
         <div className="header-top">
           <div className="header-title" onClick={reloadPage}>
-            Giulio Valente
+            <div> GV</div>
           </div>
 
           <div className="header-theme-toggle">
@@ -63,7 +63,7 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
         </div>
         <nav>
           {pages.map((page) => (
-            <button key={page} onClick={() => tryScrollTo(page)}>
+            <button className="header-button" key={page} onClick={() => tryScrollTo(page)}>
               {page}
             </button>
           ))}

@@ -1,3 +1,4 @@
+import { Skills } from "../skills/Skills";
 import "./style.css";
 
 export const About = () => {
@@ -12,19 +13,7 @@ export const About = () => {
 
         <p>My background in audio engineering gives me a creative approach to software: I like building tools, interfaces, and experiences that feel responsive, polished, and alive.</p>
 
-        <div className="about-tags">
-          <span>React</span>
-          <span>TypeScript</span>
-          <span>Creative Coding</span>
-          <span>Web Audio</span>
-          <span>UI Motion</span>
-          <span>C#</span>
-          <span>C</span>
-          <span>C++</span>
-          <span>Blender</span>
-          <span>Unity</span>
-          <span>Pro-Tools</span>
-        </div>
+        <Skills />
       </div>
     </section>
   );

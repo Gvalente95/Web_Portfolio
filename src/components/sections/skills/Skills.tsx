@@ -14,10 +14,6 @@ export const Skills = () => {
       {skills.map(([key, value]) => (
         <div className="skill" key={key}>
           <img src={value.image} alt={key} />
-          <div className="skill-tooltip">
-            <strong>{key}</strong>
-            <span>{"★".repeat(value.stars)}</span>
-          </div>
         </div>
       ))}
     </section>

@@ -14,6 +14,16 @@ body,
   overflow-x: clip;
 }
 
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
@@ -71,28 +81,12 @@ body,
   --hero-clr-web: #1f2937;
 }
 
-html,
-body,
-#root {
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  transition: background 0.3s ease;
-}
-
 .page-content {
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 1;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .page-content * {

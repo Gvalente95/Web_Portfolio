@@ -46,10 +46,10 @@ import "./style.css";
 export const useWaveData = (): WaveData => {
   const mobile = useIsMobile();
 
-  const y = mobile ? 840 : 960;
+  let y = 600;
+  if (mobile) y += 100;
   const sections: ShapeSection[] = [
-    // { h: 160, color: "rgb(22, 74, 79)", amp: 32, shape: "wave" },
-    { h: 900, color: "rgb(53, 170, 181)", amp: 64, shape: "wave" },
+    { h: 1000, color: "rgb(53, 170, 181)", amp: 64, shape: "wave" },
 
     { h: 900, color: "rgb(255, 184, 77)", amp: 64, shape: "wave" },
     { h: 900, color: "rgb(61, 220, 151)", amp: 64, shape: "zigzag" },

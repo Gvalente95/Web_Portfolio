@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 340px);
   padding: 20px;
 }
 

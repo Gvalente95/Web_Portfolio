@@ -30,15 +30,20 @@ export const HeroSection = () => {
         transformOrigin: "bottom center",
       });
 
-      tl.to(".hero-name:nth-child(1) .char", {
-        opacity: 1,
-        y: 0,
-        scaleY: 1,
-        rotateX: 0,
-        duration: 0.65,
-        stagger: 0.035,
-        ease: "back.out(2.2)",
-      })
+      tl.add("nameStart")
+        .to(
+          ".hero-name:nth-child(1) .char",
+          {
+            opacity: 1,
+            y: 0,
+            scaleY: 1,
+            rotateX: 0,
+            duration: 0.65,
+            stagger: 0.01,
+            ease: "back.out(2.2)",
+          },
+          "+=0.2",
+        )
         .to(
           ".hero-name:nth-child(2) .char",
           {
@@ -47,10 +52,10 @@ export const HeroSection = () => {
             scaleY: 1,
             rotateX: 0,
             duration: 0.65,
-            stagger: 0.035,
-            ease: "circ.out(2.2)",
+            stagger: 0.01,
+            ease: "back.out(2.2)",
           },
-          "+=0.2",
+          "nameStart",
         )
         .to(
           ".hero-job:nth-child(1) .char",
@@ -59,11 +64,11 @@ export const HeroSection = () => {
             y: 0,
             scaleY: 1,
             rotateX: 0,
-            duration: 0.45,
-            stagger: 0.018,
+            duration: 0.3,
+            stagger: 0.01,
             ease: "circ.out(1.8)",
           },
-          "+=0.45",
+          "+=0.35",
         )
         .to(
           ".hero-job:nth-child(2) .char",
@@ -72,8 +77,8 @@ export const HeroSection = () => {
             y: 0,
             scaleY: 1,
             rotateX: 0,
-            duration: 0.45,
-            stagger: 0.018,
+            duration: 0.3,
+            stagger: 0.01,
             ease: "circ.out(1.8)",
           },
           "+=0.15",
@@ -85,8 +90,8 @@ export const HeroSection = () => {
             y: 0,
             scaleY: 1,
             rotateX: 0,
-            duration: 0.45,
-            stagger: 0.018,
+            duration: 0.3,
+            stagger: 0.01,
             ease: "circ.out(1.8)",
           },
           "+=0.15",

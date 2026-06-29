@@ -4,6 +4,7 @@ import { useRef } from "react";
 import webAppsData from "../../../data/web-apps.json";
 import audioAppsData from "../../../data/audio-apps.json";
 import cAppsData from "../../../data/c_apps.json";
+import arrowGif from "/gif/arrow.gif";
 
 import "./style.css";
 
@@ -25,8 +26,10 @@ export const Projects = () => {
 
   return (
     <section ref={ref} id="projects" className="projects-section">
-      <div className="title projects-title">Projects</div>
-
+      <div className="projects-intro">
+        <div className="projects-title">Explore</div>
+        <img className="projects-arrow" src={arrowGif} alt="Scroll down" />
+      </div>
       <div className="projects-content">
         <Carousel titlePosition="center" title="Interactive Web Applications" items={webApps} />
         <Carousel titlePosition="center" title="Audio Programs" items={audioApps} />
