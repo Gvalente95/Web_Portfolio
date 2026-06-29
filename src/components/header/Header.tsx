@@ -10,8 +10,6 @@ const pages = ["Projects", "About", "Contact", "Resume"];
 
 export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.SetStateAction<boolean>>; isDark: boolean }) => {
   const [isScrolling, setIsScrolling] = useState(false);
-  const timeoutRef = useRef<number | null>(null);
-  const lastScrollY = useRef(window.scrollY);
   const clickSound = useRef(new Audio("audio/flashlight.wav"));
 
   const tryScrollTo = (page: string) => {
@@ -32,21 +30,13 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
 
   useEffect(() => {
     const onScroll = () => {
-      const current = window.scrollY;
-      const delta = Math.abs(current - lastScrollY.current);
-      lastScrollY.current = current;
-      if (delta < 40) return;
-      setIsScrolling(true);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      timeoutRef.current = window.setTimeout(() => {
-        setIsScrolling(false);
-      }, 300);
+      setIsScrolling(window.scrollY > 40);
     };
+
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
