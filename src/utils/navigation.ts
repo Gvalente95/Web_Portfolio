@@ -7,3 +7,5 @@ export const scrollToSection = (section: string) => {
 };
 
 export const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, "-");
+
+export const isMobile = () => window.matchMedia("(max-width: 700px)").matches;

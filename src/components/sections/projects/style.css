@@ -74,3 +74,18 @@
   user-select: none;
   pointer-events: none;
 }
+
+@media (max-width: 700px) {
+  .projects-section .sub-title {
+    align-self: center;
+    text-align: center;
+    width: fit-content;
+    max-width: 90%;
+  }
+  .carousel-section .sub-title::after,
+  .projects-section .sub-title::after {
+    left: 50% !important;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}

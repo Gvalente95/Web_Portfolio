@@ -12,6 +12,7 @@ body,
   padding: 0;
   min-height: 100%;
   overflow-x: clip;
+  user-select: none;
 }
 
 body {

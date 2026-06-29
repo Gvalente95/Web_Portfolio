@@ -71,7 +71,7 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
     >
       {value.image && !value.video && <img src={value.image} alt={projectKey} />}
 
-      {value.video && <video ref={isActive ? videoRef : null} className="entry-video" controls={isVideoOpen} src={value.video} onClick={(e) => e.stopPropagation()} />}
+      {value.video && <video ref={isActive ? videoRef : null} className="entry-video" playsInline preload="metadata" controls={isVideoOpen} src={value.video} onClick={(e) => e.stopPropagation()} />}
 
       {value.video && !isVideoOpen && <img className="play-button" src={playButtonImage} alt="Play" />}
 
