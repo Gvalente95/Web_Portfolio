@@ -44,15 +44,10 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
     if (index !== prevIndex.current) {
       if (isRevScroll) reverse = !reverse;
       if (inner) {
-        let nextColor = index >= pathsData.length - 1 ? "white" : pathsData[index + 1].color;
-        inner.style.background = `
-linear-gradient(135deg,
-  ${data.color} 25%,
-  ${nextColor} 25% 50%,
-  ${data.color} 50% 75%,
-  ${nextColor} 75%
-)`;
-        inner.style.backgroundSize = "24px 24px";
+        let nextColor = index > 0 ? pathsData[index - 1].color : "white";
+        inner.style.background = data.color;
+        document.getElementById("bar0")!.style.background = nextColor;
+        document.getElementById("bar1")!.style.background = nextColor;
       }
     }
 
@@ -126,7 +121,10 @@ export const SlidingElement = ({ paths }: { paths: PathData[] }) => {
 
   return (
     <div ref={ballRef} className="sliding-element">
-      <div className="sliding-element-inner">{/* <div className="bar_0"></div> */}</div>
+      <div className="sliding-element-inner">
+        <div id="bar0" className="bar_0"></div>
+        <div id="bar1" className="bar_1"></div>
+      </div>
     </div>
   );
 };

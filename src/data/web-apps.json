@@ -1,28 +1,28 @@
 {
   "Ropes": {
-    "info": "An interactive & Procedural Rope Simulation environment written from scratch in JS using the integration formulae and some math.",
-    "image": "image/screenshot/ropes.png",
+    "info": "An interactive rope simulation built from scratch in JavaScript using Verlet integration. Explore physically simulated ropes, constraints, and real-time interaction through a lightweight custom engine.",
+    "image": "image/screenshot/Ropes.png",
     "url": "https://gvalente95.github.io/Ropes/",
     "language": "Vanilla JS",
     "tags": "Graphics-design Physics-simulation"
   },
   "Falling Sand": {
-    "info": "A Falling Sand Simulation written in pure JS. Inspired by a Coding Train Challenge video, it features more than 50 materials with unique interactions, a controllable character that shoots materials as projectiles and much more",
-    "image": "image/screenshot/falling-sand.png",
+    "info": "A falling-sand sandbox simulation featuring over fifty unique materials and emergent interactions. Includes a controllable character capable of shooting particles, creating dynamic and often unpredictable simulations.",
+    "image": "image/screenshot/Falling-sand.png",
     "url": "https://gvalente95.github.io/FallingSand/",
     "language": "JS",
     "tags": ""
   },
   "Logic Gates": {
-    "info": "Create, connect and update logic / audio nodes in order to simulate the inner workings of a computer, or make music in the most convoluted way immaginable.",
-    "image": "image/screenshot/gates.png",
+    "info": "A visual node-based logic simulator where digital circuits can be assembled and evaluated in real time. The same node system can also be used to build experimental audio synthesis graphs.",
+    "image": "image/screenshot/Gates.png",
     "url": "https://gvalente95.github.io/LogicGateSynth/",
     "language": "JS",
     "tags": ""
   },
   "Marbles": {
-    "info": "A simple physics engine revolving around marbles. Move them around and relax",
-    "image": "image/screenshot/marbles.png",
+    "info": "A lightweight physics playground built around realistic marble interactions. Experiment with collisions, gravity, and momentum inside a simple but satisfying simulation.",
+    "image": "image/screenshot/Marbles.png",
     "url": "https://gvalente95.github.io/Marbles/",
     "language": "JS",
     "tags": ""

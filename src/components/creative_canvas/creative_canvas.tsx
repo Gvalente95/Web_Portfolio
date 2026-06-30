@@ -16,7 +16,7 @@ export const CreativeCanvas = () => {
         setOpacity(1);
         return;
       }
-      setOpacity((prev) => prev + 0.001);
+      setOpacity((prev) => prev + 0.01);
       requestAnimationFrame(() => increaseOpacity());
     }
     setTimeout(() => {

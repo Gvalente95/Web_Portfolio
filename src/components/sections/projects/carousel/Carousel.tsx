@@ -7,10 +7,11 @@ import { slugify } from "../../../../utils/navigation";
 
 interface CarouselProps {
   title: string;
+  description?: string;
   items: [string, ProjectData][];
   titlePosition: "left" | "center" | "right";
 }
-export const Carousel = ({ title, items, titlePosition }: CarouselProps) => {
+export const Carousel = ({ title, description, items, titlePosition }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [transitionIndex, setTransitionIndex] = useState(-1);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,6 +36,7 @@ export const Carousel = ({ title, items, titlePosition }: CarouselProps) => {
   return (
     <section className="carousel-section" id={slugify(title)} key={title}>
       <div className={`sub-title title_one ${titlePosition}`}>{title}</div>
+      {description && <div className={`carousel-description ${titlePosition}`}>{description}</div>}
       <div className="carousel-content">
         <div className="carousel-track">
           {items.map(([key, value], index) => {

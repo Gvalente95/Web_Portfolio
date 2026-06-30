@@ -7,14 +7,15 @@ import darkModeOffIcon from "../../assets/icons/black/sun.png";
 import "./style.css";
 
 const pages = ["Projects", "About", "Contact", "Resume"];
+const offsets = [-60, -80, -50, 0];
 
 export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.SetStateAction<boolean>>; isDark: boolean }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const clickSound = useRef(new Audio("audio/flashlight.wav"));
 
-  const tryScrollTo = (page: string) => {
+  const tryScrollTo = (page: string, idx: number) => {
     if (page === "Resume") openPage("resume_gvalente.pdf");
-    else scrollToSection(page);
+    else scrollToSection(page, offsets[idx]);
   };
 
   const reloadPage = () => {
@@ -52,8 +53,8 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
           </div>
         </div>
         <nav>
-          {pages.map((page) => (
-            <button className="header-button" key={page} onClick={() => tryScrollTo(page)}>
+          {pages.map((page, idx) => (
+            <button className="header-button" key={page} onClick={() => tryScrollTo(page, idx)}>
               {page}
             </button>
           ))}

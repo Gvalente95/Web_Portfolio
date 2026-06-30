@@ -1,14 +1,14 @@
 {
   "Audio Blocks": {
     "info": "Inspired by MAX Msp and Built in React, AudioBlocks lets you create, connect and automate all sorts of audio nodes inside a ReactFlow Graph.",
-    "image": "image/screenshot/audio-nodes.png",
+    "image": "image/screenshot/Audio-nodes.png",
     "url": "https://gvalente95.github.io/AudioBlocks/",
     "language": "React Typescript JS CSS Html Tone.js",
     "tags": ""
   },
   "web-daw": {
     "info": "A Web DAW (Digital Audio Workstation) made in React, it uses Tone.js for processing audio and features recording, effects, routing, automations, editting, instruments and way too many components.",
-    "image": "image/screenshot/webdaw.png",
+    "image": "image/screenshot/Webdaw.png",
     "url": "https://gvalente95.github.io/GiuDaw/",
     "language": "React Typescript JS CSS Html Tone.js",
     "tags": "Audio Enineering"

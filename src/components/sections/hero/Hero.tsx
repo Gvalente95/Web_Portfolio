@@ -109,13 +109,13 @@ export const HeroSection = () => {
       </div>
 
       <div className="right">
-        <div onClick={() => scrollToSection("interactive-web-applications")} className="hero-job">
+        <div onClick={() => scrollToSection("interactive-web-applications", 80)} className="hero-job">
           {splitChars("Web-Developer")}
         </div>
-        <div onClick={() => scrollToSection("audio-applications")} className="hero-job">
+        <div onClick={() => scrollToSection("audio-programs", 80)} className="hero-job">
           {splitChars("Audio-Engineer")}
         </div>
-        <div onClick={() => scrollToSection("c-programs")} className="hero-job">
+        <div onClick={() => scrollToSection("games", 80)} className="hero-job">
           {splitChars("Game-Programmer")}
         </div>
       </div>

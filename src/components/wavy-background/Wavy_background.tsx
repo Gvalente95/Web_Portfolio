@@ -50,11 +50,11 @@ export const useWaveData = (): WaveData => {
   let y = 600;
   if (mobile) y += 100;
   const sections: ShapeSection[] = [
-    { h: 1000, color: "#2D9CB0", amp: 64, shape: "wave" },
-    { h: 900, color: "#DFA245", amp: 64, shape: "wave" },
-    { h: 900, color: "#34B97E", amp: 64, shape: "wave" },
-    { h: 750, color: "#7444C4", amp: 64, shape: "wave" },
-    { h: 0, color: "var(--text)", amp: 64, shape: "wave" },
+    { h: 1090, color: "#2D9CB0", amp: 64, shape: "wave" },
+    { h: 1000, color: "#DFA245", amp: 64, shape: "wave" },
+    { h: 1000, color: "#34B97E", amp: 64, shape: "wave" },
+    { h: 780, color: "#7444C4", amp: 64, shape: "wave" },
+    { h: 0, color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 
   const padding = getMaxAmp(sections);

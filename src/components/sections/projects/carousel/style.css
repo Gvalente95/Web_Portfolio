@@ -5,6 +5,28 @@
   align-items: center;
 }
 
+.carousel-description {
+  width: min(900px, 82vw);
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--contrast);
+  opacity: 0.8;
+}
+
+.carousel-description.left {
+  text-align: left;
+}
+
+.carousel-description.center {
+  text-align: center;
+}
+
+.carousel-description.right {
+  text-align: right;
+}
+
 .carousel-content {
   position: relative;
   width: 100%;
@@ -22,4 +44,3 @@
   align-items: center;
   justify-content: center;
 }
-

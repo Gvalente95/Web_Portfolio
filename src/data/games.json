@@ -1,0 +1,75 @@
+{
+  "So Long": {
+    "info": "A 2D game developed in C as part of the 42 curriculum. Built with MiniLibX, it features real-time rendering, collision detection, sprite animation, and a complete game loop.",
+    "image": "image/screenshot/SoLong.png",
+    "video": "video/SoLong.mp4",
+    "url": "https://github.com/Gvalente95/So_long",
+    "language": "C",
+    "tags": "Game-Design"
+  },
+  "Cube": {
+    "info": "A custom multithreaded raycasting game engine written in C. Originally developed for the 42 Cub3D project, it was expanded with vertical camera and world positioning, procedural map generation, dynamic lighting, post-processing effects, configurable rendering options, advanced minimaps, and a Pokémon-inspired RPG gameplay system complete with NPCs, battles, and collectibles.",
+    "image": "image/screenshot/Cube.png",
+    "video": "video/Cube.mp4",
+    "url": "https://github.com/Gvalente95/Cub3d_42",
+    "language": "C",
+    "tags": "Raycasting Game-Engine"
+  },
+  "Ascii Run": {
+    "info": "A side-scrolling platformer rendered entirely with ASCII characters inside the terminal. Built on top of my custom ASCII rendering engine, featuring real-time animation, physics, and keyboard input.",
+    "image": "image/screenshot/Ascii_Run.png",
+    "video": "video/Ascii_Run.mp4",
+    "url": "",
+    "language": "C",
+    "tags": "Ascii Terminal"
+  },
+  "Ascii Fight": {
+    "info": "A top-down action RPG rendered exclusively in the terminal using ASCII graphics. Features real-time combat, animated entities, and a custom rendering engine written from scratch.",
+    "image": "image/screenshot/Ascii_Fight.png",
+    "video": "video/Ascii_Fight.mp4",
+    "url": "",
+    "language": "C",
+    "tags": "Ascii Terminal"
+  },
+  "Ascii Jump": {
+    "info": "A vertical platformer displayed entirely in the terminal. Demonstrates procedural level generation, and smooth ASCII rendering at interactive frame rates.",
+    "image": "image/screenshot/Ascii_Jump.png",
+    "video": "video/Ascii_Jump.mp4",
+    "url": "",
+    "language": "C",
+    "tags": "Ascii Terminal"
+  },
+
+  "Ascii Space": {
+    "info": "A terminal-based space shooter powered by my custom ASCII rendering engine. Includes real-time movement, particle effects, enemy AI, and responsive gameplay entirely within a console.",
+    "image": "image/screenshot/Ascii_Space.png",
+    "video": "video/Ascii_Space.mp4",
+    "url": "",
+    "language": "C",
+    "tags": "Ascii Terminal"
+  },
+  "Philosophers": {
+    "info": "An enhanced implementation of the classic Dining Philosophers concurrency problem. Beyond multithreading and synchronization, it includes a live ASCII visualization that displays the state of every philosopher in real time.",
+    "image": "image/screenshot/Philosophers.png",
+    "video": "video/Philosophers.mp4",
+    "url": "",
+    "language": "C",
+    "tags": "Ascii Terminal Multithreading"
+  },
+  "Sudoku": {
+    "info": "A complete Sudoku game developed in Unity with C#. Features puzzle generation, validation logic, interactive gameplay, and a polished user interface.",
+    "image": "image/screenshot/Sudoku.png",
+    "video": "video/Sudoku.mp4",
+    "url": "",
+    "language": "C#",
+    "tags": "Unity 2D"
+  },
+  "Chess": {
+    "info": "A fully playable chess game developed in Unity. Implements legal move generation, game state management, captures, special moves, and a clean interactive interface.",
+    "image": "image/screenshot/Chess.png",
+    "video": "video/Chess.mp4",
+    "url": "",
+    "language": "C#",
+    "tags": "Unity 2D"
+  }
+}
