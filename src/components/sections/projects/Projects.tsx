@@ -1,6 +1,5 @@
 import { SpotifyContainer } from "./spotifyContainer/SpotifyContainer";
 import { Carousel } from "./carousel/Carousel";
-import { useRef } from "react";
 import webAppsData from "../../../data/web-apps.json";
 import audioAppsData from "../../../data/audio-apps.json";
 import cAppsData from "../../../data/games.json";
@@ -8,6 +7,7 @@ import arrowGif from "/gif/arrow.gif";
 import { scrollToSection } from "../../../utils/navigation";
 
 import "./style.css";
+import { useOpacityAnimation } from "../../../shared/hooks/useOpacityAnimation";
 
 export type ProjectData = {
   info: string;
@@ -23,38 +23,41 @@ export const Projects = () => {
   const audioApps = Object.entries(audioAppsData as Record<string, ProjectData>);
   const cApps = Object.entries(cAppsData as Record<string, ProjectData>);
 
-  const ref = useRef<HTMLDivElement>(null);
+  const opacityAnim = useOpacityAnimation({ delay: 2000, duration: 2000, endOnScroll: true });
 
   return (
-    <section ref={ref} id="projects" className="projects-section">
+    <section ref={opacityAnim.ref} id="projects" className="projects-section">
       <div onClick={() => scrollToSection("interactive-web-applications", 100)} className="projects-intro">
         <div className="projects-title">Explore</div>
         <img className="projects-arrow" src={arrowGif} alt="Scroll down" />
       </div>
-      <div className="projects-content">
-        <Carousel
-          titlePosition="center"
-          title="Interactive Web Applications"
-          description="A collection of modern web applications built with a focus on performance, intuitive user experiences, and scalable architecture. These projects explore frontend engineering, backend services, real-time interactions, and creative web technologies."
-          description_short="A collection of modern web applications."
-          items={webApps}
-        />
-        <Carousel
-          titlePosition="center"
-          title="Audio Programs"
-          description="Desktop and web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features and game audio techniques."
-          description_short="Desktop and web-based audio software."
-          items={audioApps}
-        />
-        <Carousel
-          titlePosition="center"
-          title="Games"
-          description="A selection of games and game engines created across different technologies, ranging from terminal-based ASCII adventures to raycasting engines and Unity prototypes. These projects emphasize gameplay programming, graphics, AI, and engine architecture."
-          description_short="A selection of games and game engines."
-          items={cApps}
-        />
-        <SpotifyContainer />
-      </div>
+
+      {opacityAnim.hasEnded && (
+        <div className="projects-content">
+          <Carousel
+            titlePosition="center"
+            title="Interactive Web Applications"
+            description="A collection of modern web applications built with a focus on performance, intuitive user experiences, and scalable architecture. These projects explore frontend engineering, backend services, real-time interactions, and creative web technologies."
+            description_short="A collection of modern web applications."
+            items={webApps}
+          />
+          <Carousel
+            titlePosition="center"
+            title="Audio Programs"
+            description="Desktop and web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features and game audio techniques."
+            description_short="Desktop and web-based audio software."
+            items={audioApps}
+          />
+          <Carousel
+            titlePosition="center"
+            title="Games"
+            description="A selection of games and game engines created across different technologies, ranging from terminal-based ASCII adventures to raycasting engines and Unity prototypes. These projects emphasize gameplay programming, graphics, AI, and engine architecture."
+            description_short="A selection of games and game engines."
+            items={cApps}
+          />
+          <SpotifyContainer />
+        </div>
+      )}
     </section>
   );
 };

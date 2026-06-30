@@ -1,6 +1,7 @@
 .about-section {
   width: 100%;
   padding: 140px 24px;
+  padding-bottom: 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

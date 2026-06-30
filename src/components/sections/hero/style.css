@@ -26,6 +26,11 @@
   transition: color 0.3s ease;
 }
 
+.left > :first-child {
+  text-decoration: underline;
+  text-underline-offset: -8px;
+}
+
 .left > :nth-child(2) {
   color: var(--hero-clr-audio);
   transition: color 0.3s ease;
@@ -51,10 +56,6 @@
   cursor: pointer;
 }
 
-.right > div:hover {
-  filter: brightness(1.2);
-}
-
 .hero-section .right {
   display: flex;
   align-items: center;
@@ -73,6 +74,21 @@
   transition: text-shadow 2s ease;
   display: block;
   line-height: 1.25;
+}
+
+.hero-job {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-section:not(.animating) .hero-job:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  height: 1px;
+  background: currentColor;
 }
 
 .hero-job {

@@ -56,7 +56,6 @@
   margin: 48px 0 80px;
   padding: 15px;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.02);
   border-radius: 5px;
   color: var(--contrast);
 }

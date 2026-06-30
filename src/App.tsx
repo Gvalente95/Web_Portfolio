@@ -10,10 +10,17 @@ import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/As
 import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
 import { SlidingElement } from "./components/wavy-background/SlidingElement/slidingElement";
 import { isMobile } from "./utils/navigation";
+import { useOpacityAnimation } from "./shared/hooks/useOpacityAnimation";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
   const wave = useWaveData();
+
+  const opacityAnim = useOpacityAnimation<HTMLDivElement>({
+    delay: 2000,
+    duration: 2000,
+    endOnScroll: true,
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
@@ -22,9 +29,11 @@ function App() {
   return (
     <div className="App">
       <AsciiElements />
-      {!isMobile() && <CreativeCanvas />}
-      <SlidingElement paths={wave.paths} />
-      <WavyBackground sections={wave.sections} svgTop={wave.svgTop} totalHeight={wave.totalHeight} padding={wave.padding} />
+      <div ref={opacityAnim.ref}>
+        {!isMobile() && <CreativeCanvas />}
+        <SlidingElement paths={wave.paths} />
+        <WavyBackground sections={wave.sections} svgTop={wave.svgTop} totalHeight={wave.totalHeight} padding={wave.padding} />
+      </div>
       <Header setIsDark={setIsDark} isDark={isDark} />
 
       <div className="page-content">

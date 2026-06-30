@@ -1,3 +1,8 @@
+import { isMobile } from "../../utils/navigation";
+import { bakePath, shapeLRSliding, shapeSegment } from "./path";
+
+import "./style.css";
+
 export type SectionShapeType = "wave" | "zigzag" | "square";
 
 type ShapeSection = {
@@ -38,11 +43,6 @@ export type WaveData = {
   totalHeight: number;
   padding: number;
 };
-
-import { isMobile } from "../../utils/navigation";
-import { bakePath, shapeLRSliding, shapeSegment } from "./path";
-
-import "./style.css";
 
 export const useWaveData = (): WaveData => {
   const mobile = isMobile();

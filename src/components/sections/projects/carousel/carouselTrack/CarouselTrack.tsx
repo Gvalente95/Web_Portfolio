@@ -84,13 +84,14 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
       return;
     }
     if (value.video) {
-      setIsVideoOpen(true);
-      setShowControls(false);
+      setIsVideoOpen((prev) => !prev);
+      setShowControls((prev) => !prev);
       setTimeout(() => {
-        videoRef.current?.play();
+        if (videoRef.current?.paused) videoRef.current?.play();
+        else videoRef.current?.pause();
       }, 0);
       setTimeout(() => {
-        setShowControls(true);
+        setShowControls((prev) => !prev);
       }, 700);
       return;
     }

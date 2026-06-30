@@ -44,7 +44,7 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
     if (index !== prevIndex.current) {
       if (isRevScroll) reverse = !reverse;
       if (inner) {
-        let nextColor = index > 0 ? pathsData[index - 1].color : "white";
+        let nextColor = index > 0 ? pathsData[index - 1].color : "var(--contrast)";
         inner.style.background = data.color;
         document.getElementById("bar0")!.style.background = nextColor;
         document.getElementById("bar1")!.style.background = nextColor;
@@ -84,7 +84,6 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
       inner.style.borderRadius = "50%";
     }
 
-    ballRef.current.style.opacity = ".8";
     ballRef.current.style.transform = `translate(${point.x}vw, ${pagePoint.y}px) translate(-50%, -50%)`;
     lastScrollRef.current = window.scrollY;
     prevIndex.current = index;
@@ -112,7 +111,6 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
 };
 export const SlidingElement = ({ paths }: { paths: PathData[] }) => {
   const ballRef = useRef<HTMLDivElement | null>(null);
-
   useSlidingPosition({
     pathsData: paths,
     ballRef,
