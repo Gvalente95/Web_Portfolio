@@ -15,6 +15,30 @@
     "language": "C",
     "tags": "Raycasting Game-Engine"
   },
+  "Sudoku": {
+    "info": "A complete Sudoku game developed in Unity with C#. Features puzzle generation, validation logic, interactive gameplay, and a polished user interface.",
+    "image": "image/screenshot/Sudoku.png",
+    "video": "video/Sudoku.mp4",
+    "url": "",
+    "language": "C#",
+    "tags": "Unity 2D"
+  },
+  "Chess": {
+    "info": "A fully playable chess game developed in Unity. Implements legal move generation, game state management, captures, special moves, and a clean interactive interface.",
+    "image": "image/screenshot/Chess.png",
+    "video": "video/Chess.mp4",
+    "url": "",
+    "language": "C#",
+    "tags": "Unity 2D"
+  },
+  "Grid Miner": {
+    "info": "A 3d rpg Platformer with a range of classes and procedural terrain grid generation. Almost every texture and 3d models were built and processed by me in blender",
+    "image": "image/screenshot/GridMiner.png",
+    "video": "video/GridMiner.mp4",
+    "url": "",
+    "language": "C#",
+    "tags": "Unity 3D"
+  },
   "Ascii Run": {
     "info": "A side-scrolling platformer rendered entirely with ASCII characters inside the terminal. Built on top of my custom ASCII rendering engine, featuring real-time animation, physics, and keyboard input.",
     "image": "image/screenshot/Ascii_Run.png",
@@ -55,21 +79,5 @@
     "url": "",
     "language": "C",
     "tags": "Ascii Terminal Multithreading"
-  },
-  "Sudoku": {
-    "info": "A complete Sudoku game developed in Unity with C#. Features puzzle generation, validation logic, interactive gameplay, and a polished user interface.",
-    "image": "image/screenshot/Sudoku.png",
-    "video": "video/Sudoku.mp4",
-    "url": "",
-    "language": "C#",
-    "tags": "Unity 2D"
-  },
-  "Chess": {
-    "info": "A fully playable chess game developed in Unity. Implements legal move generation, game state management, captures, special moves, and a clean interactive interface.",
-    "image": "image/screenshot/Chess.png",
-    "video": "video/Chess.mp4",
-    "url": "",
-    "language": "C#",
-    "tags": "Unity 2D"
   }
 }

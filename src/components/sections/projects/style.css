@@ -95,4 +95,14 @@
     right: auto;
     transform: translateX(-50%);
   }
+
+  .projects-intro {
+    margin-top: -70px;
+    color: var(--text);
+    margin-bottom: 160px;
+  }
+
+  .projects-content {
+    gap: 120px;
+  }
 }

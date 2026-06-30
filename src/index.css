@@ -33,7 +33,7 @@ body {
 }
 
 [data-theme="dark"] {
-  --header-bgr: rgba(10, 14, 23, 0.5);
+  --header-bgr: rgba(255, 255, 255, 0.02);
   --header-scroll-bgr: rgba(10, 14, 23, 0.1);
   --header-border: rgba(255, 255, 255, 0.1);
 
@@ -59,7 +59,7 @@ body {
 }
 
 [data-theme="light"] {
-  --header-bgr: rgba(255, 255, 255, 0.5);
+  --header-bgr: rgba(0, 0, 0, 0.02);
   --header-scroll-bgr: rgba(255, 255, 255, 0.1);
   --header-border: rgba(5, 5, 5, 0.1);
 

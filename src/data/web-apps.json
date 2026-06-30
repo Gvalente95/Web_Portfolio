@@ -2,6 +2,7 @@
   "Ropes": {
     "info": "An interactive rope simulation built from scratch in JavaScript using Verlet integration. Explore physically simulated ropes, constraints, and real-time interaction through a lightweight custom engine.",
     "image": "image/screenshot/Ropes.png",
+    "video": "video/Ropes.mp4",
     "url": "https://gvalente95.github.io/Ropes/",
     "language": "Vanilla JS",
     "tags": "Graphics-design Physics-simulation"
@@ -9,6 +10,7 @@
   "Falling Sand": {
     "info": "A falling-sand sandbox simulation featuring over fifty unique materials and emergent interactions. Includes a controllable character capable of shooting particles, creating dynamic and often unpredictable simulations.",
     "image": "image/screenshot/Falling-sand.png",
+    "video": "video/FallingSand.mp4",
     "url": "https://gvalente95.github.io/FallingSand/",
     "language": "JS",
     "tags": ""
@@ -16,6 +18,7 @@
   "Logic Gates": {
     "info": "A visual node-based logic simulator where digital circuits can be assembled and evaluated in real time. The same node system can also be used to build experimental audio synthesis graphs.",
     "image": "image/screenshot/Gates.png",
+    "video": "video/Gates.mp4",
     "url": "https://gvalente95.github.io/LogicGateSynth/",
     "language": "JS",
     "tags": ""
@@ -23,6 +26,7 @@
   "Marbles": {
     "info": "A lightweight physics playground built around realistic marble interactions. Experiment with collisions, gravity, and momentum inside a simple but satisfying simulation.",
     "image": "image/screenshot/Marbles.png",
+    "video": "video/Marbles.mp4",
     "url": "https://gvalente95.github.io/Marbles/",
     "language": "JS",
     "tags": ""

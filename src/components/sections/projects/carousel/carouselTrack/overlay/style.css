@@ -6,7 +6,7 @@
 .overlay p {
   max-width: 620px;
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--text);
   line-height: 1.6;
 }
 

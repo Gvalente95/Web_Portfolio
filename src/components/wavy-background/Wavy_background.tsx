@@ -48,13 +48,17 @@ export const useWaveData = (): WaveData => {
   const mobile = isMobile();
 
   let y = 600;
-  if (mobile) y += 100;
+  if (mobile) y += 160;
+
+  let heights = [1090, 1000, 1000, 780, 0];
+  if (mobile) heights = [750, 750, 750, 650, 0];
+
   const sections: ShapeSection[] = [
-    { h: 1090, color: "#2D9CB0", amp: 64, shape: "wave" },
-    { h: 1000, color: "#DFA245", amp: 64, shape: "wave" },
-    { h: 1000, color: "#34B97E", amp: 64, shape: "wave" },
-    { h: 780, color: "#7444C4", amp: 64, shape: "wave" },
-    { h: 0, color: "var(--contrast)", amp: 64, shape: "wave" },
+    { h: heights[0], color: "#2D9CB0", amp: 64, shape: "wave" },
+    { h: heights[1], color: "#DFA245", amp: 64, shape: "wave" },
+    { h: heights[2], color: "#34B97E", amp: 64, shape: "wave" },
+    { h: heights[3], color: "#7444C4", amp: 64, shape: "wave" },
+    { h: heights[4], color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 
   const padding = getMaxAmp(sections);

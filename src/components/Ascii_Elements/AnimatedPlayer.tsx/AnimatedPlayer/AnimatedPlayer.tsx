@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import player_sprites from "../../../../data/ascii/player_sprites.json";
+import player_sprites from "../../../../data/player_sprites.json";
 
 import "./style.css";
 

@@ -96,3 +96,11 @@
   opacity: 0.7;
   transform: translate(-50%, -50%) scale(1.12);
 }
+
+@media (max-width: 700px) {
+  .entry {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}

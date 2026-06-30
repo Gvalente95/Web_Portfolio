@@ -36,18 +36,21 @@ export const Projects = () => {
           titlePosition="center"
           title="Interactive Web Applications"
           description="A collection of modern web applications built with a focus on performance, intuitive user experiences, and scalable architecture. These projects explore frontend engineering, backend services, real-time interactions, and creative web technologies."
+          description_short="A collection of modern web applications."
           items={webApps}
         />
         <Carousel
           titlePosition="center"
           title="Audio Programs"
           description="Desktop and web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features and game audio techniques."
+          description_short="Desktop and web-based audio software."
           items={audioApps}
         />
         <Carousel
           titlePosition="center"
           title="Games"
           description="A selection of games and game engines created across different technologies, ranging from terminal-based ASCII adventures to raycasting engines and Unity prototypes. These projects emphasize gameplay programming, graphics, AI, and engine architecture."
+          description_short="A selection of games and game engines."
           items={cApps}
         />
         <SpotifyContainer />
