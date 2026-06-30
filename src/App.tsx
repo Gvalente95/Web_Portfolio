@@ -8,7 +8,7 @@ import { HeroSection } from "./components/sections/hero/Hero";
 import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
 import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
-import { SlidingElement } from "./components/wavy-background/SlidingElement/slidingElement";
+import { SlidingElement } from "./components/wavy-background/SlidingElement/SlidingElement";
 import { isMobile } from "./utils/navigation";
 import { useOpacityAnimation } from "./shared/hooks/useOpacityAnimation";
 
