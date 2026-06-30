@@ -25,6 +25,8 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
     if (index === -1) {
       ballRef.current.style.opacity = "0";
       return;
+    } else {
+      ballRef.current.style.opacity = "1";
     }
 
     const data = pathsData[index];
@@ -33,6 +35,7 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
 
     const isLastSection = index === pathsData.length - 1;
     const referenceHeight = isLastSection ? window.innerHeight : data.endY - data.startY;
+
     const sectionProgress = clamp((viewportTrigger - data.startY) / referenceHeight, 0, 1);
     const inner = ballRef.current.firstElementChild as HTMLDivElement | null;
 

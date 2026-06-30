@@ -5,9 +5,9 @@ import audioAppsData from "../../../data/audio-apps.json";
 import cAppsData from "../../../data/games.json";
 import arrowGif from "/gif/arrow.gif";
 import { scrollToSection } from "../../../utils/navigation";
+import { useOpacityAnimation } from "../../../shared/hooks/useOpacityAnimation";
 
 import "./style.css";
-import { useOpacityAnimation } from "../../../shared/hooks/useOpacityAnimation";
 
 export type ProjectData = {
   info: string;
@@ -27,11 +27,10 @@ export const Projects = () => {
 
   return (
     <section ref={opacityAnim.ref} id="projects" className="projects-section">
-      <div onClick={() => scrollToSection("interactive-web-applications", 100)} className="projects-intro">
+      <div id="explore-button" onClick={() => scrollToSection("interactive-web-applications", 100)} className="projects-intro">
         <div className="projects-title">Explore</div>
         <img className="projects-arrow" src={arrowGif} alt="Scroll down" />
       </div>
-
       {opacityAnim.hasEnded && (
         <div className="projects-content">
           <Carousel

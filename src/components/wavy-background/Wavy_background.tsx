@@ -1,7 +1,10 @@
 import { isMobile } from "../../utils/navigation";
 import { bakePath, shapeLRSliding, shapeSegment } from "./path";
+import { useLayoutEffect, useState } from "react";
 
 import "./style.css";
+
+const sectionIds = ["explore-button", "interactive-web-applications", "audio-programs", "games", "spotify"];
 
 export type SectionShapeType = "wave" | "zigzag" | "square";
 
@@ -45,20 +48,61 @@ export type WaveData = {
 };
 
 export const useWaveData = (): WaveData => {
+  const [waveData, setWaveData] = useState<WaveData>(() => {
+    return buildWaveData([1090, 1000, 1000, 780, 0], 600);
+  });
   const mobile = isMobile();
+  const toMargin = mobile ? 50 : 150;
 
-  let y = 600;
-  if (mobile) y += 160;
+  useLayoutEffect(() => {
+    const updateWaveData = () => {
+      const positions = sectionIds
+        .map((id) => {
+          const el = document.getElementById(id);
+          if (!el) return null;
 
-  let heights = [1090, 1000, 1000, 780, 0];
-  if (mobile) heights = [750, 750, 750, 650, 0];
+          return el.getBoundingClientRect().top + window.scrollY;
+        })
+        .filter((v): v is number => v !== null);
 
+      if (positions.length < 2) return;
+
+      let heights = positions.map((top, i) => {
+        const next = positions[i + 1];
+        return next !== undefined ? next - top : 0;
+      });
+
+      let firstY = positions[0] - toMargin;
+
+      if (!mobile) {
+        heights.splice(0, 1);
+        firstY += 100;
+        heights[0] += 60;
+      }
+      setWaveData(buildWaveData(heights, firstY));
+    };
+
+    updateWaveData();
+
+    window.addEventListener("resize", updateWaveData);
+    window.addEventListener("load", updateWaveData);
+
+    return () => {
+      window.removeEventListener("resize", updateWaveData);
+      window.removeEventListener("load", updateWaveData);
+    };
+  }, []);
+
+  return waveData;
+};
+
+const buildWaveData = (heights: number[], y: number): WaveData => {
   const sections: ShapeSection[] = [
-    { h: heights[0], color: "#2D9CB0", amp: 64, shape: "wave" },
-    { h: heights[1], color: "#DFA245", amp: 64, shape: "wave" },
-    { h: heights[2], color: "#34B97E", amp: 64, shape: "wave" },
-    { h: heights[3], color: "#7444C4", amp: 64, shape: "wave" },
-    { h: heights[4], color: "var(--contrast)", amp: 64, shape: "wave" },
+    { h: heights[0] ?? 0, color: "#2D9CB0", amp: 64, shape: "wave" },
+    { h: heights[1] ?? 0, color: "#DFA245", amp: 64, shape: "wave" },
+    { h: heights[2] ?? 0, color: "#34B97E", amp: 64, shape: "wave" },
+    { h: heights[3] ?? 0, color: "#7444C4", amp: 64, shape: "wave" },
+    { h: heights[4] ?? 0, color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 
   const padding = getMaxAmp(sections);
@@ -69,6 +113,7 @@ export const useWaveData = (): WaveData => {
 
   const paths = positionedSections.map((section) => {
     const path = shapeLRSliding(section.topShape, section.top, section.topAmp, section.topPhase);
+
     return {
       path,
       y: svgTop,
@@ -86,7 +131,7 @@ export const useWaveData = (): WaveData => {
   return {
     sections: positionedSections,
     paths,
-    svgTop: y - padding,
+    svgTop,
     totalHeight,
     padding,
   };

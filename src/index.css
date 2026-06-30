@@ -19,7 +19,6 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  color: white;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   transition: background 0.3s ease;
