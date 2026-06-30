@@ -75,10 +75,13 @@ export const useWaveData = (): WaveData => {
       let firstY = positions[0] - toMargin;
 
       if (!mobile) {
-        heights.splice(0, 1);
         firstY += 100;
-        heights[0] += 60;
+        heights[0] += heights[1] - 100;
+      } else {
+        firstY += 200;
+        heights[0] += heights[1] - 220;
       }
+      heights[heights.length - 2] -= 220;
       setWaveData(buildWaveData(heights, firstY));
     };
 

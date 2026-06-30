@@ -13,7 +13,7 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
   const updateBall = () => {
     if (!ballRef.current) return;
 
-    const viewportTrigger = window.scrollY + window.innerHeight * 0.99;
+    const viewportTrigger = window.scrollY + window.innerHeight + 50;
 
     const index = pathsData.findIndex((path, i) => {
       const isLast = i === pathsData.length - 1;
