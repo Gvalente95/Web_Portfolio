@@ -75,8 +75,8 @@ export const useWaveData = (): WaveData => {
       let firstY = positions[0] - toMargin;
 
       if (!mobile) {
-        firstY += 140;
-        heights[0] += heights[1] - 140;
+        firstY += 100;
+        heights[0] += heights[1] - 100;
       } else {
         firstY += 40;
         heights[0] += heights[1] - 60;
@@ -101,10 +101,10 @@ export const useWaveData = (): WaveData => {
 
 const buildWaveData = (heights: number[], y: number): WaveData => {
   const sections: ShapeSection[] = [
-    { h: heights[0] ?? 0, color: "var(--section-0)", amp: 0, shape: "wave" },
-    { h: heights[1] ?? 0, color: "var(--section-1)", amp: 64, shape: "wave" },
-    { h: heights[2] ?? 0, color: "var(--section-2)", amp: 64, shape: "wave" },
-    { h: heights[3] ?? 0, color: "var(--section-3)", amp: 64, shape: "wave" },
+    { h: heights[0] ?? 0, color: "var(--section-web)", amp: 64, shape: "wave" },
+    { h: heights[1] ?? 0, color: "var(--section-audio)", amp: 64, shape: "wave" },
+    { h: heights[2] ?? 0, color: "var(--section-games)", amp: 64, shape: "wave" },
+    { h: heights[3] ?? 0, color: "var(--section-music)", amp: 64, shape: "wave" },
     { h: heights[4] ?? 0, color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 
@@ -177,18 +177,20 @@ interface WavybackgroundProps {
 }
 export const WavyBackground = ({ sections, svgTop, totalHeight, padding }: WavybackgroundProps) => {
   return (
-    <svg
-      className="wave-bg"
-      style={{
-        top: svgTop,
-        height: totalHeight,
-      }}
-      viewBox={`0 ${-padding} 100 ${totalHeight}`}
-      preserveAspectRatio="none"
-    >
-      {sections.map((section, index) => (
-        <path key={index} fill={section.color} d={shapeSegment(section)} />
-      ))}
-    </svg>
+    <>
+      <svg
+        className="wave-bg"
+        style={{
+          top: svgTop,
+          height: totalHeight,
+        }}
+        viewBox={`0 ${-padding} 100 ${totalHeight}`}
+        preserveAspectRatio="none"
+      >
+        {sections.map((section, index) => (
+          <path key={index} fill={section.color} d={shapeSegment(section)} />
+        ))}
+      </svg>
+    </>
   );
 };

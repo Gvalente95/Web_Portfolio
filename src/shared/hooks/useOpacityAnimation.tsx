@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type UseOpacityAnimationProps = {
   delay?: number;
@@ -10,8 +10,8 @@ type UseOpacityAnimationProps = {
 
 export const useOpacityAnimation = <T extends HTMLElement>({ delay = 0, duration = 1000, endOnScroll = false, maxOpacity = 1, startOpacity = 0 }: UseOpacityAnimationProps) => {
   const ref = useRef<T | null>(null);
-  const hasStarted = useRef(false);
-  const hasEnded = useRef(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [hasEnded, setHasEnded] = useState(false);
 
   useEffect(() => {
     if (ref.current) {
@@ -25,6 +25,8 @@ export const useOpacityAnimation = <T extends HTMLElement>({ delay = 0, duration
     const stop = () => {
       stopped = true;
 
+      setHasStarted(true);
+      setHasEnded(true);
       if (timeoutId !== undefined) {
         clearTimeout(timeoutId);
       }
@@ -47,7 +49,7 @@ export const useOpacityAnimation = <T extends HTMLElement>({ delay = 0, duration
       ref.current.style.opacity = String(opacity);
 
       if (t < 1) {
-        hasEnded.current = true;
+        setHasEnded(true);
         frameId = requestAnimationFrame(animate(start));
       }
     };
@@ -59,7 +61,7 @@ export const useOpacityAnimation = <T extends HTMLElement>({ delay = 0, duration
     timeoutId = setTimeout(() => {
       if (stopped) return;
 
-      hasStarted.current = true;
+      setHasStarted(true);
 
       const start = performance.now();
       frameId = requestAnimationFrame(animate(start));

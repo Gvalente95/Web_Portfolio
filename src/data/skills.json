@@ -14,6 +14,6 @@
   "ps": { "image": "image/badge/ps.svg", "stars": 4 },
   "blender": { "image": "image/badge/blender.svg", "stars": 3 },
   "logic": { "image": "image/badge/logic.ico", "stars": 5 },
-  "ableton": { "image": "image/badge/ableton.svg", "stars": 3 },
-  "wwise": { "image": "image/badge/wwise.svg", "stars": 4 }
+  "ableton": { "image": "image/badge/ableton_white.svg", "image_dark": "image/badge/ableton.svg", "stars": 3 },
+  "wwise": { "image": "image/badge/wwise_white.svg", "image_dark": "image/badge/wwise.svg", "stars": 4 }
 }

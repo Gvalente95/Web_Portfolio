@@ -3,6 +3,7 @@ import type { PathData } from "../Wavy_background";
 import { clamp } from "../../../utils/math";
 
 import "./style.css";
+import { isMobile } from "../../../utils/navigation";
 
 export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsData: PathData[]; ballRef: React.RefObject<HTMLDivElement | null>; ballRadius: number }) => {
   const rotationRef = useRef(0);
@@ -46,12 +47,7 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
 
     if (index !== prevIndex.current) {
       if (isRevScroll) reverse = !reverse;
-      if (inner) {
-        let nextColor = index > 0 ? pathsData[index - 1].color : "var(--contrast)";
-        inner.style.background = data.color;
-        document.getElementById("bar0")!.style.background = nextColor;
-        document.getElementById("bar1")!.style.background = nextColor;
-      }
+      if (inner) inner.style.borderColor = data.color;
     }
 
     const progress = reverse ? 1 - sectionProgress : sectionProgress;
@@ -81,11 +77,8 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
 
     lastPointRef.current = pagePoint;
 
-    if (inner) {
-      inner.style.transform = `rotate(${rotationRef.current}deg)`;
-    }
-
-    ballRef.current.style.transform = `translate(${point.x}vw, ${pagePoint.y }px) translate(-50%, -50%)`;
+    if (inner) inner.style.transform = `rotate(${rotationRef.current}deg)`;
+    ballRef.current.style.transform = `translate(${point.x}vw, ${pagePoint.y}px) translate(-50%, -50%)`;
     lastScrollRef.current = window.scrollY;
     prevIndex.current = index;
   };
@@ -115,15 +108,12 @@ export const SlidingElement = ({ paths }: { paths: PathData[] }) => {
   useSlidingPosition({
     pathsData: paths,
     ballRef,
-    ballRadius: 32,
+    ballRadius: isMobile() ? 32 : 64,
   });
 
   return (
     <div ref={ballRef} className="sliding-element">
-      <div className="sliding-element-inner">
-        <div id="bar0" className="bar_0"></div>
-        <div id="bar1" className="bar_1"></div>
-      </div>
+      <div className="sliding-element-inner"></div>
     </div>
   );
 };

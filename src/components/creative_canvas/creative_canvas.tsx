@@ -1,13 +1,17 @@
 import { lerpColor } from "../../utils/colors";
-import { useDocumentSize, useMarchingBlobs } from "./hooks";
+import { isMobile } from "../../utils/navigation";
+import { useMarchingBlobs } from "./hooks";
 
 export const CreativeCanvas = () => {
-  const { size } = useDocumentSize();
-  const { blobPath } = useMarchingBlobs({ size });
+  const size = { width: window.innerWidth, height: window.innerHeight };
+  const strokeWidth = 2;
+  const resolution = isMobile() ? 64 : 16;
+  const { blobPath } = useMarchingBlobs({ size, resolution });
 
   const scrollYNorm = window.scrollY / document.body.scrollHeight;
   const curClr = lerpColor("rgba(255, 184, 77, 0.35)", "rgba(0, 255, 132, 0.35)", scrollYNorm);
 
+  console.warn("CRATIBE");
   return (
     <div className="creative-blur-zone">
       <div className="creative-layer" style={{ position: "absolute", width: "100%", height: "100%" }}>
@@ -22,7 +26,7 @@ export const CreativeCanvas = () => {
               </feMerge>
             </filter>
           </defs>
-          <path d={blobPath} fill="none" stroke={curClr} strokeWidth="26" strokeLinecap="round" strokeLinejoin="round" filter="url(#blob-glow)" />
+          <path d={blobPath} fill="none" stroke={curClr} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" filter="url(#blob-glow)" />
         </svg>
       </div>
     </div>

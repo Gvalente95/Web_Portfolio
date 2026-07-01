@@ -1,7 +1,7 @@
 import { Skills } from "../skills/Skills";
 import "./style.css";
 
-export const About = () => {
+export const About = ({ isDark }: { isDark: boolean }) => {
   return (
     <section id="about" className="about-section">
       <div className="about-card">
@@ -13,7 +13,7 @@ export const About = () => {
 
         <p>My background in audio engineering gives me a creative approach to software: I like building tools, interfaces, and experiences that feel responsive, polished, and alive.</p>
 
-        <Skills />
+        <Skills isDark={isDark} />
       </div>
     </section>
   );

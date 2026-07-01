@@ -1,26 +1,28 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Blob } from "./type";
 import { marchingSquaresPath } from "./utils";
+import { f_range } from "../../utils/math";
 
-export const useMarchingBlobs = ({ size }: { size: { width: number; height: number } }) => {
+export const useMarchingBlobs = ({ size, resolution }: { size: { width: number; height: number }; resolution: number }) => {
   const { mouse } = useMouse();
   const [time, setTime] = useState(0);
   const blobsRef = useRef<Blob[]>([]);
   const bigCHange = 0.2;
+  const blobMaxSize = 150;
 
   useEffect(() => {
-    blobsRef.current = Array.from({ length: 30 }, (_, i) => {
-      const x = Math.random() * size.width;
-      const y = Math.random() * size.height;
+    blobsRef.current = Array.from({ length: 10 }, (_, i) => {
+      const homeX = f_range(20, size.width - 20);
+      const homeY = f_range(80, size.height - 20);
       return {
         id: i,
-        x,
-        y,
-        homeX: x,
-        homeY: y,
+        x: size.width / 2,
+        y: size.height / 2,
+        homeX: homeX,
+        homeY: homeY,
         vx: 0,
         vy: 0,
-        r: 20 + Math.random() * (Math.random() < bigCHange ? 200 : 100),
+        r: 20 + Math.random() * (Math.random() < bigCHange ? blobMaxSize : blobMaxSize / 2),
         speed: 0.15 + Math.random() * 0.35,
         phase: Math.random() * Math.PI * 2,
         range: 30 + Math.random() * 90,
@@ -88,7 +90,7 @@ export const useMarchingBlobs = ({ size }: { size: { width: number; height: numb
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  const blobPath = useMemo(() => marchingSquaresPath(size.width, size.height, blobsRef.current, time, window.scrollY), [size.width, size.height, time]);
+  const blobPath = useMemo(() => marchingSquaresPath(size.width, size.height, blobsRef.current, time, window.scrollY, resolution), [size.width, size.height, time]);
   return { blobPath };
 };
 

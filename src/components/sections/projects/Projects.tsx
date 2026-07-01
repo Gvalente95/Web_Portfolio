@@ -31,7 +31,7 @@ export const Projects = () => {
         <div className="projects-title">Explore</div>
         <img className="projects-arrow" src={arrowGif} alt="Scroll down" />
       </div>
-      {opacityAnim.hasEnded && (
+      {
         <div className="projects-content">
           <Carousel
             titlePosition="center"
@@ -56,7 +56,7 @@ export const Projects = () => {
           />
           <SpotifyContainer title="My Music" />
         </div>
-      )}
+      }
     </section>
   );
 };

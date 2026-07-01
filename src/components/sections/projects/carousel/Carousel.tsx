@@ -38,8 +38,10 @@ export const Carousel = ({ title, description, description_short, items, titlePo
 
   return (
     <section className="carousel-section" id={slugify(title)} key={title}>
-      <div className={`sub-title title_one ${titlePosition}`}>{title}</div>
-      {target_description && <div className={`carousel-description ${titlePosition}`}>{target_description}</div>}
+      <div className="carousel-info">
+        <div className={`sub-title title_one ${titlePosition}`}>{title}</div>
+        {target_description && <div className={`carousel-description ${titlePosition}`}>{target_description}</div>}
+      </div>
       <div className="carousel-content">
         <div className="carousel-track">
           {items.map(([key, value], index) => {

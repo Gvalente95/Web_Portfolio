@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+.carousel-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
 .carousel-description {
   width: min(900px, 82vw);
   margin-top: 2rem;

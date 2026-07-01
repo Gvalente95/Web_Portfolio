@@ -17,8 +17,8 @@ function App() {
   const wave = useWaveData();
 
   const opacityAnim = useOpacityAnimation<HTMLDivElement>({
-    delay: 2000,
-    duration: 2000,
+    delay: 1800,
+    duration: 3000,
     endOnScroll: true,
   });
 
@@ -30,16 +30,15 @@ function App() {
     <div className="App">
       <AsciiElements />
       <div ref={opacityAnim.ref}>
-        {!isMobile() && <CreativeCanvas />}
-        <SlidingElement paths={wave.paths} />
-        <WavyBackground sections={wave.sections} svgTop={wave.svgTop} totalHeight={wave.totalHeight} padding={wave.padding} />
+        {!isMobile() && opacityAnim.hasStarted ? <CreativeCanvas /> : null} <SlidingElement paths={wave.paths} />
+        <WavyBackground sections={wave.sections} totalHeight={wave.totalHeight} svgTop={wave.svgTop} padding={wave.padding} />
+        <Header setIsDark={setIsDark} isDark={isDark} />
       </div>
-      <Header setIsDark={setIsDark} isDark={isDark} />
 
       <div className="page-content">
         <HeroSection />
         <Projects />
-        <About />
+        <About isDark={isDark} />
         <Contact />
       </div>
       <Footer />

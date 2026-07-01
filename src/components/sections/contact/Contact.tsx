@@ -14,15 +14,28 @@ export const Contact = () => {
 
     try {
       const data = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
+        name: String(formData.get("name") ?? ""),
+        email: String(formData.get("email") ?? ""),
+        message: String(formData.get("message") ?? ""),
       };
 
+      const response = await fetch("https://formspree.io/f/mrewyagp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) throw new Error();
+
+      form.reset();
       console.log("Contact form submitted:", data);
-
-      await new Promise((resolve) => setTimeout(resolve, 800));
-
       setStatus("sent");
       form.reset();
     } catch {

@@ -1,4 +1,3 @@
-import { isMobile } from "../../utils/navigation";
 import type { Blob, Point } from "./type";
 
 function fieldValue(x: number, y: number, blobs: Blob[], time: number) {
@@ -27,8 +26,7 @@ function interp(a: Point, b: Point, va: number, vb: number, threshold: number): 
   };
 }
 
-export function marchingSquaresPath(width: number, height: number, blobs: Blob[], time: number, scrollY: number) {
-  const cell = isMobile() ? 64 : 16;
+export function marchingSquaresPath(width: number, height: number, blobs: Blob[], time: number, scrollY: number, cellSize: number) {
   const threshold = 1;
   const margin = 400;
 
@@ -37,12 +35,12 @@ export function marchingSquaresPath(width: number, height: number, blobs: Blob[]
 
   let d = "";
 
-  for (let y = viewTop; y < viewBottom; y += cell) {
-    for (let x = 0; x < width; x += cell) {
+  for (let y = viewTop; y < viewBottom; y += cellSize) {
+    for (let x = 0; x < width; x += cellSize) {
       const p0 = { x, y };
-      const p1 = { x: x + cell, y };
-      const p2 = { x: x + cell, y: y + cell };
-      const p3 = { x, y: y + cell };
+      const p1 = { x: x + cellSize, y };
+      const p2 = { x: x + cellSize, y: y + cellSize };
+      const p3 = { x, y: y + cellSize };
 
       const v0 = fieldValue(p0.x, p0.y, blobs, time);
       const v1 = fieldValue(p1.x, p1.y, blobs, time);

@@ -2,8 +2,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   z-index: 1;
   pointer-events: none;
   will-change: transform;
@@ -18,20 +18,18 @@
   height: 100%;
   overflow: hidden;
   border-radius: 50%;
+  border: 24px groove rgba(255, 255, 255, 0.3);
+  background: transparent;
+  box-sizing: border-box;
 }
 
-.bar_0,
-.bar_1 {
-  position: absolute;
-  background: var(--contrast);
-}
+@media (max-width: 700px) {
+  .sliding-element {
+    width: 64px;
+    height: 64px;
+  }
 
-.bar_0 {
-  width: 10%;
-  height: 60%;
-}
-
-.bar_1 {
-  width: 60%;
-  height: 10%;
+  .sliding-element-inner {
+    border: 12px groove rgba(255, 255, 255, 0.3);
+  }
 }

@@ -5,6 +5,7 @@
   text-align: center;
   height: calc(100vh - 340px);
   padding: 20px;
+  margin-top: 73px;
 }
 
 .hero-section > div {
@@ -108,7 +109,7 @@
 @media (max-width: 700px) {
   .hero-section {
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 200px;
   }
 
   .hero-section .left {
