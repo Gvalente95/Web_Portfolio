@@ -78,8 +78,8 @@ export const useWaveData = (): WaveData => {
         firstY += 100;
         heights[0] += heights[1] - 100;
       } else {
-        firstY += 200;
-        heights[0] += heights[1] - 220;
+        firstY += 40;
+        heights[0] += heights[1] - 60;
       }
       heights[heights.length - 2] -= 220;
       setWaveData(buildWaveData(heights, firstY));
@@ -101,10 +101,10 @@ export const useWaveData = (): WaveData => {
 
 const buildWaveData = (heights: number[], y: number): WaveData => {
   const sections: ShapeSection[] = [
-    { h: heights[0] ?? 0, color: "#2D9CB0", amp: 64, shape: "wave" },
-    { h: heights[1] ?? 0, color: "#DFA245", amp: 64, shape: "wave" },
-    { h: heights[2] ?? 0, color: "#34B97E", amp: 64, shape: "wave" },
-    { h: heights[3] ?? 0, color: "#7444C4", amp: 64, shape: "wave" },
+    { h: heights[0] ?? 0, color: "var(--section-0)", amp: 0, shape: "wave" },
+    { h: heights[1] ?? 0, color: "var(--section-1)", amp: 64, shape: "wave" },
+    { h: heights[2] ?? 0, color: "var(--section-2)", amp: 64, shape: "wave" },
+    { h: heights[3] ?? 0, color: "var(--section-3)", amp: 64, shape: "wave" },
     { h: heights[4] ?? 0, color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 

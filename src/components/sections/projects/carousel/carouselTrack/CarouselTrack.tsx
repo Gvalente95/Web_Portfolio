@@ -1,16 +1,16 @@
-import { isMobile, openPage } from "../../../../../utils/navigation";
+import { isMobile } from "../../../../../utils/navigation";
 import type { ProjectData } from "../../Projects";
 import { CarouselOverlay } from "./overlay/CarouselOverlay";
-import playButtonImage from "../../../../../assets/icons/white/play-button.png";
+import closeIcon from "../../../../../assets/icons/white/close.png";
+
 import { useEffect, useRef, useState } from "react";
 
 import "./style.css";
 
 interface useCarouselPointersProps {
-  onClick: () => void;
   onMove: (offset: number) => void;
 }
-const useCarouselPointers = ({ onClick, onMove }: useCarouselPointersProps) => {
+const useCarouselPointers = ({ onMove }: useCarouselPointersProps) => {
   const startX = useRef(0);
   const startY = useRef(0);
   const SWIPE_THRESHOLD = 50;
@@ -25,7 +25,6 @@ const useCarouselPointers = ({ onClick, onMove }: useCarouselPointersProps) => {
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isMobile()) {
-      onClick();
       return;
     }
 
@@ -34,7 +33,6 @@ const useCarouselPointers = ({ onClick, onMove }: useCarouselPointersProps) => {
 
     const isHorizontalSwipe = Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy);
     if (isHorizontalSwipe) onMove(dx > 0 ? -1 : 1);
-    else onClick();
   };
 
   return { handlePointerDown, handlePointerUp };
@@ -60,9 +58,8 @@ interface CarouselTrackProps {
 }
 export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitionIndex, onMove, items, videoRef }: CarouselTrackProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [showControls, setShowControls] = useState(false);
 
-  const { handlePointerDown, handlePointerUp } = useCarouselPointers({ onClick: () => handleClick(), onMove: (v) => onMove(v) });
+  const { handlePointerDown, handlePointerUp } = useCarouselPointers({ onMove: (v) => onMove(v) });
 
   const offset = index - activeIndex;
   const wrappedOffset = offset > items.length / 2 ? offset - items.length : offset < -items.length / 2 ? offset + items.length : offset;
@@ -74,7 +71,6 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
   useEffect(() => {
     if (!isActive) {
       setIsVideoOpen(false);
-      setShowControls(false);
     }
   }, [isActive]);
 
@@ -83,23 +79,24 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
       onMove(wrappedOffset);
       return;
     }
+  };
+
+  const onPreviewClick = () => {
+    if (!isActive) return;
     if (value.video) {
       setIsVideoOpen((prev) => !prev);
-      setShowControls((prev) => !prev);
       setTimeout(() => {
         if (videoRef.current?.paused) videoRef.current?.play();
         else videoRef.current?.pause();
       }, 0);
-      setTimeout(() => {
-        setShowControls((prev) => !prev);
-      }, 700);
+
       return;
     }
-    if (value.url) openPage(value.url);
   };
 
   return (
     <div
+      onClick={() => handleClick()}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       className={`entry ${transitionIndex === index ? "transitioning" : ""} ${isActive ? "active" : ""} ${isVideoOpen ? "video-open" : ""}`}
@@ -112,14 +109,25 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
       {value.image && !value.video && <img src={value.image} alt={projectKey} />}
 
       {value.video && isVideoOpen ? (
-        <video ref={isActive ? videoRef : null} className="entry-video" playsInline preload="metadata" controls={showControls} src={value.video} onClick={(e) => e.stopPropagation()} />
+        <video ref={isActive ? videoRef : null} className="entry-video" playsInline preload="metadata" controls={true} src={value.video} onClick={(e) => e.stopPropagation()} />
       ) : (
         <img src={value.image} />
       )}
 
-      {value.video && !isVideoOpen && <img className="play-button" src={playButtonImage} alt="Play" />}
-
-      {!isVideoOpen && <CarouselOverlay value={value} projectKey={projectKey} languages={languages} tags={tags} />}
+      {!isVideoOpen && <CarouselOverlay value={value} projectKey={projectKey} languages={languages} tags={tags} onPreviewClick={onPreviewClick} />}
+      {isVideoOpen && value.video && (
+        <div className="right-corner">
+          <img
+            onClick={(e) => {
+              e.stopPropagation();
+              onPreviewClick();
+            }}
+            className="close-button"
+            src={closeIcon}
+            alt="Close"
+          />
+        </div>
+      )}
     </div>
   );
 };

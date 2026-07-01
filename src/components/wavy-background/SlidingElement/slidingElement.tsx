@@ -82,12 +82,10 @@ export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsDa
     lastPointRef.current = pagePoint;
 
     if (inner) {
-      //   inner.style.backgroundColor = data.color;
       inner.style.transform = `rotate(${rotationRef.current}deg)`;
-      inner.style.borderRadius = "50%";
     }
 
-    ballRef.current.style.transform = `translate(${point.x}vw, ${pagePoint.y}px) translate(-50%, -50%)`;
+    ballRef.current.style.transform = `translate(${point.x}vw, ${pagePoint.y }px) translate(-50%, -50%)`;
     lastScrollRef.current = window.scrollY;
     prevIndex.current = index;
   };

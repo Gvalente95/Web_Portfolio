@@ -3,6 +3,32 @@
   --green: #3ddc97;
   --hero-clr-audio: #e68a00;
   --hero-clr-game: rgb(61, 220, 151);
+
+  /* --section-0: #2d9cb0;
+  --section-1: #dfa245;
+  --section-2: #34b97e;
+  --section-3: #7444c4; */
+
+  /* 
+  --section-0: #a7c7e7;
+  --section-1: #b7e4c7;
+  --section-2: #ffd6a5;
+  --section-3: #d8b4f8; */
+  /* 
+  --section-0: #1d4ed8;
+  --section-1: #047857;
+  --section-2: #b45309;
+  --section-3: #6d28d9;
+
+  --section-0: #2563eb;
+  --section-1: #16a34a;
+  --section-2: #dc2626;
+  --section-3: #7c3aed; */
+
+  --section-0: #3b82f6;
+  --section-1: #f59e0b;
+  --section-2: #10b981;
+  --section-3: #8b5cf6;
 }
 
 html,

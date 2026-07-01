@@ -86,7 +86,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 12px;
+  bottom: 6px;
   height: 1px;
   background: currentColor;
 }
@@ -96,8 +96,7 @@
 }
 
 .char-line {
-  display: inline-block;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .char {
@@ -109,6 +108,7 @@
 @media (max-width: 700px) {
   .hero-section {
     flex-direction: column;
+    margin-top: 50px;
   }
 
   .hero-section .left {
@@ -116,10 +116,11 @@
   }
 
   .hero-section {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 450px);
   }
 
   .hero-section .right {
     font-size: 30px;
+    margin-top: 20px;
   }
 }

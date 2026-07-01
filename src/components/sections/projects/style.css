@@ -96,9 +96,9 @@
   }
 
   .projects-intro {
-    margin-top: -70px;
+    margin-top: 30px;
     color: var(--text);
-    margin-bottom: 160px;
+    margin-bottom: 100px;
   }
 
   .projects-content {

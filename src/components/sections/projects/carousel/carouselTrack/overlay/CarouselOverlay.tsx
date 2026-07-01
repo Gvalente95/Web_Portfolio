@@ -8,19 +8,30 @@ interface CarouselOverlayProps {
   projectKey: string;
   languages: string[];
   tags: string[];
+  onPreviewClick: () => void;
 }
-export const CarouselOverlay = ({ value, projectKey, languages, tags }: CarouselOverlayProps) => {
+export const CarouselOverlay = ({ value, projectKey, languages, tags, onPreviewClick }: CarouselOverlayProps) => {
   const hasUrl = value.url && value.url.length;
-
-  const handleLabelClick = () => {
-    if (hasUrl) openPage(value.url!);
-  };
 
   return (
     <div className="overlay">
       <div className="project-header">
-        <div onClickCapture={handleLabelClick} className={`label${hasUrl ? " clickable" : ""}`}>
-          {projectKey}
+        <div className="project-title">
+          <div className="label">{projectKey}</div>
+
+          <div style={{ display: "flex", gap: "8px" }}>
+            {hasUrl && (
+              <button className="open-button" onClick={() => openPage(value.url!)}>
+                🌐 Visit Site
+              </button>
+            )}
+
+            {value.video && (
+              <button className="demo-button" onClick={onPreviewClick}>
+                ▶ Play Demo
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="project-tech">

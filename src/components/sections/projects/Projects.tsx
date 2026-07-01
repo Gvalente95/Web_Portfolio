@@ -27,7 +27,7 @@ export const Projects = () => {
 
   return (
     <section ref={opacityAnim.ref} id="projects" className="projects-section">
-      <div id="explore-button" onClick={() => scrollToSection("interactive-web-applications", 100)} className="projects-intro">
+      <div id="explore-button" onClick={() => scrollToSection("interactive-web-applications", 80)} className="projects-intro">
         <div className="projects-title">Explore</div>
         <img className="projects-arrow" src={arrowGif} alt="Scroll down" />
       </div>
