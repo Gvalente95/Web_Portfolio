@@ -28,7 +28,7 @@ export const CarouselOverlay = ({ value, projectKey, languages, tags, onPreviewC
 
             {value.video && (
               <button className="demo-button" onClick={onPreviewClick}>
-                ▶ Play Demo
+                ▶ View Demo
               </button>
             )}
           </div>

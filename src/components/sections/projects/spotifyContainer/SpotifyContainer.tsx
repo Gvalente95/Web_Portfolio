@@ -11,10 +11,10 @@ export function SpotifyPlayer({ artistId }: { artistId: string }) {
   );
 }
 
-export function SpotifyContainer() {
+export function SpotifyContainer({ title }: { title: string }) {
   return (
     <section id="spotify" className="spotify-section">
-      <div className="sub-title left">My music projects</div>
+      <div className="sub-title left">{title}</div>
       <div className="spotify-container">
         <SpotifyPlayer artistId="7vBqRAQvSzrHZKVh3Vdmr6" />
         <SpotifyPlayer artistId="24WXaykATkIU7tYWaTyNhu" />

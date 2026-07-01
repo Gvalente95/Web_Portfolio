@@ -54,7 +54,7 @@ export const Projects = () => {
             description_short="A selection of games and game engines."
             items={cApps}
           />
-          <SpotifyContainer />
+          <SpotifyContainer title="My Music" />
         </div>
       )}
     </section>

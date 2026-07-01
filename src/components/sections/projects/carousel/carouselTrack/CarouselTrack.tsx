@@ -58,8 +58,8 @@ interface CarouselTrackProps {
 }
 export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitionIndex, onMove, items, videoRef }: CarouselTrackProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-
   const { handlePointerDown, handlePointerUp } = useCarouselPointers({ onMove: (v) => onMove(v) });
+  const videoInteractionRef = useRef(false);
 
   const offset = index - activeIndex;
   const wrappedOffset = offset > items.length / 2 ? offset - items.length : offset < -items.length / 2 ? offset + items.length : offset;
@@ -67,6 +67,15 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
   const isActive = wrappedOffset === 0;
   const languages = splitList(value.language);
   const tags = splitList(value.tags);
+
+  const stopVideoGesture = (e: React.SyntheticEvent) => {
+    videoInteractionRef.current = true;
+    e.stopPropagation();
+
+    window.setTimeout(() => {
+      videoInteractionRef.current = false;
+    }, 250);
+  };
 
   useEffect(() => {
     if (!isActive) {
@@ -96,9 +105,18 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
 
   return (
     <div
-      onClick={() => handleClick()}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
+      onClick={() => {
+        if (videoInteractionRef.current) return;
+        handleClick();
+      }}
+      onPointerDown={(e) => {
+        if (videoInteractionRef.current) return;
+        handlePointerDown(e);
+      }}
+      onPointerUp={(e) => {
+        if (videoInteractionRef.current) return;
+        handlePointerUp(e);
+      }}
       className={`entry ${transitionIndex === index ? "transitioning" : ""} ${isActive ? "active" : ""} ${isVideoOpen ? "video-open" : ""}`}
       style={{
         transform: `translateX(${wrappedOffset * 62}%) scale(${isActive ? 1 : 0.78})`,
@@ -109,7 +127,19 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
       {value.image && !value.video && <img src={value.image} alt={projectKey} />}
 
       {value.video && isVideoOpen ? (
-        <video ref={isActive ? videoRef : null} className="entry-video" playsInline preload="metadata" controls={true} src={value.video} onClick={(e) => e.stopPropagation()} />
+        <video
+          ref={isActive ? videoRef : null}
+          className="entry-video"
+          playsInline
+          preload="metadata"
+          controls={true}
+          src={value.video}
+          onClick={stopVideoGesture}
+          onPointerDown={stopVideoGesture}
+          onPointerUp={stopVideoGesture}
+          onTouchStart={stopVideoGesture}
+          onTouchEnd={stopVideoGesture}
+        />
       ) : (
         <img src={value.image} />
       )}
