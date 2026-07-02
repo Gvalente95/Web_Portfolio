@@ -40,7 +40,7 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
     <header>
       <div className={`header-content ${isScrolling ? "scrolling" : ""}`}>
         <div className="header-top">
-          <div className="header-title" onClick={reloadPage}>
+          <div className="header-home" onClick={reloadPage}>
             <div> GV</div>
           </div>
 

@@ -16,12 +16,12 @@ header {
   pointer-events: none;
 }
 
-.header-title,
+.header-home,
 .header-theme-toggle {
   pointer-events: auto;
 }
 
-.header-title {
+.header-home {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -35,13 +35,13 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 24px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.header-title:hover {
+.header-home:hover {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -93,7 +93,8 @@ header {
   cursor: pointer;
   padding: 0 22px;
   height: 100%;
-  font-size: 15px;
+  font-family: "Inter";
+  font-size: 20px;
   font-weight: 700;
   transition:
     background 0.3s ease,
@@ -180,7 +181,7 @@ header {
     pointer-events: none;
   }
 
-  .header-title,
+  .header-home,
   .header-theme-toggle {
     position: static;
     transform: none;

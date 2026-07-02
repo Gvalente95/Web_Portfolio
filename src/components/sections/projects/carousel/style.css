@@ -19,6 +19,7 @@
   color: var(--projects-text);
   opacity: 0.8;
   text-align: left;
+  font-family: "Inter", "monospace";
 }
 
 .motivator {

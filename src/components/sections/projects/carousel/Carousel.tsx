@@ -61,7 +61,7 @@ export const Carousel = ({ data, titlePosition }: CarouselProps) => {
     <section className="carousel-section" id={slugify(title)} key={title}>
       <div className="carousel-info">
         <div className="carousel-description--banner" />
-        <h2 className={`sub-title title_one ${titlePosition}`}>{title}</h2>
+        <h2 className={`sub-title ${titlePosition}`}>{title}</h2>
         {target_description && <p className={`carousel-description ${titlePosition}`}>{target_description}</p>}
       </div>
       <div className="carousel-content" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>

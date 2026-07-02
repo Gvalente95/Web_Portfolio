@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { scrollToSection } from "../../../utils/navigation";
+import { isMobile, scrollToSection } from "../../../utils/navigation";
 
 import "./style.css";
 import { lerpColor } from "../../../utils/colors";
@@ -67,18 +67,6 @@ export const HeroSection = () => {
           "+=0.1",
         )
         .to(
-          ".hero-name:nth-child(2) .char",
-          {
-            opacity: 1,
-            y: 0,
-            scaleY: 1,
-            rotateX: 0,
-            duration: 0.65,
-            ease: "back.out(2.2)",
-          },
-          "nameStart",
-        )
-        .to(
           ".hero-job:nth-child(1) .char",
           {
             opacity: 1,
@@ -130,24 +118,33 @@ export const HeroSection = () => {
   const colorA = "#737feb";
   const colorB = "#ad8ff3";
 
+  const frmt = (s: string) => {
+    return s + (isMobile() ? "" : ",");
+  };
+
+  const frmtTitle = () => {
+    if (isMobile()) return splitChars("Giulio Valente", { start: 0, colorA, colorB });
+    return splitChars("Hi! I'm Giulio Valente", { start: 8, colorA, colorB });
+  };
+
   return (
     <section ref={heroRef} id="hero" className={`hero-section${animFinished ? "" : " animating"}`}>
       <div className="hero-content">
         <div className="left">
-          <div className="hero-name">{splitChars("Hi! I'm Giulio Valente", { start: 8, colorA, colorB })}</div>
+          <div className="hero-name">{frmtTitle()}</div>
         </div>
 
         <div className="right">
           <div onClick={() => handleJobClick("interactive-web-applications", 40)} className="hero-job">
-            {splitChars("Web Developer,")}
+            {splitChars(frmt("Web Developer"))}
           </div>
 
           <div onClick={() => handleJobClick("audio-programs", 10)} className="hero-job">
-            {splitChars("Audio Engineer,")}
+            {splitChars(frmt("Audio Engineer"))}
           </div>
 
           <div onClick={() => handleJobClick("games", 5)} className="hero-job">
-            {splitChars("Game Programmer")}
+            {splitChars(frmt("Game Programmer"))}
           </div>
         </div>
       </div>
