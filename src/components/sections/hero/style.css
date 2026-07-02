@@ -1,23 +1,23 @@
 .hero-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - 340px);
+  height: calc(100svh - 340px);
   padding: 20px;
   margin-top: 73px;
 }
 
 .hero-section > div {
-  flex: 1;
+  flex: 0;
 }
 
 .hero-section .left {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  font-size: 120px;
+  align-items: flex-start; /* was center */
+  justify-content: center;
+  font-size: 80px;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
 }
@@ -37,34 +37,33 @@
   transition: color 0.3s ease;
 }
 
-.right > :first-child {
-  color: var(--hero-clr-web);
-  transition: color 0.3s ease;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin: 0 auto;
 }
 
-.right > :nth-child(2) {
-  color: var(--hero-clr-audio);
+.hero-section .right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* was center */
+  align-items: center;
+  width: fit-content;
+  align-self: center;
+  font-size: 30px;
+  font-family: "JetBrains Mono", monospace;
+  gap: 40px;
+  font-weight: 80;
   transition: color 0.3s ease;
-}
-
-.right > :nth-child(3) {
-  color: var(--hero-clr-game);
-  transition: color 0.3s ease;
+  color: var(--text);
+  margin-top: 10px;
 }
 
 .right > div {
   transition: transform 0.3s ease;
   cursor: pointer;
-}
-
-.hero-section .right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 40px;
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 500;
 }
 
 .hero-name,
@@ -82,14 +81,25 @@
   display: inline-block;
 }
 
-.hero-section:not(.animating) .hero-job:hover::after {
+.hero-job::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 6px;
-  height: 1px;
-  background: currentColor;
+  bottom: 2px;
+  height: 0px;
+  background: rgba(245, 155, 0, 0.781);
+
+  transition:
+    height 0.2s ease,
+    bottom 0.3s ease;
+}
+
+.hero-section:not(.animating) .hero-job:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  height: 16px;
 }
 
 .hero-job {
@@ -97,13 +107,37 @@
 }
 
 .char-line {
+  position: relative;
+  display: inline-block;
   overflow: visible;
 }
 
+.char-outline,
 .char {
   display: inline-block;
   transform-origin: bottom center;
   will-change: transform, opacity;
+}
+
+.char-outline {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  pointer-events: none;
+  transform: translate(3px, 3px);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  text-shadow: none;
+}
+
+.char-outline-segment {
+  display: inline-block;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.char {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 700px) {
@@ -113,15 +147,16 @@
   }
 
   .hero-section .left {
-    font-size: 60px;
+    font-size: 30px;
   }
 
   .hero-section {
-    height: calc(100vh - 450px);
+    height: calc(100svh - 450px);
   }
 
   .hero-section .right {
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 20px;
+    flex-direction: column;
   }
 }

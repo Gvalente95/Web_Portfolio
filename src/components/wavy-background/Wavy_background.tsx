@@ -52,7 +52,7 @@ export const useWaveData = (): WaveData => {
     return buildWaveData([1090, 1000, 1000, 780, 0], 600);
   });
   const mobile = isMobile();
-  const toMargin = mobile ? 50 : 150;
+  const toMargin = mobile ? 50 : 75;
 
   useLayoutEffect(() => {
     const updateWaveData = () => {
@@ -75,13 +75,16 @@ export const useWaveData = (): WaveData => {
       let firstY = positions[0] - toMargin;
 
       if (!mobile) {
-        firstY += 100;
+        firstY += 50;
         heights[0] += heights[1] - 100;
+        heights[heights.length - 2] -= 220;
       } else {
-        firstY += 40;
-        heights[0] += heights[1] - 60;
+        firstY += 20;
+        heights[0] += heights[1];
+        heights[heights.length - 3] -= 40;
+
+        heights[heights.length - 2] -= 260;
       }
-      heights[heights.length - 2] -= 220;
       setWaveData(buildWaveData(heights, firstY));
     };
 
@@ -102,9 +105,9 @@ export const useWaveData = (): WaveData => {
 const buildWaveData = (heights: number[], y: number): WaveData => {
   const sections: ShapeSection[] = [
     { h: heights[0] ?? 0, color: "var(--section-web)", amp: 64, shape: "wave" },
-    { h: heights[1] ?? 0, color: "var(--section-audio)", amp: 64, shape: "wave" },
-    { h: heights[2] ?? 0, color: "var(--section-games)", amp: 64, shape: "wave" },
-    { h: heights[3] ?? 0, color: "var(--section-music)", amp: 64, shape: "wave" },
+    { h: heights[1] ?? 0, color: "var(--section-audio)", amp: 0, shape: "wave" },
+    { h: heights[2] ?? 0, color: "var(--section-games)", amp: 0, shape: "wave" },
+    { h: heights[3] ?? 0, color: "var(--section-music)", amp: 0, shape: "wave" },
     { h: heights[4] ?? 0, color: "var(--contrast)", amp: 64, shape: "wave" },
   ];
 
@@ -187,6 +190,13 @@ export const WavyBackground = ({ sections, svgTop, totalHeight, padding }: Wavyb
         viewBox={`0 ${-padding} 100 ${totalHeight}`}
         preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient id="grassGradient" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stopColor="#2f7d328b" />
+            <stop offset="70%" stopColor="#4caf4f96" />
+            <stop offset="100%" stopColor="#8bc34a95" />
+          </linearGradient>
+        </defs>
         {sections.map((section, index) => (
           <path key={index} fill={section.color} d={shapeSegment(section)} />
         ))}

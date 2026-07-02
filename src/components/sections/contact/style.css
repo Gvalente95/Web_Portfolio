@@ -16,8 +16,8 @@
   width: min(400px, 100%);
   padding: 36px;
   border-radius: 28px;
-  background: rgba(12, 16, 30, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--contact-card);
+  border: 1px solid var(--contact-card--border);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(18px);
 }
@@ -63,7 +63,7 @@
 .form-field textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--contact-card--inner-border);
   border-radius: 14px;
   padding: 14px 16px;
   color: var(--text);
@@ -110,12 +110,4 @@
 
 .contact-success > h3 {
   margin-top: 358px;
-}
-
-@media (max-width: 700px) {
-  .contact-card {
-    background: rgba(92, 122, 231, 0.72);
-    border: 1px solid rgba(0, 0, 0, 0.14);
-    box-shadow: 0 24px 80px rgba(255, 255, 255, 0.4);
-  }
 }

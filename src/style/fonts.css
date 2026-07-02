@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Awanika";
+  src: url("./fonts/Awanika.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChineseRocks";
+  src: url("./fonts/ChineseRocks.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hidachi";
+  src: url("./fonts/Hidachi.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "JoGrunge";
+  src: url("./fonts/JoGrunge.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nelight";
+  src: url("./fonts/Nelight.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Polarized";
+  src: url("./fonts/Polarized.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RustSmoke";
+  src: url("./fonts/RustSmoke.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "StylishCreative";
+  src: url("./fonts/StylishCreative.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Valdavia";
+  src: url("./fonts/Valdavia.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}

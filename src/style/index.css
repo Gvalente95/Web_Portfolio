@@ -9,36 +9,12 @@
   --section-2: #34b97e;
   --section-3: #7444c4; */
 
-  --section-web: #e1772c;
-  --section-audio: #3b83f6;
-  --section-games: #10b981;
-  --section-music: #8b5cf6;
-}
+  --section-web: #d68850;
+  --section-audio: #385a96;
+  --section-games: #4cb995;
+  --section-music: #7b58ca;
 
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  overflow-x: clip;
-  user-select: none;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  transition: background 0.3s ease;
-}
-
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  --projects-text: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -65,6 +41,12 @@ body {
   --projects-bgr: rgba(13, 13, 13, 0.9);
 
   --hero-clr-web: rgb(207, 207, 207);
+
+  --contact-card: rgba(12, 16, 30, 0.72);
+  --contact-card--border: rgba(255, 255, 255, 0.14);
+  --contact-card--inner-border: rgba(255, 255, 255, 0.14);
+
+  --tooltip-fill: rgb(224, 216, 230);
 }
 
 [data-theme="light"] {
@@ -89,6 +71,38 @@ body {
   --projects-bgr: #eef3ffc5;
 
   --hero-clr-web: #1f2937;
+
+  --contact-card: rgba(211, 222, 236, 0.72);
+  --contact-card--border: rgba(0, 0, 0, 0.14);
+  --contact-card--inner-border: rgba(0, 0, 0, 0.14);
+
+  --tooltip-fill: rgb(54, 52, 56);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: clip;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.App {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
 .page-content {
@@ -116,4 +130,18 @@ section .title {
 section .content {
   margin: 20px;
   font-size: 16px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  font-size: 1.65rem;
+}
+
+h2 {
+  color: var(--text);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
 }

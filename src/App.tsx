@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { CreativeCanvas } from "./components/creative_canvas/creative_canvas";
+import { useAppContext } from "./contexts/AppContext";
 import { Footer } from "./components/footer/Footer";
 import { Header } from "./components/header/Header";
 import { About } from "./components/sections/about/About";
@@ -9,28 +8,26 @@ import { Projects } from "./components/sections/projects/Projects";
 import { AsciiElements } from "./components/Ascii_Elements/AnimatedPlayer.tsx/AsciiElements";
 import { useWaveData, WavyBackground } from "./components/wavy-background/Wavy_background";
 import { SlidingElement } from "./components/wavy-background/SlidingElement/SlidingElement";
-import { isMobile } from "./utils/navigation";
 import { useOpacityAnimation } from "./shared/hooks/useOpacityAnimation";
 
+import "./style/fonts.css";
+
 function App() {
-  const [isDark, setIsDark] = useState(true);
+  const { isDark, setIsDark } = useAppContext();
   const wave = useWaveData();
 
   const opacityAnim = useOpacityAnimation<HTMLDivElement>({
-    delay: 1800,
-    duration: 3000,
+    delay: 2000,
+    duration: 1000,
     endOnScroll: true,
   });
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-  }, [isDark]);
 
   return (
     <div className="App">
       <AsciiElements />
       <div ref={opacityAnim.ref}>
-        {!isMobile() && opacityAnim.hasStarted ? <CreativeCanvas /> : null} <SlidingElement paths={wave.paths} />
+        {/* {!isMobile() && opacityAnim.hasStarted ? <CreativeCanvas /> : null} */}
+        <SlidingElement paths={[wave.paths[0], wave.paths[wave.paths.length - 1]]} />
         <WavyBackground sections={wave.sections} totalHeight={wave.totalHeight} svgTop={wave.svgTop} padding={wave.padding} />
         <Header setIsDark={setIsDark} isDark={isDark} />
       </div>
@@ -41,7 +38,7 @@ function App() {
         <About isDark={isDark} />
         <Contact />
       </div>
-      <Footer />
+      <Footer isDark={isDark} />
     </div>
   );
 }

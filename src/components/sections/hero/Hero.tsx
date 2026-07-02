@@ -1,15 +1,36 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import "./style.css";
 import { scrollToSection } from "../../../utils/navigation";
 
-const splitChars = (text: string) => (
+import "./style.css";
+import { lerpColor } from "../../../utils/colors";
+
+type ColorRange = {
+  start: number;
+  end?: number;
+  colorA: string;
+  colorB: string;
+};
+
+const splitChars = (text: string, range?: ColorRange) => (
   <span className="char-line">
-    {text.split("").map((char, i) => (
-      <span key={i} className="char">
-        {char === " " ? "\u00A0" : char}
-      </span>
-    ))}
+    {text.split("").map((char, i, chars) => {
+      let color: string | undefined;
+
+      if (range && i >= range.start) {
+        const end = range.end ?? chars.length - 1;
+        const length = end - range.start;
+        const t = length <= 0 ? 1 : Math.min((i - range.start) / length, 1);
+
+        color = lerpColor(range.colorA, range.colorB, t);
+      }
+
+      return (
+        <span key={i} className="char" style={color ? { color } : undefined}>
+          {char === " " ? "\u00A0" : char}
+        </span>
+      );
+    })}
   </span>
 );
 
@@ -106,22 +127,28 @@ export const HeroSection = () => {
     scrollToSection(page, offset);
   };
 
+  const colorA = "#737feb";
+  const colorB = "#ad8ff3";
+
   return (
     <section ref={heroRef} id="hero" className={`hero-section${animFinished ? "" : " animating"}`}>
-      <div className="left">
-        <div className="hero-name">{splitChars("Giulio")}</div>
-        <div className="hero-name">{splitChars("Valente")}</div>
-      </div>
+      <div className="hero-content">
+        <div className="left">
+          <div className="hero-name">{splitChars("Hi! I'm Giulio Valente", { start: 8, colorA, colorB })}</div>
+        </div>
 
-      <div className="right">
-        <div onClick={() => handleJobClick("interactive-web-applications", 80)} className="hero-job">
-          {splitChars("Web-Developer")}
-        </div>
-        <div onClick={() => handleJobClick("audio-programs", 80)} className="hero-job">
-          {splitChars("Audio-Engineer")}
-        </div>
-        <div onClick={() => handleJobClick("games", 80)} className="hero-job">
-          {splitChars("Game-Programmer")}
+        <div className="right">
+          <div onClick={() => handleJobClick("interactive-web-applications", 40)} className="hero-job">
+            {splitChars("Web Developer,")}
+          </div>
+
+          <div onClick={() => handleJobClick("audio-programs", 10)} className="hero-job">
+            {splitChars("Audio Engineer,")}
+          </div>
+
+          <div onClick={() => handleJobClick("games", 5)} className="hero-job">
+            {splitChars("Game Programmer")}
+          </div>
         </div>
       </div>
     </section>

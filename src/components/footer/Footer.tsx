@@ -1,19 +1,21 @@
 import instagramIcon from "/image/badge/instagram.svg";
 import youtubeIcon from "/image/badge/youtube.svg";
 import githubIcon from "/image/badge/github.svg";
+import githubIcon_white from "/image/badge/github_white.svg";
 
 import "./style.css";
 
-const links = [
-  { label: "Dawn.w", url: "https://www.instagram.com/dinnerandwhiskey/", icon: instagramIcon },
-  { label: "LeSonnar", url: "https://www.instagram.com/lesonnar_/", icon: instagramIcon },
-  { label: "GitHub", url: "https://github.com/Gvalente95/", icon: githubIcon },
-  { label: "YouTube", url: "https://www.youtube.com/@lesonnar6722", icon: youtubeIcon },
-];
+export const Footer = ({ isDark }: { isDark: boolean }) => {
+  const links = [
+    { label: "Dawn.w", url: "https://www.instagram.com/dinnerandwhiskey/", icon: instagramIcon },
+    { label: "LeSonnar", url: "https://www.instagram.com/lesonnar_/", icon: instagramIcon },
+    { label: "GitHub", url: "https://github.com/Gvalente95/", icon: isDark ? githubIcon_white : githubIcon },
+    { label: "YouTube", url: "https://www.youtube.com/@lesonnar6722", icon: youtubeIcon },
+  ];
 
-export const Footer = () => {
   return (
     <footer className="footer">
+      <div>© 2026 Giulio Valente. All Rights Reserved.</div>
       <div className="footer-inner">
         {links.map((link) => (
           <a key={link.url} href={link.url} target="_blank" rel="noreferrer" className="footer-link">

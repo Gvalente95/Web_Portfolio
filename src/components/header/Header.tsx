@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SwitchButton } from "../../shared/ui/switchButton/SwitchButton";
 import { openPage, scrollToSection } from "../../utils/navigation";
 import darkModeOnIcon from "../../assets/icons/white/night.png";
@@ -11,7 +11,6 @@ const offsets = [-60, -80, -50, 0];
 
 export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.SetStateAction<boolean>>; isDark: boolean }) => {
   const [isScrolling, setIsScrolling] = useState(false);
-  const clickSound = useRef(new Audio("audio/flashlight.wav"));
 
   const tryScrollTo = (page: string, idx: number) => {
     if (page === "Resume") openPage("resume_gvalente.pdf");
@@ -23,9 +22,6 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
   };
 
   const handleSwitchClick = (v: boolean) => {
-    clickSound.current.currentTime = 0;
-    clickSound.current.play();
-
     setIsDark(v);
   };
 
@@ -35,7 +31,13 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
     };
 
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        onScroll;
+      },
+      { passive: true },
+    );
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

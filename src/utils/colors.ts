@@ -11,15 +11,41 @@ function getRGB(color: string): { r: number; g: number; b: number } {
 }
 
 function getRGBA(color: string): { r: number; g: number; b: number; a: number } {
-  const m = color.trim().match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})(?:\s*,\s*([\d.]+))?\s*\)$/i);
+  const trimmed = color.trim();
+
+  const hex = trimmed.match(/^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i);
+
+  if (hex) {
+    let value = hex[1];
+
+    if (value.length === 3 || value.length === 4) {
+      value = value
+        .split("")
+        .map((c) => c + c)
+        .join("");
+    }
+
+    const r = parseInt(value.slice(0, 2), 16);
+    const g = parseInt(value.slice(2, 4), 16);
+    const b = parseInt(value.slice(4, 6), 16);
+    const a = value.length === 8 ? parseInt(value.slice(6, 8), 16) / 255 : 1;
+
+    return { r, g, b, a };
+  }
+
+  const m = trimmed.match(/^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})(?:\s*,\s*([\d.]+))?\s*\)$/i);
+
   if (!m) return { r: 255, g: 255, b: 255, a: 1 };
+
   const r = Number(m[1]);
   const g = Number(m[2]);
   const b = Number(m[3]);
   const a = m[4] !== undefined ? Number(m[4]) : 1;
+
   if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 || a < 0 || a > 1) {
     return { r: 255, g: 255, b: 255, a: 1 };
   }
+
   return { r, g, b, a };
 }
 

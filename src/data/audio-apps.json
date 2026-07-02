@@ -1,16 +1,24 @@
 {
-  "Audio Blocks": {
-    "info": "Inspired by MAX Msp and Built in React, AudioBlocks lets you create, connect and automate all sorts of audio nodes inside a ReactFlow Graph.",
-    "image": "image/screenshot/Audio-nodes.png",
-    "url": "https://gvalente95.github.io/AudioBlocks/",
-    "language": "React Typescript JS CSS Html Tone.js",
-    "tags": ""
-  },
-  "web-daw": {
-    "info": "A Web DAW (Digital Audio Workstation) made in React, it uses Tone.js for processing audio and features recording, effects, routing, automations, editting, instruments and way too many components.",
-    "image": "image/screenshot/Webdaw.png",
-    "url": "https://gvalente95.github.io/GiuDaw/",
-    "language": "React Typescript JS CSS Html Tone.js",
-    "tags": "Audio Enineering"
+  "title": "Audio Programs",
+  "description": "Web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features.",
+  "description_short": "Desktop and web-based audio software.",
+  "content": {
+    "Audio Blocks": {
+      "info": "My attempt at creating a fun music-making tool by attaching nodes together inside a ReactFlow Graph.",
+      "info_short": "My attempt at creating a fun music-making tool by attaching nodes together.",
+      "image": "image/screenshot/Audio-nodes.png",
+      "url": "https://gvalente95.github.io/AudioBlocks/",
+      "language": "React Typescript JS CSS Html Tone.js",
+      "tags": ""
+    },
+    "web-daw": {
+      "info": "A complexe interface for producing music in a web browser. it uses Tone.js for processing audio and features recording, effects, routing, automations, editting, instruments, all made from scratch without external libraries.",
+      "info_short": "A complexe interface for producing music in a web browser.",
+
+      "image": "image/screenshot/Webdaw.png",
+      "url": "https://gvalente95.github.io/GiuDaw/",
+      "language": "React Typescript JS CSS Html Tone.js",
+      "tags": "Audio Enineering"
+    }
   }
 }

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Blob } from "./type";
 import { marchingSquaresPath } from "./utils";
-import { f_range } from "../../utils/math";
 
 export const useMarchingBlobs = ({ size, resolution }: { size: { width: number; height: number }; resolution: number }) => {
   const { mouse } = useMouse();
@@ -11,15 +10,45 @@ export const useMarchingBlobs = ({ size, resolution }: { size: { width: number; 
   const blobMaxSize = 150;
 
   useEffect(() => {
-    blobsRef.current = Array.from({ length: 10 }, (_, i) => {
-      const homeX = f_range(20, size.width - 20);
-      const homeY = f_range(80, size.height - 20);
+    const baseWidth = Math.max(size.width, window.innerWidth);
+    const baseHeight = Math.max(size.height, window.innerHeight);
+    const centerX = baseWidth * 0.5;
+
+    blobsRef.current = Array.from({ length: 15 }, (_, i) => {
+      let homeX = 0;
+      let homeY = 0;
+
+      if (i === 0) {
+        homeX = baseWidth * 0.18;
+        homeY = baseHeight * 0.22;
+      } else if (i === 1) {
+        homeX = baseWidth * 0.82;
+        homeY = baseHeight * 0.22;
+      } else if (i === 2) {
+        homeX = centerX;
+        homeY = baseHeight * 0.12;
+      } else if (i === 3) {
+        homeX = centerX;
+        homeY = baseHeight * 0.72;
+      } else if (i === 4) {
+        homeX = baseWidth * 0.3;
+        homeY = baseHeight * 0.6;
+      } else if (i === 5) {
+        homeX = baseWidth * 0.7;
+        homeY = baseHeight * 0.6;
+      } else {
+        const band = (i % 4) + 1;
+        const spread = (i % 3) * 0.12;
+        homeX = centerX + (i % 2 === 0 ? -1 : 1) * (baseWidth * (0.16 + spread));
+        homeY = baseHeight * (0.2 + band * 0.13);
+      }
+
       return {
         id: i,
-        x: size.width / 2,
-        y: size.height / 2,
-        homeX: homeX,
-        homeY: homeY,
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+        homeX,
+        homeY,
         vx: 0,
         vy: 0,
         r: 20 + Math.random() * (Math.random() < bigCHange ? blobMaxSize : blobMaxSize / 2),

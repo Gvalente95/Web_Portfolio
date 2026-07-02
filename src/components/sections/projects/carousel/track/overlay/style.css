@@ -102,6 +102,10 @@
   gap: 8px;
 }
 
+.overlay p {
+  color: white;
+}
+
 @media (max-width: 700px) {
   .carousel {
     height: 460px;

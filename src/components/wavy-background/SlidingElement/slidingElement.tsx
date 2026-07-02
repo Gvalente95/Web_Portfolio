@@ -2,8 +2,9 @@ import { useEffect, useRef } from "react";
 import type { PathData } from "../Wavy_background";
 import { clamp } from "../../../utils/math";
 
-import "./style.css";
 import { isMobile } from "../../../utils/navigation";
+
+import "./style.css";
 
 export const useSlidingPosition = ({ pathsData, ballRef, ballRadius }: { pathsData: PathData[]; ballRef: React.RefObject<HTMLDivElement | null>; ballRadius: number }) => {
   const rotationRef = useRef(0);

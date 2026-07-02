@@ -1,11 +1,11 @@
 import { isMobile } from "../../../../../utils/navigation";
-import type { ProjectData } from "../../Projects";
-import { CarouselOverlay } from "./overlay/CarouselOverlay";
+import { TrackOverlay } from "./overlay/TrackOverlay";
 import closeIcon from "../../../../../assets/icons/white/close.png";
 
 import { useEffect, useRef, useState } from "react";
 
 import "./style.css";
+import type { ContentData } from "../Carousel";
 
 interface useCarouselPointersProps {
   onMove: (offset: number) => void;
@@ -53,10 +53,11 @@ interface CarouselTrackProps {
   activeIndex: number;
   transitionIndex: number;
   onMove: (wrappedOffset: number) => void;
-  items: [string, ProjectData][];
+  items: [string, ContentData][];
   videoRef: React.RefObject<HTMLVideoElement | null>;
+  isHovered?: boolean;
 }
-export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitionIndex, onMove, items, videoRef }: CarouselTrackProps) => {
+export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitionIndex, onMove, items, videoRef, isHovered = false }: CarouselTrackProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const { handlePointerDown, handlePointerUp } = useCarouselPointers({ onMove: (v) => onMove(v) });
   const videoInteractionRef = useRef(false);
@@ -65,6 +66,11 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
   const wrappedOffset = offset > items.length / 2 ? offset - items.length : offset < -items.length / 2 ? offset + items.length : offset;
 
   const isActive = wrappedOffset === 0;
+  const absOffset = Math.abs(wrappedOffset);
+  const stackScale = isActive ? 1 : Math.max(0.5, 1 - absOffset * 0.16);
+  const stackGap = isActive ? 0 : Math.max(18, isHovered ? 64 - absOffset * 8 : 32 - absOffset * 8);
+  const cardWidth = isActive ? "min(720px, 78vw)" : `calc(min(720px, 78vw) * ${stackScale.toFixed(2)})`;
+  const cardHeight = isActive ? "450px" : `calc(450px * ${stackScale.toFixed(2)})`;
   const languages = splitList(value.language);
   const tags = splitList(value.tags);
 
@@ -119,9 +125,11 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
       }}
       className={`entry ${transitionIndex === index ? "transitioning" : ""} ${isActive ? "active" : ""} ${isVideoOpen ? "video-open" : ""}`}
       style={{
-        transform: `translateX(${wrappedOffset * 62}%) scale(${isActive ? 1 : 0.78})`,
-        filter: isActive ? "brightness(1)" : "brightness(0.45)",
-        zIndex: 10 - Math.abs(wrappedOffset),
+        transform: `translateX(${wrappedOffset * (isActive ? 0 : stackGap)}%) scale(${stackScale})`,
+        width: cardWidth,
+        height: cardHeight,
+        filter: isActive ? "brightness(1)" : `brightness(${Math.max(0.28, 0.5 - absOffset * 0.08)})`,
+        zIndex: 10 - absOffset,
       }}
     >
       {value.image && !value.video && <img src={value.image} alt={projectKey} />}
@@ -144,7 +152,7 @@ export const CarouselTrack = ({ projectKey, value, index, activeIndex, transitio
         <img src={value.image} />
       )}
 
-      {!isVideoOpen && <CarouselOverlay value={value} projectKey={projectKey} languages={languages} tags={tags} onPreviewClick={onPreviewClick} />}
+      {!isVideoOpen && <TrackOverlay value={value} projectKey={projectKey} languages={languages} tags={tags} onPreviewClick={onPreviewClick} isActive={isActive} />}
       {isVideoOpen && value.video && (
         <div className="right-corner">
           <img
