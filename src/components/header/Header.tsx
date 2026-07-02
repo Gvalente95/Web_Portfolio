@@ -27,17 +27,11 @@ export const Header = ({ setIsDark, isDark }: { setIsDark: React.Dispatch<React.
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolling(window.scrollY > 40);
+      setIsScrolling(window.scrollY > 40 ? true : false);
     };
 
     onScroll();
-    window.addEventListener(
-      "scroll",
-      () => {
-        onScroll;
-      },
-      { passive: true },
-    );
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

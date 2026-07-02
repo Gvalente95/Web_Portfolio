@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <AsciiElements />
-      <div ref={opacityAnim.ref}>
+      <div className="opacity-layer" ref={opacityAnim.ref}>
         {/* {!isMobile() && opacityAnim.hasStarted ? <CreativeCanvas /> : null} */}
         <SlidingElement paths={[wave.paths[0], wave.paths[wave.paths.length - 1]]} />
         <WavyBackground sections={wave.sections} totalHeight={wave.totalHeight} svgTop={wave.svgTop} padding={wave.padding} />

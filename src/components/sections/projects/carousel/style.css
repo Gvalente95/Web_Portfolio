@@ -26,6 +26,7 @@
   bottom: -100px;
   position: absolute;
   border: none;
+  opacity: 0.5;
 }
 
 .carousel-description--banner {

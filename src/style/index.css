@@ -111,9 +111,6 @@ body {
   position: relative;
   z-index: 1;
   /* user-select: none; */
-}
-
-.page-content * {
   z-index: 999;
 }
 
@@ -144,4 +141,10 @@ h2 {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
   letter-spacing: -0.05em;
+}
+
+.opacity-layer {
+  position: relative;
+  overflow-x: clip;
+  width: 100%;
 }
