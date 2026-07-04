@@ -1,0 +1,23 @@
+.hero {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.hero > :first-child {
+  flex: 1;
+}
+
+.hero > :nth-child(2) {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    margin-left: 40px;
+    margin-right: 40px;
+    flex-direction: column;
+  }
+}

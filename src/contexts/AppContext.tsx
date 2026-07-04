@@ -1,26 +1,11 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
-type AppContextType = {
-  isDark: boolean;
-  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
-};
+type AppContextType = {};
 
 const AppContext = createContext<AppContextType | null>(null);
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [isDark, setIsDark] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  const contextValue = useMemo(
-    () => ({
-      isDark,
-      setIsDark,
-    }),
-    [isDark, setIsDark],
-  );
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-  }, [isDark]);
+  const contextValue = useMemo(() => ({}), []);
 
   return <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>;
 }

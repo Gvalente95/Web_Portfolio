@@ -4,33 +4,86 @@
 
   --blue: #737feb;
   --purple: #ad8ff3;
-  --accent: var(--purple);
-  --accent2: var(--blue);
 
-  --bgr: #000000;
+  --accent-secondary-light: #78e7a4;
+  --accent-secondary: #3aeb81;
+  --accent-secondary-strong: #2cff92;
+  --accent-secondary-dark: #279051;
+
+  --accent-light: #e6be6d;
+  --accent: #e9ba20;
+  --accent-strong: #ea8f27;
+  --accent-dark: #866b13;
+
+  --text: white;
+  --bg: #0e0e0f;
 }
 
 html,
 body,
 #root {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+body.dropdown-open * {
+  cursor: default !important;
+}
+
+body.dropdown-open .lang-dropdown,
+body.dropdown-open .lang-dropdown * {
+  cursor: pointer !important;
 }
 
 .app {
-  width: 100vw;
-  height: 100vh;
-  background: var(--bgr);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: "JetBrain Mono", monospace;
 }
 
 p {
-  font-family: "Inter", sans-serif;
-  color: var(--text-secondary);
   line-height: 1.3;
-  font-size: 1.65rem;
+  font-size: 1.2rem;
+  font-weight: 120;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -0.05em;
 }
 
-h2 {
-  color: var(--text);
+h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
   letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+[data-debug-outlines="true"] *:hover {
+  background-color: rgba(255, 0, 0, 0.435);
+  outline: 1px solid red;
 }

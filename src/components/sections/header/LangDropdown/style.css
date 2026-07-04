@@ -1,0 +1,85 @@
+.lang-dropdown {
+  position: relative;
+  margin-left: auto;
+}
+
+.lang-dropdown > button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "JetBrain Mono", monospace;
+  border-radius: 20px;
+  background-color: var(--accent);
+  min-width: 140px;
+  width: 140px;
+  transition: filter 0.3s ease;
+}
+
+.lang-dropdown > button:hover {
+  filter: brightness(0.8);
+}
+
+.lang-dropdown > button > img {
+  width: 20px;
+  height: 20px;
+}
+
+.lang-dropdown > .content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: calc(100% + 4px);
+  left: 5%;
+  width: 80%;
+  padding: 5px;
+  background: black;
+  border: 1px solid var(--accent);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.lang-dropdown.active > .content {
+  opacity: 1;
+}
+
+.content > a {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  background: transparent;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  text-decoration: none;
+}
+
+.content > a:hover {
+  background-color: var(--accent-strong);
+  color: black;
+}
+
+.content > a.active::after {
+  content: "";
+
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.content > a.active:hover::after {
+  background: black;
+}

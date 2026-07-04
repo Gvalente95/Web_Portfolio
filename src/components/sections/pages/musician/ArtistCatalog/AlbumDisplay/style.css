@@ -1,0 +1,78 @@
+.album-display {
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition:
+    transform 0.8s ease,
+    scale 0.3s ease;
+}
+
+.album-display-wrap {
+  transition:
+    transform 0.8s ease,
+    scale 0.3s ease;
+}
+
+.album-display-wrap:hover:not(.active) {
+  scale: 1.05;
+}
+
+.album-display-wrap.playing:not(.active) {
+  animation: float-3d 8s ease-in-out infinite;
+}
+
+.album-display-wrap.playing:not(.active) {
+  border: 2px solid var(--accent-strong);
+}
+
+.album-display.active {
+  transform: rotateY(180deg);
+}
+
+.album-icon {
+  width: 100%;
+  display: block;
+  transition: filter 0.8s ease;
+}
+
+.album-display.active .album-icon {
+  filter: brightness(0.3);
+}
+
+.album-info {
+  padding: 30px;
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+
+  color: var(--accent-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.album-track {
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+  width: fit-content;
+  min-height: 20px;
+}
+
+.album-track.selected {
+  margin-left: 5px;
+  color: var(--accent-dark);
+}
+
+.album-track.selected.playing {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.album-track:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+.artist-catalogs {
+  width: 100%;
+  flex: 1;
+}
+
+.artist-catalogs > .artist {
+  flex: 1;
+}
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 24px;
+}

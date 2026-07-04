@@ -1,0 +1,94 @@
+{
+  "Lesonnar": {
+    "icon": "/band/lesonnar/Vapor Kid/cover.jpg",
+    "name": "Lesonnar",
+    "albums": {
+      "Name The User": {
+        "path": "/band/lesonnar/Name The User/",
+        "icon": "/band/lesonnar/Name The User/cover.png",
+        "files": ["Dunes.wav", "Gone for good.wav", "Isolation.wav", "Like Talking To a Wall.wav"]
+      },
+      "Vapor Kid": {
+        "path": "/band/lesonnar/Vapor Kid/",
+        "icon": "/band/lesonnar/Vapor Kid/cover.jpg",
+        "files": [
+          "Dripples.wav",
+          "Fluorescent Caves.wav",
+          "Future Pilot.wav",
+          "Hyperspeed.wav",
+          "Lone wanderer.wav",
+          "Monkeys in space.wav",
+          "Neon City.wav",
+          "Pulsar.wav",
+          "Unknown Territory.wav",
+          "Where do we go.wav",
+          "You'll be fine up there.wav"
+        ]
+      },
+
+      "In Depth": {
+        "path": "/band/lesonnar/In Depth/",
+        "icon": "/band/lesonnar/In Depth/cover.webp",
+        "files": ["Depth.wav", "The Only One.wav"]
+      },
+
+      "Vibrejcha": {
+        "path": "/band/lesonnar/Vibrejcha/",
+        "icon": "/band/lesonnar/Vibrejcha/cover.jpg",
+        "files": ["Catharsis.wav", "Molecularite.mp3"]
+      },
+
+      "Fluke": {
+        "path": "/band/lesonnar/Fluke/",
+        "icon": "/band/lesonnar/Fluke/cover.jpg",
+        "files": [
+          "Spacewalker.aif",
+          "It was all a dream.wav",
+          "Nenuphar.aif",
+          "Any road will do.mp3",
+          "Café.aif",
+          "Last living soul.wav",
+          "Forever Lost.aif",
+          "All that could have been.aif",
+          "dragons of the west.aif",
+          "It Happened Again.mp3"
+        ]
+      },
+
+      "Castle In The Sky": {
+        "path": "/band/lesonnar/Castle in the sky/",
+        "icon": "/band/lesonnar/Castle in the sky/cover.jpg",
+        "files": ["Having to wait.mp3", "Long way.wav", "lost to conge.mp3", "Promenade sous la mer.wav", "Say do we.wav", "Un po di sale.wav"]
+      }
+    }
+  },
+  "dawn": {
+    "icon": "",
+    "name": "Dawn",
+    "albums": {
+      "Gravitational Pull": {
+        "icon": "/band/dawn/Gravitational Pull/cover.jpg",
+        "files": [
+          "Drugs To Forget About Drugs.mp3",
+          "Falling in the Sun.mp3",
+          "Rectifier.mp3",
+          "Just Like a Doll.mp3",
+          "La Fée PT. I.mp3",
+          "La Fée PT. II.mp3",
+          "Fish in my head.mp3",
+          "Motions.mp3",
+          "SOAD.mp3",
+          "The Mule.mp3",
+          "Cosmic Desire.mp3",
+          "Vanilla Fuzz.mp3"
+        ],
+        "path": "/band/dawn/Gravitational Pull/"
+      },
+      "The W is silent": {
+        "icon": "/band/dawn/The W Is Silent/cover.webp",
+        "path": "/band/dawn/The W Is Silent/",
+        "files": ["Ad Infinitum.mp3", "Black Metal Jacket.mp3", "FAR.mp3", "Impact.mp3", "Misty Island.mp3", "The Mule.mp3"]
+      }
+    }
+  }
+}

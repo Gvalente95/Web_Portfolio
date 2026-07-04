@@ -1,0 +1,23 @@
+.neon-button > button {
+  position: relative;
+  background: rgb(81, 81, 81);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.neon-button > button::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+}
+
+.neon-button.active > button::after {
+  background: green;
+}

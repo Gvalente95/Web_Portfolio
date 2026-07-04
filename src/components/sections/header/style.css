@@ -1,0 +1,90 @@
+header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  padding: 30px;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  z-index: 9999;
+}
+
+header > .home {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  font-size: 30px;
+  border: none;
+}
+
+header > .home::after {
+  position: absolute;
+  content: "";
+  left: -5%;
+  top: -5%;
+  width: 110%;
+  height: 110%;
+  z-index: -1;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  scale: 1;
+
+  transition:
+    border 0.3s ease,
+    scale 0.3s ease;
+}
+
+header > .home:hover::after {
+  border: 1px solid white;
+  scale: 1.1;
+}
+
+header > .right-section {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  color: white;
+  border: none;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.header-button.selected,
+.header-button:hover {
+  color: var(--accent-strong);
+}
+
+.header-button::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 5px;
+  background: var(--accent-strong);
+  width: 0;
+  height: 2px;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.header-button.selected::after {
+  left: 0;
+  width: 100%;
+}
