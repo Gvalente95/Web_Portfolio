@@ -1,0 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.daw-guide-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+}
+
+.daw-guide {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.daw-guide__toc {
+  position: sticky;
+  align-self: start;
+  top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+
+.daw-guide__toc a.active {
+  color: var(--accent);
+  font-weight: 800;
+  border-left: 2px solid var(--accent);
+  padding-left: 8px;
+}
+
+.daw-guide__toc-sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 14px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.daw-guide__toc-sublist a {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.daw-guide__toc-title {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.daw-guide__toc a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.daw-guide__toc a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.daw-guide {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.daw-guide__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.daw-guide__title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-strong);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.daw-guide__section-title {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  scroll-margin-top: 24px;
+}
+
+.daw-guide__sub-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  margin-left: 5px;
+  scroll-margin-top: 24px;
+}
+
+.daw-guide__body {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 16px;
+}
+
+.daw-guide__body strong {
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.daw-guide__body code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #ffffff;
+}
+
+.daw-guide__tip {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-left: 3px solid #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+.daw-guide__list {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+
+.daw-guide__list li {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.daw-guide__image {
+  display: block;
+  width: auto;
+  height: auto;
+
+  max-width: 80%;
+  max-height: 80vh;
+
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.daw-guide__sub-title--tip {
+  float: right;
+}
+
+.daw-guide__sub-title--tip code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #ffffff;
+}
