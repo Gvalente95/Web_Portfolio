@@ -13,8 +13,8 @@ export function HeroInfo() {
     <div ref={ref} className="hero-info">
       <span>Front-end developper</span>
       <div className="hero-greeting">
-        <div>{t("hero.greeting")}</div>
-        <strong>{t("common.name")}</strong>
+        <div className="greeting">{t("hero.greeting")}</div>
+        <strong className="greeting">{t("common.name")}</strong>
         <p>
           {t("hero.brief.character")} | {t("hero.brief.spec")}
         </p>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useScrollDistance() {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [scrollDistance, setScrollDistance] = useState(0);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
-import GithubIcon from "@assets/svg/github_white.svg?react";
-import YoutubeIcon from "@assets/svg/youtube.svg?react";
-import InstagramIcon from "@assets/svg/instagram.svg?react";
+import GithubIcon from "@/assets/svg/github.svg?react";
+import YoutubeIcon from "@/assets/svg/youtube.svg?react";
+import InstagramIcon from "@/assets/svg/instagram.svg?react";
 
 import "./style.css";
 

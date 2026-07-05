@@ -7,7 +7,7 @@ export function HomeContent() {
   return (
     <div className="home-content">
       <Timeline />
-      {/* <Vitrine /> */}
+      <Vitrine />
     </div>
   );
 }

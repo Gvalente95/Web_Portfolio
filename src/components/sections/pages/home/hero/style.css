@@ -1,9 +1,9 @@
 .hero {
   width: auto;
-  height: auto;
+  height: calc(100svh - 180px);
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin: 30px;
 }
 
 .hero > :first-child {
@@ -19,5 +19,10 @@
     margin-left: 40px;
     margin-right: 40px;
     flex-direction: column;
+  }
+
+  .hero > :first-child,
+  .hero > :nth-child(2) {
+    flex: initial;
   }
 }

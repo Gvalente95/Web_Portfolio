@@ -1,14 +1,11 @@
-import computerBgr from "@assets/computer.jpg";
+import computerBgr from "@/assets/computer.jpg";
 import { useSelectionBox } from "./useSelectionBox";
-import terminalIcon from "assets/svg/terminal.svg";
-import webApps from "../../../../../data/web-apps.json";
-import games from "../../../../../data/games.json";
-import audioApps from "../../../../../data/audio-apps.json";
-
-import { useNavigate } from "react-router-dom";
+import terminalIcon from "@/assets/svg/terminal.svg";
+import webApps from "@/data/web-apps.json";
+import games from "@/data/games.json";
+import audioApps from "@/data/audio-apps.json";
 
 import "./style.css";
-import { Projects } from "../Projects.tsx/Projects";
 
 type Project = {
   info: string;
@@ -31,8 +28,6 @@ export function Computer() {
   const audioEntries = Object.entries((audioApps as ProjectsData).content);
 
   const allEntries = [...webAppEntries, ...gameEntries, ...audioEntries];
-
-  const navigate = useNavigate();
 
   const icons = [
     { name: "Terminal", image: terminalIcon, url: "" },

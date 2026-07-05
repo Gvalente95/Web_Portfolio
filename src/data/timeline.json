@@ -1,0 +1,54 @@
+{
+  "army": {
+    "start": [2019, 9, 12],
+    "end": [2020, 4, 12],
+    "name": "Aviation Administrative in the swiss army",
+    "info": ["Ord. Bureau Office and administrative tasks within aviation unit."]
+  },
+  "technician": {
+    "start": [2020, 5, 12],
+    "end": [2022, 2, 12],
+    "name": "Worked as an audio Technician",
+    "info": ["Live and studio audio setup, patching, maintenance and troubleshooting.", "Responsible technician for small production runs and venue black-box operations."]
+  },
+  "sound": {
+    "start": [2022, 2, 12],
+    "end": [2023],
+    "name": "Sound Design (student project)",
+    "info": [
+      "Final-year project – interactive 3D simulation",
+      "- Created sound design for a 3D island exploration simulation with two cave environments",
+      "- Implemented realistic cavern acoustics in one environment and deliberately altered fidelity/processing"
+    ]
+  },
+  "etm": {
+    "start": [2016, 4, 2],
+    "end": [2019],
+    "name": "Music Cursus",
+    "info": ["ETM", "Guitar & Voice"]
+  },
+  "musician": {
+    "start": [2018, 4, 2],
+    "end": [2019],
+    "name": "Worked as a musician and music produceer",
+    "info": ["DAWN.w, LeSonnar"]
+  },
+  "sae": {
+    "start": [2019],
+    "end": [2023],
+    "name": "Bachelor of Arts, Sound Engineering",
+    "info": ["Sound Engineering"]
+  },
+  "42": {
+    "start": [2024],
+    "end": [2026],
+    "name": "Architecte en Technologie du Numérique",
+    "info": ["School 42"]
+  },
+  "web": {
+    "start": [2025],
+    "end": [2026],
+    "name": "Started working on Web projects, Vanilla JS and React",
+    "info": [""]
+  }
+}

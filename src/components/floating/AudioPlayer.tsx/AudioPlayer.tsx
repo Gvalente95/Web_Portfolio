@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useAudioPlayer } from "../../../contexts/AudioPlayerContext";
-import { useSpinObject } from "../../../hooks/useSpinObject";
-import { clamp } from "../../../utils/math";
-import PauseIcon from "@assets/svg/pause.svg?react";
-import PlayIcon from "@assets/svg/play.svg?react";
-import EffronteIcon from "@assets/svg/effronte.svg?react";
-import EfbackIcon from "@assets/svg/efback.svg?react";
-import ShuffleIcon from "@assets/svg/shuffle.svg?react";
-import CloseIcon from "@assets/svg/close.svg?react";
+import { clamp } from "@/utils/math";
+import PauseIcon from "@/assets/svg/pause.svg?react";
+import PlayIcon from "@/assets/svg/play.svg?react";
+import EffronteIcon from "@/assets/svg/effronte.svg?react";
+import EfbackIcon from "@/assets/svg/efback.svg?react";
+import ShuffleIcon from "@/assets/svg/shuffle.svg?react";
+import CloseIcon from "@/assets/svg/close.svg?react";
 
 import { NavLink, useLocation } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
-import worldIcon from "@assets/svg/world.svg";
+import worldIcon from "@/assets/svg/world.svg";
 
 import "./style.css";
 

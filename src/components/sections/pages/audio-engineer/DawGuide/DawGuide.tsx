@@ -1,12 +1,12 @@
 import "./style.css";
-import track_editor_img from "@assets/png/screenshot/daw/track-editor.png";
-import keyboard_img from "@assets/png/screenshot/daw/keyboard.png";
-import transport_img from "@assets/png/screenshot/daw/transport.png";
-import track_lane_img from "@assets/png/screenshot/daw/track-lane.png";
-import routing_img from "@assets/png/screenshot/daw/routing.png";
-import mixer_img from "@assets/png/screenshot/daw/mixer.png";
-import region_editor_img from "@assets/png/screenshot/daw/region-editor.png";
-import midi_editor_img from "@assets/png/screenshot/daw/midi-editor.png";
+import track_editor_img from "@/assets/png/screenshot/daw/track-editor.png";
+import keyboard_img from "@/assets/png/screenshot/daw/keyboard.png";
+import transport_img from "@/assets/png/screenshot/daw/transport.png";
+import track_lane_img from "@/assets/png/screenshot/daw/track-lane.png";
+import routing_img from "@/assets/png/screenshot/daw/routing.png";
+import mixer_img from "@/assets/png/screenshot/daw/mixer.png";
+import region_editor_img from "@/assets/png/screenshot/daw/region-editor.png";
+import midi_editor_img from "@/assets/png/screenshot/daw/midi-editor.png";
 import { useEffect, useState } from "react";
 
 export function DawGuide() {

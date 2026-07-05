@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { LanguageDropdown } from "./LangDropdown/LangDropdown";
 
 import "./style.css";
+import { isMobile } from "@/utils/navigation";
 
 export function Header() {
   const { t } = useTranslation();
@@ -17,16 +18,18 @@ export function Header() {
         {t("common.name")}
       </NavLink>
 
-      <div className="right-section">
-        {Object.entries(pages).map(([key, value]) => {
-          return (
-            <NavLink key={key} to={`/${lang}/${key}`} className={({ isActive }) => `header-button${isActive ? " selected" : ""}`}>
-              <div> {value}</div>
-            </NavLink>
-          );
-        })}
-        <LanguageDropdown />
-      </div>
+      {!isMobile() && (
+        <div className="right-section">
+          {Object.entries(pages).map(([key, value]) => {
+            return (
+              <NavLink key={key} to={`/${lang}/${key}`} className={({ isActive }) => `header-button${isActive ? " selected" : ""}`}>
+                <div> {value}</div>
+              </NavLink>
+            );
+          })}
+          <LanguageDropdown />
+        </div>
+      )}
     </header>
   );
 }

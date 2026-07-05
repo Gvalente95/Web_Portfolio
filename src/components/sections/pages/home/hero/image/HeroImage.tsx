@@ -1,4 +1,4 @@
-import meIcon from "@assets/png/photos/me.png";
+import meIcon from "@/assets/png/photos/me.png";
 
 import "./style.css";
 
