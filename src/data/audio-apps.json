@@ -6,7 +6,7 @@
     "Audio Blocks": {
       "info": "My attempt at creating a fun music-making tool by attaching nodes together inside a ReactFlow Graph.",
       "info_short": "My attempt at creating a fun music-making tool by attaching nodes together.",
-      "image": "/screenshot/Audio-nodes.png",
+      "image": "/image/screenshot/Audio-nodes.png",
       "url": "https://gvalente95.github.io/AudioBlocks/",
       "language": "React Typescript JS CSS Html Tone.js",
       "tags": ""
@@ -14,7 +14,7 @@
     "web-daw": {
       "info": "A complexe interface for producing music in a web browser. it uses Tone.js for processing audio and features recording, effects, routing, automations, editting, instruments, all made from scratch without external libraries.",
       "info_short": "A complexe interface for producing music in a web browser.",
-      "image": "/screenshot/Webdaw.png",
+      "image": "/image/screenshot/Webdaw.png",
       "url": "https://gvalente95.github.io/GiuDaw/",
       "language": "React Typescript JS CSS Html Tone.js",
       "tags": "Audio Enineering"
