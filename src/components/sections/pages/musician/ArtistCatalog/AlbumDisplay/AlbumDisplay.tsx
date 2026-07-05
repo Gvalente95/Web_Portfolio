@@ -3,11 +3,18 @@ import type { AudioAlbum } from "../ArtistsCatalog";
 import { useAudioPlayer } from "../../../../../../contexts/AudioPlayerContext";
 
 import "./style.css";
+import { useTextEffect } from "../../../home/hero/image/asciiAnimation/AnimatedText";
 
 type AlbumDisplayProps = {
   album: AudioAlbum & { name: string };
   artistName: string;
 };
+
+export function AlbumBottomDisplay({ albumName, trackName, isAlbumPlaying }: { albumName: string; trackName: string; isAlbumPlaying: boolean }) {
+  const { text } = useTextEffect({ target: trackName + " ", type: "loop", stepDuration: 100 });
+
+  return <div className="album-track-name">{isAlbumPlaying ? text.slice(0, 25 - albumName.length) : trackName}</div>;
+}
 
 export function AlbumDisplay({ album, artistName }: AlbumDisplayProps) {
   const [active, setActive] = useState(false);
@@ -18,7 +25,9 @@ export function AlbumDisplay({ album, artistName }: AlbumDisplayProps) {
     return labelRaw.replaceAll(".wav", "").replaceAll(".mp3", "").replaceAll(".aif", "");
   }
 
-  const isAlbumPlaying = isPlaying && currentTrack && currentTrack.albumName === album.name;
+  const isAlbumSelected = currentTrack && currentTrack.albumName === album.name;
+  const isAlbumPlaying = isAlbumSelected && isPlaying ? true : false;
+
   return (
     <div className={`album-display-wrap${active ? " active" : ""}${isAlbumPlaying ? " playing" : ""}`}>
       <div onClick={() => setActive(!active)} className={`album-display${active ? " active" : ""}`} key={album.name}>
@@ -29,6 +38,7 @@ export function AlbumDisplay({ album, artistName }: AlbumDisplayProps) {
 
             return (
               <div
+                key={album.path + f}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
@@ -43,6 +53,12 @@ export function AlbumDisplay({ album, artistName }: AlbumDisplayProps) {
             );
           })}
         </div>
+        {!active && (
+          <div className="album-bottom">
+            <div className="album-title">{album.name}</div>
+            {isAlbumSelected && <AlbumBottomDisplay albumName={album.name} trackName={formatLabel(currentTrack.name)} isAlbumPlaying={isAlbumPlaying} />}
+          </div>
+        )}
       </div>
     </div>
   );

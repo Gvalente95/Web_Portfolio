@@ -35,7 +35,7 @@ i18n.use(initReactI18next).init({
           pages: {
             dev: "Developper",
             audio: "Audio-engineer",
-            music: "Musician",
+            music: "Music",
           },
           languages: {
             en: "English",
@@ -66,7 +66,7 @@ i18n.use(initReactI18next).init({
           pages: {
             dev: "Developpeur",
             audio: "Ingénieur son",
-            music: "Musicien",
+            music: "Musique",
           },
           languages: {
             en: "Angais",
@@ -97,7 +97,7 @@ i18n.use(initReactI18next).init({
           pages: {
             dev: "Sviluppatore Informatico",
             audio: "Ingeniere Audio",
-            music: "Musicista",
+            music: "Musica",
           },
           languages: {
             en: "Inglese",

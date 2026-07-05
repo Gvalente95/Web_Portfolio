@@ -1,46 +1,57 @@
 import { useEffect, useRef } from "react";
+import { clamp } from "../utils/math";
 
-export function useDragObject({ onDrag }: { onDrag: (v: number) => void }) {
+type dragReturn = { normX: number; normY: number };
+interface useDragObjectProps {
+  onDrag: (v: dragReturn) => void;
+  onDown?: (v: dragReturn) => void;
+  onUp?: (v: dragReturn) => void;
+}
+
+export function useDragObject({ onDrag, onDown, onUp }: useDragObjectProps) {
   const dragRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
 
   useEffect(() => {
     const handle = dragRef.current;
+    if (!handle) return;
 
-    function update(e: PointerEvent) {
-      if (!dragRef.current) return;
-
-      const rect = dragRef.current.getBoundingClientRect();
-      const normX = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-
-      onDrag(normX);
+    function getNormCoord(e: PointerEvent) {
+      const rect = handle!.getBoundingClientRect();
+      const normX = clamp((e.clientX - rect.left) / rect.width, 0, 1);
+      const normY = clamp((e.clientY - rect.top) / rect.height, 0, 1);
+      return { normX, normY };
     }
 
-    function onDown(e: PointerEvent) {
+    function handleDown(e: PointerEvent) {
       draggingRef.current = true;
-      handle?.setPointerCapture(e.pointerId);
+      handle!.setPointerCapture(e.pointerId);
+      onDown?.(getNormCoord(e));
     }
 
-    function onMove(e: PointerEvent) {
+    function handleMove(e: PointerEvent) {
       if (!draggingRef.current) return;
-      update(e);
+      onDrag?.(getNormCoord(e));
     }
 
-    function onUp(e: PointerEvent) {
+    function handleUp(e: PointerEvent) {
+      if (!draggingRef.current) return;
+
       draggingRef.current = false;
-      handle?.releasePointerCapture(e.pointerId);
+      handle!.releasePointerCapture(e.pointerId);
+      onUp?.(getNormCoord(e));
     }
 
-    dragRef.current?.addEventListener("pointerdown", onDown);
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
+    handle.addEventListener("pointerdown", handleDown);
+    window.addEventListener("pointermove", handleMove);
+    window.addEventListener("pointerup", handleUp);
 
     return () => {
-      handle?.removeEventListener("pointerdown", onDown);
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
+      handle.removeEventListener("pointerdown", handleDown);
+      window.removeEventListener("pointermove", handleMove);
+      window.removeEventListener("pointerup", handleUp);
     };
-  }, [onDrag]);
+  }, [onDown, onDrag, onUp]);
 
   return { dragRef };
 }

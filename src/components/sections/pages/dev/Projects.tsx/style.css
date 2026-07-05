@@ -1,0 +1,41 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  color: black;
+  margin: 60px;
+}
+
+.project {
+  position: relative;
+  aspect-ratio: 16 / 9; /* or 1 / 1 if you prefer squares */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project:hover {
+  border-radius: 0px;
+}
+
+.project img,
+.project video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project video {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.project:hover video {
+  opacity: 1;
+}
+
+.project:hover img {
+  opacity: 0;
+}

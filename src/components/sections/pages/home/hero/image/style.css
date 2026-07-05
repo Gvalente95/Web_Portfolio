@@ -11,6 +11,7 @@
   border-radius: 50%;
   border: 2px solid var(--accent-secondary);
   cursor: pointer;
+  animation: float 20s ease-in-out infinite;
 }
 
 @media (max-width: 700px) {

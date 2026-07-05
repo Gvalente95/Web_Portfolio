@@ -9,13 +9,11 @@
 .page {
   width: auto;
   height: auto;
-  display: flex;
 
   margin-left: 100px;
   margin-right: 100px;
   margin-bottom: 100px;
 
-  flex: 1;
   min-height: 0;
 
   z-index: 0;

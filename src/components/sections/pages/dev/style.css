@@ -1,0 +1,10 @@
+.deg-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.dev-intro {
+  margin: 30px;
+  margin-bottom: 60px;
+  font-weight: 100;
+}

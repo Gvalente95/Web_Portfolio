@@ -13,17 +13,27 @@
     scale 0.3s ease;
 }
 
+.album-display-wrap:not(.active) {
+  scale: 0.8;
+}
+
 .album-display-wrap:hover:not(.active) {
-  scale: 1.05;
+  scale: 0.9;
+}
+
+.album-display-wrap:hover .album-icon {
+  box-shadow:
+    0 0 22px color-mix(in srgb, var(--accent-secondary-strong) 22%, transparent),
+    0 18px 50px rgba(0, 0, 0, 0.2);
 }
 
 .album-display-wrap.playing:not(.active) {
   animation: float-3d 8s ease-in-out infinite;
 }
 
-.album-display-wrap.playing:not(.active) {
+/* .album-display-wrap.playing:not(.active) {
   border: 2px solid var(--accent-strong);
-}
+} */
 
 .album-display.active {
   transform: rotateY(180deg);
@@ -75,4 +85,26 @@
 
 .album-track:hover {
   text-decoration: underline;
+}
+
+.album-display-wrap {
+  position: relative;
+}
+
+.album-bottom {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 30px);
+
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0;
+
+  pointer-events: none;
+}
+
+.album-bottom .album-track-name {
+  color: var(--accent);
+  margin-left: 20px;
 }

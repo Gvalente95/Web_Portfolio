@@ -113,28 +113,28 @@ html {
   font-size: 1.25rem;
   font-weight: 800;
   color: #ffffff;
-  margin-top: 36px;
+  margin-top: 64px;
   margin-bottom: 12px;
   letter-spacing: 0.02em;
   scroll-margin-top: 24px;
 }
 
 .daw-guide__sub-title {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-top: 24px;
+  margin-top: 64px;
   margin-bottom: 8px;
   margin-left: 5px;
   scroll-margin-top: 24px;
 }
 
 .daw-guide__body {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 16px;
+  margin-bottom: 64px;
 }
 
 .daw-guide__body strong {

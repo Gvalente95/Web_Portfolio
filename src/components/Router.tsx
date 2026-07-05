@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-
 import i18n from "../i18n";
 import { PageContainer, type PageType } from "./sections/PageContainer";
 import { Debugger } from "./debugger/debugger";
+import { FloatingElements } from "./floating/FloatingElements";
 
 const supportedLangs = ["en", "fr", "it"] as const;
 
@@ -18,6 +19,7 @@ function LangRoute() {
 
   return (
     <>
+      <FloatingElements />
       <PageContainer page={page as PageType} />
       <Debugger />
     </>

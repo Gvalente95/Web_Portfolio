@@ -1,4 +1,5 @@
-import { createContext, useContext, useRef, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { r_range_int } from "../utils/math";
 
 type Track = {
   name: string;
@@ -14,6 +15,8 @@ type PlayerState = {
   isPlaying: boolean;
   currentTrack: Track | null;
   duration: number;
+  audioTracks: Track[];
+  isShuffle: boolean;
 };
 
 type AudioPlayerContextValue = PlayerState & {
@@ -23,19 +26,41 @@ type AudioPlayerContextValue = PlayerState & {
   onTrackPause: () => void;
   onVolumeChange: (volume: number) => void;
   onSeek: (time: number) => void;
+  loadAudioTracks: (tracks: Track[]) => void;
+  onTrackSkip: (dir: "left" | "right") => void;
+  onToggleShuffle: () => void;
+  onClose: () => void;
 };
 
 const AudioPlayerContext = createContext<AudioPlayerContextValue | null>(null);
 
 export function AudioPlayerProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
+  const [audioTracks, setAudioTracks] = useState<Track[]>([]);
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
   const [playtime, setPlaytime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isShuffle, setIsShuffle] = useState(false);
 
+  const currentTrackRef = useRef<Track | null>(null);
+  const audioTracksRef = useRef<Track[]>([]);
+  const isShuffleRef = useRef(false);
+
+  useEffect(() => {
+    currentTrackRef.current = currentTrack;
+  }, [currentTrack]);
+
+  useEffect(() => {
+    audioTracksRef.current = audioTracks;
+  }, [audioTracks]);
+
+  useEffect(() => {
+    isShuffleRef.current = isShuffle;
+  }, [isShuffle]);
+
+  const onToggleShuffle = () => setIsShuffle((prev) => !prev);
   const getAudio = () => {
     if (!audioRef.current) {
       audioRef.current = new Audio();
@@ -50,12 +75,32 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
       };
 
       audioRef.current.onended = () => {
-        setIsPlaying(false);
-        setPlaytime(0);
+        onTrackSkip("right");
       };
     }
 
     return audioRef.current;
+  };
+
+  const loadAudioTracks = (tracks: Track[]) => {
+    setAudioTracks(tracks);
+  };
+
+  const onTrackSkip = (dir: "left" | "right") => {
+    const track = currentTrackRef.current;
+    const tracks = audioTracksRef.current;
+    if (!track || tracks.length === 0) return;
+    const idx = tracks.findIndex((f) => f.src === track.src);
+    if (idx === -1) return;
+    let newIdx;
+    if (isShuffleRef.current) {
+      if (tracks.length === 1) return;
+      newIdx = r_range_int(0, tracks.length - 1);
+      while (newIdx === idx) newIdx = r_range_int(0, tracks.length - 1);
+    } else {
+      newIdx = (idx + (dir === "left" ? -1 : 1) + tracks.length) % tracks.length;
+    }
+    onTrackChange(tracks[newIdx]);
   };
 
   const onTrackChange = (track: Track) => {
@@ -89,6 +134,11 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
     setIsPlaying(false);
   };
 
+  const onClose = () => {
+    onTrackStop();
+    setCurrentTrack(null);
+  };
+
   const onTrackStop = () => {
     const audio = getAudio();
 
@@ -120,14 +170,20 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
         volume,
         playtime,
         isPlaying,
+        isShuffle,
         duration,
         currentTrack,
+        audioTracks,
         onTrackChange,
         onTrackStart,
         onTrackStop,
         onTrackPause,
         onVolumeChange,
         onSeek,
+        loadAudioTracks,
+        onTrackSkip,
+        onToggleShuffle,
+        onClose,
       }}
     >
       {children}

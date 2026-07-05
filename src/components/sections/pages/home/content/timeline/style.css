@@ -1,0 +1,133 @@
+.timeline {
+  position: relative;
+  height: 1200px;
+  flex: 1;
+  overflow: visible;
+}
+
+.timeline-bar {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.timeline-bound {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.timeline-bound-start {
+  top: -34px;
+}
+
+.timeline-bound-end {
+  bottom: -34px;
+}
+
+.timeline-item {
+  position: absolute;
+  left: 50%;
+  width: 0;
+  height: 0;
+  --card-gap: calc(96px + (var(--event-offset) * 190px));
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 14px var(--accent);
+  z-index: 3;
+}
+
+.timeline-dot-end {
+  top: var(--duration-height);
+  opacity: 0.7;
+}
+
+.timeline-duration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: var(--duration-height);
+  width: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 50%, transparent);
+  transform: translateX(-50%);
+  box-shadow: 0 0 14px var(--accent);
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  width: calc(var(--card-gap) - 28px);
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+.timeline-card {
+  position: absolute;
+  top: 0;
+  width: max-content;
+  min-width: 180px;
+  max-width: 360px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  transform: translateY(-50%);
+}
+
+.timeline-item.left .timeline-line {
+  right: 0;
+}
+
+.timeline-item.right .timeline-line {
+  left: 0;
+}
+
+.timeline-item.left .timeline-card {
+  right: var(--card-gap);
+}
+
+.timeline-item.right .timeline-card {
+  left: var(--card-gap);
+}
+
+.timeline-date {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.timeline-title {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.timeline-info {
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-size: 0.9rem;
+}

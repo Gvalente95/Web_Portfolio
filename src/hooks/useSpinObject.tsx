@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { clamp } from "../utils/math";
 
 type SpinAxis = "x" | "y" | "z";
 
@@ -7,71 +8,68 @@ type UseSpinObjectProps = {
   sensitivity?: number;
   drag?: boolean;
   friction?: number;
-  restorePosition?: boolean;
-  restoreSpeed?: number;
+  onSpin?: (spinDelta: SpinDelta) => void;
+  onSpinStart?: () => void;
+  onSpinEnd?: () => void;
+  onSpinMove?: () => void;
+  resetRotation?: boolean;
+  clampAxes?: { x: number; y: number; z: number };
 };
 
-export function useSpinObject({ axes = ["z"], sensitivity = 0.5, drag = true, friction = 0.95, restorePosition = false, restoreSpeed = 0.08 }: UseSpinObjectProps = {}) {
+type SpinDelta = {
+  x: number;
+  y: number;
+  dx: number;
+  dy: number;
+};
+
+export function useSpinObject({
+  axes = ["z"],
+  sensitivity = 0.5,
+  drag = false,
+  friction = 0.95,
+  onSpin,
+  onSpinStart,
+  onSpinEnd,
+  onSpinMove,
+  resetRotation = true,
+  clampAxes = { x: 360, y: 360, z: 360 },
+}: UseSpinObjectProps = {}) {
   const ref = useRef<HTMLDivElement>(null);
 
-  const draggingRef = useRef(false);
-  const movingRef = useRef(false);
-  const restoringRef = useRef(false);
+  const moving = useRef(false);
+  const dragging = useRef(false);
+  const isResetting = useRef(false);
 
   const lastPos = useRef({ x: 0, y: 0 });
   const rotation = useRef({ x: 0, y: 0, z: 0 });
   const velocity = useRef({ x: 0, y: 0, z: 0 });
   const frame = useRef(0);
 
-  const [isDragging, setIsDragging] = useState(false);
-  const [isMoving, setIsMoving] = useState(false);
-
-  const setMoving = (value: boolean) => {
-    movingRef.current = value;
-    setIsMoving(value);
-  };
-
   const applyTransform = () => {
     if (!ref.current) return;
 
     ref.current.style.transform = `
-      rotateX(${rotation.current.x}deg)
-      rotateY(${rotation.current.y}deg)
-      rotateZ(${rotation.current.z}deg)
+      rotateX(${clamp(rotation.current.x, -clampAxes.x, clampAxes.x)}deg)
+      rotateY(${clamp(rotation.current.y, -clampAxes.y, clampAxes.y)}deg)
+      rotateZ(${clamp(rotation.current.z, -clampAxes.z, clampAxes.z)}deg)
     `;
   };
 
-  const restoreRotation = () => {
-    if (draggingRef.current) return;
-
-    restoringRef.current = true;
-
-    rotation.current.x += (0 - rotation.current.x) * restoreSpeed;
-    rotation.current.y += (0 - rotation.current.y) * restoreSpeed;
-    rotation.current.z += (0 - rotation.current.z) * restoreSpeed;
-
-    applyTransform();
-
-    const closeEnough = Math.abs(rotation.current.x) < 0.05 && Math.abs(rotation.current.y) < 0.05 && Math.abs(rotation.current.z) < 0.05;
-
-    if (closeEnough) {
-      rotation.current = { x: 0, y: 0, z: 0 };
-      velocity.current = { x: 0, y: 0, z: 0 };
-      restoringRef.current = false;
-      setMoving(false);
-      applyTransform();
-      return;
-    }
-
-    frame.current = requestAnimationFrame(restoreRotation);
-  };
-
   const animateMomentum = () => {
-    if (!drag || draggingRef.current) return;
+    if (!drag || dragging.current) return;
+
+    const resetStrength = 0.03; // tweak
 
     rotation.current.x += velocity.current.x;
     rotation.current.y += velocity.current.y;
     rotation.current.z += velocity.current.z;
+
+    if (resetRotation) {
+      rotation.current.x -= rotation.current.x * resetStrength;
+      rotation.current.y -= rotation.current.y * resetStrength;
+      rotation.current.z -= rotation.current.z * resetStrength;
+    }
 
     velocity.current.x *= friction;
     velocity.current.y *= friction;
@@ -81,18 +79,14 @@ export function useSpinObject({ axes = ["z"], sensitivity = 0.5, drag = true, fr
 
     const stillMoving = Math.abs(velocity.current.x) > 0.01 || Math.abs(velocity.current.y) > 0.01 || Math.abs(velocity.current.z) > 0.01;
 
+    moving.current = stillMoving;
+
     if (stillMoving) {
-      setMoving(true);
       frame.current = requestAnimationFrame(animateMomentum);
-      return;
-    }
-
-    if (restorePosition) {
-      frame.current = requestAnimationFrame(restoreRotation);
-      return;
-    }
-
-    setMoving(false);
+    } else if (resetRotation) {
+      isResetting.current = true;
+      frame.current = requestAnimationFrame(animateMomentum);
+    } else onSpinEnd?.();
   };
 
   useEffect(() => {
@@ -102,20 +96,16 @@ export function useSpinObject({ axes = ["z"], sensitivity = 0.5, drag = true, fr
     const handlePointerDown = (e: PointerEvent) => {
       e.preventDefault();
 
-      draggingRef.current = true;
-      restoringRef.current = false;
-
-      setIsDragging(true);
-      setMoving(true);
-
+      dragging.current = true;
       lastPos.current = { x: e.clientX, y: e.clientY };
-      velocity.current = { x: 0, y: 0, z: 0 };
 
+      velocity.current = { x: 0, y: 0, z: 0 };
       cancelAnimationFrame(frame.current);
+      if (onSpinStart) onSpinStart();
     };
 
     const handlePointerMove = (e: PointerEvent) => {
-      if (!draggingRef.current) return;
+      if (!dragging.current || !ref.current) return;
 
       const dx = e.clientX - lastPos.current.x;
       const dy = e.clientY - lastPos.current.y;
@@ -134,23 +124,24 @@ export function useSpinObject({ axes = ["z"], sensitivity = 0.5, drag = true, fr
 
       applyTransform();
 
+      onSpin?.({
+        x: rotation.current.x,
+        y: rotation.current.y,
+        dx,
+        dy,
+      });
+
       lastPos.current = { x: e.clientX, y: e.clientY };
-      setMoving(true);
+      moving.current = true;
+      if (onSpinMove) onSpinMove();
     };
 
     const handlePointerUp = () => {
-      if (!draggingRef.current) return;
-
-      draggingRef.current = false;
-      setIsDragging(false);
+      dragging.current = false;
 
       if (drag) {
         frame.current = requestAnimationFrame(animateMomentum);
-      } else if (restorePosition) {
-        frame.current = requestAnimationFrame(restoreRotation);
-      } else {
-        setMoving(false);
-      }
+      } else if (onSpinEnd) onSpinEnd();
     };
 
     el.addEventListener("pointerdown", handlePointerDown);
@@ -163,7 +154,7 @@ export function useSpinObject({ axes = ["z"], sensitivity = 0.5, drag = true, fr
       window.removeEventListener("pointerup", handlePointerUp);
       cancelAnimationFrame(frame.current);
     };
-  }, [axes, sensitivity, drag, friction, restorePosition, restoreSpeed]);
+  }, [axes, sensitivity, drag, friction]);
 
-  return { ref, isDragging, isMoving };
+  return { ref, isDragging: dragging.current, moving: moving.current };
 }
