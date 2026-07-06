@@ -82,6 +82,7 @@
 
 @media (max-width: 700px) {
   .skills-panel {
-    width: 300px;
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
