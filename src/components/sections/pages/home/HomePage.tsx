@@ -2,10 +2,10 @@ import { Hero } from "./hero/Hero";
 import { HomeContent } from "./content/content";
 
 import { Skills } from "./about/skills/Skills";
+// import { Skillboard } from "./about/skillboard/Skillboard";
+import { About } from "./about/About";
 
 import "./style.css";
-import { About } from "./about/About";
-import { Skillboard } from "./about/skillboard/Skillboard";
 
 export function HomePage() {
   return (
@@ -13,7 +13,7 @@ export function HomePage() {
       <Hero />
       <About />
       <Skills />
-      <Skillboard />
+      {/* <Skillboard /> */}
       <HomeContent />
     </div>
   );

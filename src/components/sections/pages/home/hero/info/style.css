@@ -1,7 +1,6 @@
 .hero-info {
   width: auto;
   height: auto;
-  transform-style: preserve-3d;
 }
 
 .hero-info .hero-greeting {
