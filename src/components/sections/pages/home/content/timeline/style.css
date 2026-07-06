@@ -1,8 +1,21 @@
+.timeline-canvas {
+  width: 100%;
+  height: 1200px;
+}
 .timeline {
   position: relative;
   height: 1200px;
   overflow: visible;
   width: 100%;
+  perspective: 1000px;
+}
+
+.timeline-world {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
 }
 
 .timeline-bar {
@@ -81,19 +94,6 @@
   opacity: 0.8;
 }
 
-.timeline-card {
-  position: absolute;
-  top: 0;
-  width: max-content;
-  min-width: 180px;
-  max-width: 360px;
-  padding: 16px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-}
-
 .timeline-item.left .timeline-line {
   right: 0;
 }
@@ -129,4 +129,33 @@
   color: var(--text-secondary);
   margin-top: 8px;
   font-size: 0.9rem;
+}
+
+.timeline-card {
+  position: absolute;
+  top: 0;
+  width: max-content;
+  min-width: 180px;
+  max-width: 360px;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.timeline-card-inner {
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  transform: rotateZ(calc(var(--spin-z) * -1deg)) rotateY(calc(var(--spin-y) * -1deg)) rotateX(calc(var(--spin-x) * -1deg));
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.timeline,
+.timeline-world,
+.timeline-item,
+.timeline-card,
+.timeline-card-inner {
+  transform-style: preserve-3d;
 }

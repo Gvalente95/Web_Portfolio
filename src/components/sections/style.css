@@ -38,7 +38,8 @@
 
 @media (max-width: 700px) {
   .page {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

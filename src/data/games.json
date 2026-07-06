@@ -1,96 +1,130 @@
 {
-  "title": "Games",
-  "description": "A selection of games ranging from terminal-based ASCII adventures to raycasting game engines and Unity prototypes. These projects emphasize gameplay programming, graphics, and engine architecture.",
-  "description_short": "A selection of games I made.",
+  "title": {
+    "en": "Games",
+    "fr": "Jeux",
+    "it": "Giochi"
+  },
+  "description": {
+    "en": "A selection of games ranging from terminal-based ASCII adventures to raycasting game engines and Unity prototypes. These projects emphasize gameplay programming, graphics, and engine architecture.",
+    "fr": "Une sélection de jeux allant d'aventures ASCII en terminal à des moteurs de jeu en raycasting et des prototypes Unity. Ces projets mettent l'accent sur la programmation gameplay, les graphismes et l'architecture moteur.",
+    "it": "Una selezione di giochi che spaziano da avventure ASCII nel terminale a motori di gioco raycasting e prototipi Unity. Questi progetti mettono l'accento sulla programmazione gameplay, la grafica e l'architettura del motore."
+  },
+  "description_short": {
+    "en": "A selection of games I made.",
+    "fr": "Une sélection de jeux que j'ai créés.",
+    "it": "Una selezione di giochi che ho creato."
+  },
   "content": {
     "So Long": {
-      "info": "A 2D game developed in C as part of the 42 curriculum. Built with MiniLibX, it features real-time rendering, collision detection, sprite animation, and a complete game loop.",
-      "info_short": "A 2D platformer game developed in C as part of the 42 curriculum.",
+      "info": {
+        "en": "A 2D platformer game developed in C as part of the 42 curriculum.",
+        "fr": "Un jeu de plateforme 2D développé en C dans le cadre du cursus 42.",
+        "it": "Un platformer 2D sviluppato in C come parte del percorso 42."
+      },
       "image": "/image/screenshot/SoLong.png",
       "video": "/video/SoLong.mp4",
-      "url": "https://github.com/Gvalente95/So_long",
+      "github": "https://github.com/Gvalente95/So_long",
       "language": "C",
       "tags": "Game-Design"
     },
     "Cube": {
-      "info": "A custom multithreaded raycasting game engine written in C featuring procedural map generation, shadows, post-processing effects, configurable rendering options, advanced minimaps, and a Pokémon-inspired RPG gameplay system.",
-      "info_short": "A custom multithreaded raycasting game engine written in C.",
+      "info": {
+        "en": "A custom multithreaded raycasting game engine written in C.",
+        "fr": "Un moteur de jeu raycasting multithread personnalisé écrit en C.",
+        "it": "Un motore di gioco raycasting multithread personalizzato scritto in C."
+      },
       "image": "/image/screenshot/Cube.png",
       "video": "/video/Cube.mp4",
-      "url": "https://github.com/Gvalente95/Cub3d_42",
+      "github": "https://github.com/Gvalente95/Cub3d_42",
       "language": "C",
       "tags": "Raycasting Game-Engine"
     },
     "Sudoku": {
-      "info": "A simple Sudoku game developed in Unity. Features puzzle generation, validation logic, interactive gameplay, and a polished user interface.",
-      "info_short": "A simple Sudoku game developed in Unity.",
+      "info": {
+        "en": "A simple Sudoku game developed in Unity.",
+        "fr": "Un jeu de Sudoku simple développé avec Unity.",
+        "it": "Un semplice gioco Sudoku sviluppato in Unity."
+      },
       "image": "/image/screenshot/Sudoku.png",
       "video": "/video/Sudoku.mp4",
-      "url": "",
       "language": "C#",
       "tags": "Unity 2D"
     },
     "Chess": {
-      "info": "A fully playable chess game developed in Unity. Implements legal move generation, game state management, captures, special moves, and a clean interactive interface.",
-      "info_short": "A fully playable chess game developed in Unity.",
+      "info": {
+        "en": "A fully playable chess game developed in Unity.",
+        "fr": "Un jeu d'échecs entièrement jouable développé avec Unity.",
+        "it": "Un gioco di scacchi completamente giocabile sviluppato in Unity."
+      },
       "image": "/image/screenshot/Chess.png",
       "video": "/video/Chess.mp4",
-      "url": "",
       "language": "C#",
       "tags": "Unity 2D"
     },
     "Grid Miner": {
-      "info": "A 3d rpg Platformer with a range of classes and procedural terrain grid generation. Almost every texture and 3d models were built and processed by me in blender",
-      "info_short": "A 3D platformer with a range of classes and procedural terrain generation.",
+      "info": {
+        "en": "A 3D platformer with a range of classes and procedural terrain generation.",
+        "fr": "Un platformer 3D avec plusieurs classes et une génération procédurale du terrain.",
+        "it": "Un platformer 3D con diverse classi e generazione procedurale del terreno."
+      },
       "image": "/image/screenshot/GridMiner.png",
       "video": "/video/GridMiner.mp4",
-      "url": "",
       "language": "C#",
       "tags": "Unity 3D"
     },
     "Ascii Run": {
-      "info": "A side-scrolling platformer rendered in ASCII and playable in a terminal. Built on top of my custom ASCII rendering engine, featuring real-time animation, physics, and keyboard input.",
-      "info_short": "A side-scrolling platformer rendered in ASCII and playable in a terminal.",
+      "info": {
+        "en": "A side-scrolling platformer rendered in ASCII and playable in a terminal.",
+        "fr": "Un jeu de plateforme à défilement horizontal rendu en ASCII et jouable dans un terminal.",
+        "it": "Un platformer a scorrimento laterale renderizzato in ASCII e giocabile nel terminale."
+      },
       "image": "/image/screenshot/Ascii_Run.png",
       "video": "/video/Ascii_Run.mp4",
-      "url": "",
       "language": "C",
       "tags": "Ascii Terminal"
     },
     "Ascii Fight": {
-      "info": "A top-down action RPG rendered exclusively in the terminal using ASCII graphics. Features real-time combat, animated entities, and a custom rendering engine written from scratch.",
-      "info_short": "A top-down action RPG rendered in ASCII and playable in a terminal.",
+      "info": {
+        "en": "A top-down action RPG rendered in ASCII and playable in a terminal.",
+        "fr": "Un action-RPG en vue du dessus rendu en ASCII et jouable dans un terminal.",
+        "it": "Un action RPG con visuale dall'alto renderizzato in ASCII e giocabile nel terminale."
+      },
       "image": "/image/screenshot/Ascii_Fight.png",
       "video": "/video/Ascii_Fight.mp4",
-      "url": "",
       "language": "C",
       "tags": "Ascii Terminal"
     },
     "Ascii Jump": {
-      "info": "A vertical platformer displayed entirely in the terminal. Demonstrates procedural level generation, and smooth ASCII rendering at interactive frame rates.",
-      "info_short": "Doodle Jump lookalike but in ASCII and played on a terminal.",
+      "info": {
+        "en": "A Doodle Jump-like game rendered in ASCII and playable in a terminal.",
+        "fr": "Un jeu inspiré de Doodle Jump rendu en ASCII et jouable dans un terminal.",
+        "it": "Un gioco ispirato a Doodle Jump renderizzato in ASCII e giocabile nel terminale."
+      },
       "image": "/image/screenshot/Ascii_Jump.png",
       "video": "/video/Ascii_Jump.mp4",
-      "url": "",
       "language": "C",
       "tags": "Ascii Terminal"
     },
-
     "Ascii Space": {
-      "info": "A terminal-based space shooter powered by my custom ASCII rendering engine. Includes real-time movement, particle effects, enemy AI, and responsive gameplay entirely within a console.",
-      "info_short": "A terminal-based space shooter powered by my custom ASCII rendering engine.",
+      "info": {
+        "en": "A terminal-based space shooter powered by my custom ASCII rendering engine.",
+        "fr": "Un shooter spatial en terminal propulsé par mon moteur de rendu ASCII personnalisé.",
+        "it": "Uno sparatutto spaziale nel terminale basato sul mio motore di rendering ASCII personalizzato."
+      },
       "image": "/image/screenshot/Ascii_Space.png",
       "video": "/video/Ascii_Space.mp4",
-      "url": "",
       "language": "C",
       "tags": "Ascii Terminal"
     },
     "Philosophers": {
-      "info": "An enhanced implementation of the classic Dining Philosophers concurrency problem. Beyond multithreading and synchronization, it includes a live ASCII visualization that displays the state of every philosopher in real time.",
-      "info_short": "An ASCII implementation of the Dining Philosophers concurrency problem.",
+      "info": {
+        "en": "An ASCII implementation of the Dining Philosophers concurrency problem.",
+        "fr": "Une implémentation ASCII du problème de concurrence des philosophes.",
+        "it": "Un'implementazione ASCII del problema di concorrenza dei filosofi a cena."
+      },
       "image": "/image/screenshot/Philosophers.png",
       "video": "/video/Philosophers.mp4",
-      "url": "",
+      "github": "https://github.com/Gvalente95/philosophers_42",
       "language": "C",
       "tags": "Ascii Terminal Multithreading"
     }

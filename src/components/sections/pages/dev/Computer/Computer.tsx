@@ -8,11 +8,11 @@ import audioApps from "@/data/audio-apps.json";
 import "./style.css";
 
 type Project = {
-  info: string;
-  info_short: string;
+  info: { it: string; en: string; fr: string };
   image: string;
   video?: string;
-  url: string;
+  url?: string;
+  githu?: string;
   language: string;
   tags: string;
 };
@@ -65,7 +65,7 @@ export function Computer() {
               setSelectedIcons([name]);
             }}
             onDoubleClickCapture={() => {
-              window.location.href = url;
+              if (url) window.location.href = url;
             }}
           >
             <img className="computer-icon-img" src={image} />

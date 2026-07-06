@@ -221,3 +221,79 @@
 .audio-player .icon.close:hover {
   color: var(--accent-strong);
 }
+
+@media (max-width: 700px) {
+  .audio-player {
+    left: 50%;
+    right: auto;
+    bottom: 18px;
+    width: min(340px, calc(100vw - 32px));
+    height: auto;
+    padding: 18px;
+    transform: translateX(-50%);
+  }
+
+  .player-box {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .disk-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .audio-player .disk {
+    width: 76px;
+    height: 76px;
+  }
+
+  .audio-player .player-control {
+    gap: 18px;
+  }
+
+  .player-control > .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .audio-player .track-info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .audio-player .artist-label {
+    font-size: 1.1rem;
+  }
+
+  .audio-player .album-label {
+    font-size: 0.85rem;
+  }
+
+  .audio-player .track-label {
+    font-size: 0.78rem;
+  }
+
+  .audio-player .track-progress-row {
+    margin-top: 14px;
+  }
+
+  .audio-player .track-progress {
+    height: 7px;
+  }
+
+  .audio-player .icon.close {
+    right: 10px;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+  }
+}

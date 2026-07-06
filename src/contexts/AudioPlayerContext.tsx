@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import { r_range_int } from "../utils/math";
+import { isMobile } from "@/utils/navigation";
 
 type Track = {
   name: string;
@@ -30,6 +31,8 @@ type AudioPlayerContextValue = PlayerState & {
   onTrackSkip: (dir: "left" | "right") => void;
   onToggleShuffle: () => void;
   onClose: () => void;
+  isAlbumOpen: (albumName: string) => boolean;
+  onToggleAlbum: (albumName: string, active?: boolean | null) => void;
 };
 
 const AudioPlayerContext = createContext<AudioPlayerContextValue | null>(null);
@@ -43,10 +46,23 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
   const [playtime, setPlaytime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isShuffle, setIsShuffle] = useState(false);
+  const [openedAlbums, setOpenedAlbums] = useState<string[]>([]);
 
   const currentTrackRef = useRef<Track | null>(null);
   const audioTracksRef = useRef<Track[]>([]);
   const isShuffleRef = useRef(false);
+
+  function isAlbumOpen(albumName: string) {
+    return openedAlbums.includes(albumName);
+  }
+
+  function onToggleAlbum(albumName: string, active: boolean | null = null) {
+    if (!active) active = !openedAlbums.includes(albumName);
+    if (isMobile()) setOpenedAlbums(active ? [albumName] : []);
+    else if (active) {
+      if (!openedAlbums.includes(albumName)) setOpenedAlbums((prev) => [...prev, albumName]);
+    } else setOpenedAlbums((prev) => prev.filter((item) => item !== albumName));
+  }
 
   useEffect(() => {
     currentTrackRef.current = currentTrack;
@@ -184,6 +200,8 @@ export function AudioPlayerProvider({ children }: { children: ReactNode }) {
         onTrackSkip,
         onToggleShuffle,
         onClose,
+        onToggleAlbum,
+        isAlbumOpen,
       }}
     >
       {children}

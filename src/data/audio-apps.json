@@ -1,23 +1,41 @@
 {
-  "title": "Audio Programs",
-  "description": "Web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features.",
-  "description_short": "Desktop and web-based audio software.",
+  "title": {
+    "en": "Audio Programs",
+    "fr": "Logiciels Audio",
+    "it": "Programmi Audio"
+  },
+  "description": {
+    "en": "Web-based audio software developed to explore digital signal processing, music production workflows, and interactive sound design. Many of these projects were inspired by professional DAW features.",
+    "fr": "Des logiciels audio développés pour le web afin d'explorer le traitement numérique du signal, les flux de production musicale et la conception sonore interactive. Plusieurs de ces projets s'inspirent des fonctionnalités des stations audionumériques professionnelles.",
+    "it": "Software audio sviluppati per il web per esplorare l'elaborazione digitale del segnale, i flussi di produzione musicale e il sound design interattivo. Molti di questi progetti sono ispirati alle funzionalità delle DAW professionali."
+  },
+  "description_short": {
+    "en": "Desktop and web-based audio software.",
+    "fr": "Logiciels audio pour ordinateur et navigateur.",
+    "it": "Software audio per desktop e web."
+  },
   "content": {
     "Audio Blocks": {
-      "info": "My attempt at creating a fun music-making tool by attaching nodes together inside a ReactFlow Graph.",
-      "info_short": "My attempt at creating a fun music-making tool by attaching nodes together.",
+      "info": {
+        "en": "A music-making tool built by connecting audio nodes inside a React Flow graph.",
+        "fr": "Un outil de création musicale basé sur des nœuds audio reliés dans un graphe React Flow.",
+        "it": "Uno strumento per creare musica collegando nodi audio all'interno di un grafo React Flow."
+      },
       "image": "/image/screenshot/Audio-nodes.png",
-      "url": "https://gvalente95.github.io/AudioBlocks/",
+      "github": "https://github.com/gvalente95/AudioBlocks/",
       "language": "React Typescript JS CSS Html Tone.js",
       "tags": ""
     },
-    "web-daw": {
-      "info": "A complexe interface for producing music in a web browser. it uses Tone.js for processing audio and features recording, effects, routing, automations, editting, instruments, all made from scratch without external libraries.",
-      "info_short": "A complexe interface for producing music in a web browser.",
+    "Web DAW": {
+      "info": {
+        "en": "A complete browser-based digital audio workstation built from scratch.",
+        "fr": "Une station audionumérique complète fonctionnant directement dans le navigateur.",
+        "it": "Una workstation audio digitale completa che funziona direttamente nel browser."
+      },
       "image": "/image/screenshot/Webdaw.png",
-      "url": "https://gvalente95.github.io/GiuDaw/",
+      "github": "https://github.com/gvalente95/GiuDaw/",
       "language": "React Typescript JS CSS Html Tone.js",
-      "tags": "Audio Enineering"
+      "tags": "Audio Engineering"
     }
   }
 }

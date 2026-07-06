@@ -1,0 +1,21 @@
+.album-track {
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+  width: fit-content;
+  min-height: 20px;
+}
+
+.album-track.selected {
+  margin-left: 5px;
+  color: var(--accent-dark);
+}
+
+.album-track.selected.playing {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.album-track:hover {
+  text-decoration: underline;
+}

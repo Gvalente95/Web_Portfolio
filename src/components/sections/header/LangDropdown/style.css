@@ -1,6 +1,7 @@
 .lang-dropdown {
   position: relative;
   margin-left: auto;
+  z-index: 9999;
 }
 
 .lang-dropdown > button {

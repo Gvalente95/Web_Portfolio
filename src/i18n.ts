@@ -27,9 +27,13 @@ i18n.use(initReactI18next).init({
           },
         },
         about: {
-          title: "Audio engineer turned creative web developer.",
-          p0: "I build interactive web experiences with a strong focus on clean interfaces, motion, audio, and playful technical systems.",
+          title: "Audio engineer and Frontend developer.",
+          p0: "I build interactive web applications with a strong focus on clean interfaces, motion, audio, and playful technical systems.",
           p1: "My background in audio engineering gives me a creative approach to software: I like building tools, interfaces, and experiences that feel responsive, polished, and alive.",
+        },
+        musician: {
+          intro: "Explore a selection of the music I've released over the years.",
+          p0: "From metal to ambient, and everything in between.",
         },
         skills: {},
         projects: {},
@@ -62,9 +66,13 @@ i18n.use(initReactI18next).init({
           },
         },
         about: {
-          title: "Audio engineer turned creative web developer.",
-          p0: "I build interactive web experiences with a strong focus on clean interfaces, motion, audio, and playful technical systems.",
-          p1: "My background in audio engineering gives me a creative approach to software: I like building tools, interfaces, and experiences that feel responsive, polished, and alive.",
+          title: "Audio engineer et developpeur frontend.",
+          p0: "Je conçois des applications et pages web interactives en mettant l'accent sur des interfaces soignées, les animations, l'audio et des systèmes techniques ludiques.",
+          p1: "Ma formation en ingénierie audio m'apporte une approche créative du développement logiciel : j'aime concevoir des outils, des interfaces et des expériences qui sont réactifs, soignés et vivants.",
+        },
+        musician: {
+          intro: "Découvrez une sélection de la musique que j'ai publiée au fil des années.",
+          p0: "Du metal à l'ambient, en passant par de nombreux autres styles.",
         },
         skills: {},
         projects: {},
@@ -77,7 +85,7 @@ i18n.use(initReactI18next).init({
             music: "Musique",
           },
           languages: {
-            en: "Angais",
+            en: "Anglais",
             fr: "Français",
             it: "Italien",
           },
@@ -97,9 +105,13 @@ i18n.use(initReactI18next).init({
           },
         },
         about: {
-          title: "Audio engineer turned creative web developer.",
-          p0: "I build interactive web experiences with a strong focus on clean interfaces, motion, audio, and playful technical systems.",
-          p1: "My background in audio engineering gives me a creative approach to software: I like building tools, interfaces, and experiences that feel responsive, polished, and alive.",
+          title: "Audio engineer e Frontend developer.",
+          p0: "Realizzo pagine e applicazioni web interattive con una forte attenzione a interfacce curate, animazioni, audio e sistemi tecnici creativi.",
+          p1: "La mia formazione in ingegneria del suono mi ha permesso di costruire un approccio creativo allo sviluppo software: mi piace creare strumenti, interfacce ed esperienze che siano reattivi, curati e coinvolgenti.",
+        },
+        musician: {
+          intro: "Esplora una selezione della musica che ho pubblicato nel corso degli anni.",
+          p0: "Dal metal all'ambient, passando per molti altri generi.",
         },
         skills: {},
         projects: {},

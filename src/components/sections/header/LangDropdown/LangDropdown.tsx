@@ -42,7 +42,7 @@ export function LanguageDropdown() {
       {selected && (
         <div className="content">
           {Object.entries(languages).map(([key, value]) => (
-            <NavLink className={`${value === t("language") ? "active" : ""}`} key={key} to={pathname.replace(t("langPath"), `/${key}`)}>
+            <NavLink onClick={() => setSelected(false)} className={`${value === t("language") ? "active" : ""}`} key={key} to={pathname.replace(t("langPath"), `/${key}`)}>
               {value}
             </NavLink>
           ))}

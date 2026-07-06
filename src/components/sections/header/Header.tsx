@@ -3,7 +3,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { LanguageDropdown } from "./LangDropdown/LangDropdown";
 
 import "./style.css";
-import { isMobile } from "@/utils/navigation";
 
 export function Header() {
   const { t } = useTranslation();
@@ -18,7 +17,7 @@ export function Header() {
         {t("common.name")}
       </NavLink>
 
-      {!isMobile() && (
+      {
         <div className="right-section">
           {Object.entries(pages).map(([key, value]) => {
             return (
@@ -29,7 +28,7 @@ export function Header() {
           })}
           <LanguageDropdown />
         </div>
-      )}
+      }
     </header>
   );
 }

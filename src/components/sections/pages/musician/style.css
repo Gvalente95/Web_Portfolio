@@ -2,3 +2,23 @@
   display: flex;
   flex-direction: column;
 }
+
+.musician-page .page-intro {
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 50%;
+  align-self: center;
+}
+
+.musician-page .page-intro > h3 {
+  font-size: 40px;
+}
+
+@media (max-width: 700px) {
+  .musician-page .page-intro {
+    width: 90%;
+  }
+  .musician-page .page-intro > h3 {
+    font-size: 24px;
+  }
+}

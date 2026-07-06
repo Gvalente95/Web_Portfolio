@@ -1,45 +1,65 @@
 {
   "title": "Interactive Web Applications",
-  "description": "2D simulations, cellular automata, and other experiments. Built in pure JavaScript and rendered on the HTML canvas with no external libraries.",
-  "description_short": "A collection of modern web applications.",
+  "description": {
+    "en": "2D simulations, cellular automata, and other experiments. Built in pure JavaScript and rendered on the HTML canvas with no external libraries.",
+    "fr": "Simulations 2D, automates cellulaires et autres expériences. Développées en JavaScript pur et rendues sur un canvas HTML sans bibliothèques externes.",
+    "it": "Simulazioni 2D, automi cellulari e altri esperimenti. Sviluppati in JavaScript puro e renderizzati su canvas HTML senza librerie esterne."
+  },
+  "description_short": {
+    "en": "A collection of modern web applications.",
+    "fr": "Une collection d'applications web modernes.",
+    "it": "Una raccolta di moderne applicazioni web."
+  },
   "content": {
     "Ropes": {
-      "info": "An interactive rope simulation built from scratch in JavaScript using Verlet integration. Explore physically simulated ropes, constraints, and real-time interaction through a lightweight custom engine.",
-      "info_short": "An interactive rope simulation built from scratch in JavaScript using Verlet integration.",
-
+      "info": {
+        "en": "An interactive rope simulation built from scratch in JavaScript using Verlet integration.",
+        "fr": "Une simulation interactive de cordes développée en JavaScript avec l'intégration de Verlet.",
+        "it": "Una simulazione interattiva di corde sviluppata in JavaScript con integrazione di Verlet."
+      },
       "image": "/image/screenshot/Ropes.png",
       "video": "/video/Ropes.mp4",
       "url": "https://gvalente95.github.io/Ropes/",
+      "github": "https://github.com/Gvalente95/Ropes/",
       "language": "Vanilla JS",
       "tags": "Graphics-design Physics-simulation"
     },
     "Falling Sand": {
-      "info": "A falling-sand sandbox simulation featuring over fifty unique materials and emergent interactions. Includes a controllable character capable of shooting particles, creating dynamic and often unpredictable simulations.",
-      "info_short": "A cellular automata featuring emergent interactions between materials.",
-
+      "info": {
+        "en": "A cellular automata featuring emergent interactions between materials.",
+        "fr": "Un automate cellulaire mettant en scène des interactions émergentes entre différents matériaux.",
+        "it": "Un automa cellulare con interazioni emergenti tra diversi materiali."
+      },
       "image": "/image/screenshot/Falling-sand.png",
       "video": "/video/FallingSand.mp4",
       "url": "https://gvalente95.github.io/FallingSand/",
+      "github": "https://github.com/Gvalente95/FallingSand/",
       "language": "JS",
       "tags": ""
     },
     "Logic Gates": {
-      "info": "A visual node-based logic simulator where digital circuits can be assembled and evaluated in real time. The same node system can also be used to build experimental audio synthesis graphs.",
-      "info_short": "A visual node-based logic simulator drawn on an HTML canvas.",
-
+      "info": {
+        "en": "A visual node-based logic simulator drawn on an HTML canvas.",
+        "fr": "Un simulateur logique visuel basé sur des nœuds dessiné sur un canvas HTML.",
+        "it": "Un simulatore logico visuale basato su nodi disegnato su un canvas HTML."
+      },
       "image": "/image/screenshot/Gates.png",
       "video": "/video/Gates.mp4",
       "url": "https://gvalente95.github.io/LogicGateSynth/",
+      "github": "https://github.com/Gvalente95/LogicGateSynth/",
       "language": "JS",
       "tags": ""
     },
     "Marbles": {
-      "info": "A lightweight, relaxing physics playground built around marble interactions. Experiment with collisions, gravity, and momentum inside a simple but satisfying simulation.",
-      "info_short": "A fun and relaxing simulation built around marble interactions.",
-
+      "info": {
+        "en": "A fun and relaxing simulation built around marble interactions.",
+        "fr": "Une simulation ludique et relaxante autour des interactions entre des billes.",
+        "it": "Una simulazione divertente e rilassante basata sull'interazione tra biglie."
+      },
       "image": "/image/screenshot/Marbles.png",
       "video": "/video/Marbles.mp4",
       "url": "https://gvalente95.github.io/Marbles/",
+      "github": "https://github.com/Gvalente95/Marbles/",
       "language": "JS",
       "tags": ""
     }

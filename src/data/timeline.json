@@ -2,53 +2,132 @@
   "army": {
     "start": [2019, 9, 12],
     "end": [2020, 4, 12],
-    "name": "Aviation Administrative in the swiss army",
-    "info": ["Ord. Bureau Office and administrative tasks within aviation unit."]
+    "name": {
+      "en": "Administrative Assistant – Swiss Air Force",
+      "fr": "Assistant administratif – Forces aériennes suisses",
+      "it": "Assistente amministrativo – Forze aeree svizzere"
+    },
+    "info": {
+      "en": ["Office and administrative duties within an aviation unit."],
+      "fr": ["Travaux de bureau et tâches administratives au sein d'une unité d'aviation."],
+      "it": ["Attività amministrative e d'ufficio all'interno di un'unità aeronautica."]
+    }
   },
+
   "technician": {
     "start": [2020, 5, 12],
     "end": [2022, 2, 12],
-    "name": "Worked as an audio Technician",
-    "info": ["Live and studio audio setup, patching, maintenance and troubleshooting.", "Responsible technician for small production runs and venue black-box operations."]
+    "name": {
+      "en": "Audio Technician",
+      "fr": "Technicien audio",
+      "it": "Tecnico audio"
+    },
+    "info": {
+      "en": ["Live and studio audio setup, patching, maintenance and troubleshooting.", "Lead technician for small productions and black-box venues."],
+      "fr": ["Installation, câblage, maintenance et dépannage audio en studio et en spectacle.", "Technicien principal pour de petites productions et des salles de type black-box."],
+      "it": ["Installazione, cablaggio, manutenzione e risoluzione dei problemi audio in studio e dal vivo.", "Tecnico responsabile per piccole produzioni e sale teatrali black-box."]
+    }
   },
+
   "sound": {
     "start": [2022, 2, 12],
     "end": [2023],
-    "name": "Sound Design (student project)",
-    "info": [
-      "Final-year project – interactive 3D simulation",
-      "- Created sound design for a 3D island exploration simulation with two cave environments",
-      "- Implemented realistic cavern acoustics in one environment and deliberately altered fidelity/processing"
-    ]
+    "name": {
+      "en": "Sound Design – Final Year Project",
+      "fr": "Sound Design – Projet de fin d'études",
+      "it": "Sound Design – Progetto di fine studi"
+    },
+    "info": {
+      "en": [
+        "Interactive 3D simulation.",
+        "Created the sound design for an explorable island featuring two cave environments.",
+        "Implemented realistic acoustics in one cave and intentionally altered fidelity and processing in the other."
+      ],
+      "fr": [
+        "Simulation interactive en 3D.",
+        "Création du sound design d'une île explorable comprenant deux grottes.",
+        "Implémentation d'une acoustique réaliste dans une grotte et d'un traitement volontairement dégradé dans l'autre."
+      ],
+      "it": [
+        "Simulazione interattiva in 3D.",
+        "Realizzazione del sound design per un'isola esplorabile con due ambienti sotterranei.",
+        "Implementazione di un'acustica realistica in una grotta e di un'elaborazione volutamente alterata nell'altra."
+      ]
+    }
   },
+
   "etm": {
     "start": [2016, 4, 2],
     "end": [2019],
-    "name": "Music Cursus",
-    "info": ["ETM", "Guitar & Voice"]
+    "name": {
+      "en": "Music Studies",
+      "fr": "Formation musicale",
+      "it": "Percorso musicale"
+    },
+    "info": {
+      "en": ["ETM", "Guitar & Voice"],
+      "fr": ["ETM", "Guitare et chant"],
+      "it": ["ETM", "Chitarra e canto"]
+    }
   },
+
   "musician": {
     "start": [2018, 4, 2],
     "end": [2019],
-    "name": "Worked as a musician and music produceer",
-    "info": ["DAWN.w, LeSonnar"]
+    "name": {
+      "en": "Musician and Music Producer",
+      "fr": "Musicien et producteur musical",
+      "it": "Musicista e produttore musicale"
+    },
+    "info": {
+      "en": ["DAWN.w", "LeSonnar"],
+      "fr": ["DAWN.w", "LeSonnar"],
+      "it": ["DAWN.w", "LeSonnar"]
+    }
   },
+
   "sae": {
     "start": [2019],
     "end": [2023],
-    "name": "Bachelor of Arts, Sound Engineering",
-    "info": ["Sound Engineering"]
+    "name": {
+      "en": "Bachelor of Arts in Sound Engineering",
+      "fr": "Bachelor of Arts en ingénierie du son",
+      "it": "Bachelor of Arts in Ingegneria del Suono"
+    },
+    "info": {
+      "en": ["SAE Institute"],
+      "fr": ["SAE Institute"],
+      "it": ["SAE Institute"]
+    }
   },
+
   "42": {
     "start": [2024],
     "end": [2026],
-    "name": "Architecte en Technologie du Numérique",
-    "info": ["School 42"]
+    "name": {
+      "en": "Architect of Digital Technologies",
+      "fr": "Architecte des technologies numériques",
+      "it": "Architetto delle tecnologie digitali"
+    },
+    "info": {
+      "en": ["42 School"],
+      "fr": ["École 42"],
+      "it": ["Scuola 42"]
+    }
   },
+
   "web": {
     "start": [2025],
     "end": [2026],
-    "name": "Started working on Web projects, Vanilla JS and React",
-    "info": [""]
+    "name": {
+      "en": "Started Developing Web Applications",
+      "fr": "Début du développement d'applications web",
+      "it": "Inizio dello sviluppo di applicazioni web"
+    },
+    "info": {
+      "en": ["Vanilla JavaScript and React"],
+      "fr": ["JavaScript Vanilla et React"],
+      "it": ["JavaScript Vanilla e React"]
+    }
   }
 }

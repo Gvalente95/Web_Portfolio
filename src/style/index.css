@@ -17,6 +17,10 @@
 
   --text: white;
   --bg: #0e0e0f;
+
+  --hero-clr-web: var(--accent);
+  --hero-clr-audio: var(--green);
+  --hero-clr-musician: var(--purple);
 }
 
 html,
@@ -86,4 +90,16 @@ strong {
 [data-debug-outlines="true"] *:hover {
   background-color: rgba(255, 0, 0, 0.435);
   outline: 1px solid red;
+}
+
+.text-audio {
+  color: var(--hero-clr-audio);
+}
+
+.text-dev {
+  color: var(--hero-clr-web);
+}
+
+.text-musician {
+  color: var(--hero-clr-musician);
 }

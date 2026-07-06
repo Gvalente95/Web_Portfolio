@@ -11,10 +11,7 @@
   aspect-ratio: 16 / 9; /* or 1 / 1 if you prefer squares */
   overflow: hidden;
   border-radius: 12px;
-}
-
-.project:hover {
-  border-radius: 0px;
+  cursor: pointer;
 }
 
 .project img,
@@ -36,6 +33,51 @@
   opacity: 1;
 }
 
-.project:hover img {
+.project:not(.no-video):hover img {
   opacity: 0;
+}
+
+@media (max-width: 700px) {
+  .projects {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+.project-info {
+  color: white;
+  padding: 20px;
+}
+
+.project-info > .link-chip {
+  width: 24px;
+  height: 24px;
+}
+
+.project-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.project-info > .link-row {
+  margin-top: 0px;
+}
+
+.link-chip.open {
+  background-color: var(--accent);
+  color: black;
+  border: 1px solid var(--accent-dark);
+}
+
+.link-chip.open:hover {
+  background-color: black;
+  color: var(--accent);
+  border: 1px solid var(--accent-dark);
+}
+
+.link-row h2 {
+  margin: 0;
+}
+
+.link-chip:first-of-type {
+  margin-left: auto;
 }

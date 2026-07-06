@@ -19,8 +19,10 @@ type UseSpinObjectProps = {
 type SpinDelta = {
   x: number;
   y: number;
+  z: number;
   dx: number;
   dy: number;
+  dz: number;
 };
 
 export function useSpinObject({
@@ -37,6 +39,7 @@ export function useSpinObject({
 }: UseSpinObjectProps = {}) {
   const ref = useRef<HTMLDivElement>(null);
 
+  const spinDeltaRef = useRef<SpinDelta>({ x: 0, y: 0, z: 0, dx: 0, dy: 0, dz: 0 });
   const moving = useRef(false);
   const dragging = useRef(false);
   const isResetting = useRef(false);
@@ -49,11 +52,21 @@ export function useSpinObject({
   const applyTransform = () => {
     if (!ref.current) return;
 
+    const clampedX = clamp(rotation.current.x, -clampAxes.x, clampAxes.x);
+    const clampedY = clamp(rotation.current.y, -clampAxes.y, clampAxes.y);
+    const clampedZ = clamp(rotation.current.z, -clampAxes.z, clampAxes.z);
+
     ref.current.style.transform = `
-      rotateX(${clamp(rotation.current.x, -clampAxes.x, clampAxes.x)}deg)
-      rotateY(${clamp(rotation.current.y, -clampAxes.y, clampAxes.y)}deg)
-      rotateZ(${clamp(rotation.current.z, -clampAxes.z, clampAxes.z)}deg)
-    `;
+  rotateX(${clampedX}deg)
+  rotateY(${clampedY}deg)
+  rotateZ(${clampedZ}deg)
+`;
+
+    ref.current.style.setProperty("--spin-x", String(clampedX));
+    ref.current.style.setProperty("--spin-y", String(clampedY));
+    ref.current.style.setProperty("--spin-z", String(clampedZ));
+
+    spinDeltaRef.current = { x: clampedX, y: clampedY, z: clampedZ, dx: velocity.current.x, dy: velocity.current.y, dz: velocity.current.z };
   };
 
   const animateMomentum = () => {
@@ -101,7 +114,7 @@ export function useSpinObject({
 
       velocity.current = { x: 0, y: 0, z: 0 };
       cancelAnimationFrame(frame.current);
-      if (onSpinStart) onSpinStart();
+      onSpinStart?.();
     };
 
     const handlePointerMove = (e: PointerEvent) => {
@@ -120,20 +133,17 @@ export function useSpinObject({
       rotation.current.y += nextVelocity.y;
       rotation.current.z += nextVelocity.z;
 
+      spinDeltaRef.current = { x: rotation.current.x, y: rotation.current.y, z: rotation.current.z, dx: velocity.current.x, dy: velocity.current.y, dz: velocity.current.z };
+
       velocity.current = nextVelocity;
 
       applyTransform();
 
-      onSpin?.({
-        x: rotation.current.x,
-        y: rotation.current.y,
-        dx,
-        dy,
-      });
+      onSpin?.(spinDeltaRef.current);
 
       lastPos.current = { x: e.clientX, y: e.clientY };
       moving.current = true;
-      if (onSpinMove) onSpinMove();
+      onSpinMove?.();
     };
 
     const handlePointerUp = () => {
@@ -156,5 +166,5 @@ export function useSpinObject({
     };
   }, [axes, sensitivity, drag, friction]);
 
-  return { ref, isDragging: dragging.current, moving: moving.current };
+  return { ref, isDragging: dragging.current, moving: moving.current, spinDelta: spinDeltaRef.current };
 }

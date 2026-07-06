@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 
-import "./style.css";
 import { r_range_int } from "../utils/math";
 type TextEffectType = "random" | "scroll" | "all" | "shuffle" | "_";
 type TextEffectData = { target: string; start?: string; delay?: number; duration?: number; stepDuration?: number; type?: TextEffectType };

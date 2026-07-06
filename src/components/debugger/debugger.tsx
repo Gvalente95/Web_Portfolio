@@ -7,6 +7,9 @@ export function Debugger() {
   const [collapsed, setCollapsed] = useState(true);
   const { showOutlines, setShowOutlines } = useDebugContext();
 
+  if (!import.meta.env.DEV) {
+    return <></>;
+  }
   return (
     <div className={`debugger${collapsed ? " collapsed" : ""}`}>
       <header onClick={() => setCollapsed((prev) => !prev)}>Debugger</header>
