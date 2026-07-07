@@ -50,11 +50,62 @@ body.dropdown-open .lang-dropdown * {
 }
 
 .app {
+  position: relative;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   font-family: "JetBrain Mono", monospace;
+
+  --hex-size: 329px;
+  --grid-small: calc(var(--hex-size) / 5);
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-position: center;
+  /* background-image:
+    linear-gradient(rgb(33, 33, 33) 1px, transparent 1px), linear-gradient(90deg, rgb(33, 33, 33) 1px, transparent 1px), linear-gradient(rgb(33, 33, 33) 2px, transparent 2px),
+    linear-gradient(90deg, rgb(33, 33, 33) 2px, transparent 2px); */
+
+  background-size:
+    var(--grid-small) var(--grid-small),
+    var(--grid-small) var(--grid-small),
+    var(--hex-size) var(--hex-size),
+    var(--hex-size) var(--hex-size);
+
+  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+  background-color: rgb(23, 25, 26);
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  z-index: -1;
+
+  background: url("/colored-exagons.jpg") repeat;
+  background-size: 800px auto;
+
+  opacity: 0.1;
+
+  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
+}
+
+.app::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image: url("/noise.jpg");
+  mix-blend-mode: overlay;
 }
 
 p {

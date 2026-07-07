@@ -5,6 +5,7 @@
 
 .artist-catalogs > .artist {
   flex: 1;
+  margin-top: 50px;
 }
 
 .albums {
@@ -16,6 +17,7 @@
 @media (max-width: 700px) {
   .albums {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
-    gap: 32px;
+    row-gap: 32px;
+    column-gap: 4px;
   }
 }

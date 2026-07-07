@@ -13,10 +13,8 @@
   width: min(1100px, 100%);
   padding: 42px;
   border-radius: 28px;
-  /* background: rgba(255, 255, 255, 0.055); */
   border: 1px solid var(--header-border);
-  /* backdrop-filter: blur(18px); */
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+  /* box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22); */
 }
 
 .about-intro {
@@ -33,7 +31,7 @@
 
 .about-card h2 {
   margin: 0 0 12px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: var(--text);
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1;
@@ -42,6 +40,7 @@
 
 .about-card p {
   margin: 0px 0 16px;
+  margin-left: 5px;
   max-width: 720px;
   color: var(--text-secondary);
   line-height: 1.3;
@@ -59,6 +58,7 @@
     width: 100%;
     padding: 50px 10px;
     padding-bottom: 0px;
+    margin-top: 140px;
   }
 
   .about-card {

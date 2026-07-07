@@ -43,7 +43,7 @@ export function HeaderMobile() {
         <div className="menu-panel">
           <div className="open-menu">
             <div className="header--top-bar">
-              <LanguageDropdown />
+              <LanguageDropdown onChange={closeMenu} />
               <img className="header-toggler" onClick={closeMenu} src={sidebarIcon} />
             </div>
 

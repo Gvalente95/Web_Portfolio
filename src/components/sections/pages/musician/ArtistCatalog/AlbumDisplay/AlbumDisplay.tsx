@@ -1,6 +1,6 @@
 import type { AudioAlbum } from "../ArtistsCatalog";
 import { useAudioPlayer } from "../../../../../../contexts/AudioPlayerContext";
-import { useTextEffect } from "../../../home/hero/image/asciiAnimation/AnimatedText";
+import { useTextEffect } from "@/hooks/useTextEffect";
 import { isMobile } from "@/utils/navigation";
 import { AlbumTrack } from "./AlbumTrack.tsx/AlbumTrack";
 import { formatAudioFileName } from "./utils";
@@ -9,7 +9,7 @@ import "./style.css";
 import { useEffect } from "react";
 
 export function AlbumBottomDisplay({ albumName, trackName, isAlbumPlaying }: { albumName: string; trackName: string; isAlbumPlaying: boolean }) {
-  const { text } = useTextEffect({ target: trackName + " ", type: "loop", stepDuration: 100 });
+  const { text } = useTextEffect({ target: trackName + " ", type: "loop", stepDuration: 100, autoStart: true });
   return <div className="album-track-name">{isAlbumPlaying ? text.slice(0, 25 - albumName.length) : trackName}</div>;
 }
 

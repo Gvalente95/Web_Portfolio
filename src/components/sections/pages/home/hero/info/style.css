@@ -1,11 +1,18 @@
 .hero-info {
-  width: auto;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-info .hero-greeting {
-  font-size: 82px;
+  font-size: clamp(48px, 7vw, 82px);
   font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.hero-info > span {
+  font-family: "JetBrains, Mono", monospace;
+  font-weight: 20;
   letter-spacing: -0.05em;
 }
 
@@ -38,11 +45,11 @@
 }
 
 .link-row {
-  margin-top: 80px;
+  margin-top: clamp(24px, 8vh, 80px);
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 40px;
+  min-height: 40px;
   font-size: 16px;
   line-height: 1;
 }
@@ -82,9 +89,43 @@
   transition: none;
 }
 
+.link-row {
+  --chip-size: 40px;
+
+  margin-top: clamp(24px, 8vh, 80px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--chip-size);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.link-row > a {
+  height: var(--chip-size);
+}
+
+.link-chips {
+  display: flex;
+  gap: 10px;
+  height: var(--chip-size);
+  align-items: center;
+}
+
+.link-chip {
+  width: var(--chip-size);
+  height: var(--chip-size);
+  aspect-ratio: auto;
+  padding: 10px;
+}
+
 @media (max-width: 700px) {
+  .hero-info {
+    justify-content: flex-start;
+  }
+
   .hero-info .hero-greeting {
-    font-size: 50px;
+    font-size: clamp(42px, 13vw, 58px);
     line-height: 1.05;
     letter-spacing: 0;
   }
@@ -94,12 +135,29 @@
   }
 
   .hero-info .hero-greeting p {
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px);
     line-height: 1.35;
     letter-spacing: 0;
   }
 
   .link-row {
-    margin-top: 0px;
+    --chip-size: 38px;
+    height: auto;
+    min-height: var(--chip-size);
+    margin-top: clamp(16px, 4vh, 32px);
+    flex-wrap: wrap;
+  }
+
+  .link-chips {
+    height: var(--chip-size);
+  }
+
+  .link-row > a,
+  .link-chip {
+    height: var(--chip-size);
+  }
+
+  .link-chip {
+    width: var(--chip-size);
   }
 }

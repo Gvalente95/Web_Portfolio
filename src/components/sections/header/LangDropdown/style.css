@@ -84,3 +84,7 @@
 .content > a.active:hover::after {
   background: black;
 }
+
+.nav-language {
+  color: red;
+}

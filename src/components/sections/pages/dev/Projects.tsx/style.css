@@ -11,7 +11,6 @@
   aspect-ratio: 16 / 9; /* or 1 / 1 if you prefer squares */
   overflow: hidden;
   border-radius: 12px;
-  cursor: pointer;
 }
 
 .project img,
@@ -95,3 +94,4 @@
     gap: 60px;
   }
 }
+

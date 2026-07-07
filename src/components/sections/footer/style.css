@@ -7,20 +7,10 @@
   width: 100%;
   padding: 28px 20px;
   box-sizing: border-box;
-  background: var(--header-bgr);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid var(--header-border);
-}
 
-footer:before {
-  content: "";
-  background-color: rgb(107, 107, 107);
-  position: absolute;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 2px;
+  background: rgba(20, 20, 20, 0.327);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgb(77, 77, 77);
 }
 
 .footer-inner {
@@ -73,5 +63,9 @@ footer:before {
 
   .footer-link {
     min-width: 0;
+  }
+
+  .footer > div {
+    font-size: 13px;
   }
 }

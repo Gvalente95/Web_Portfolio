@@ -19,3 +19,12 @@
 .album-track:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 700px) {
+  .album-track {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 20px;
+  }
+}

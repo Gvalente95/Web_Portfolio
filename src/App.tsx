@@ -5,8 +5,10 @@ import "./style/fonts.css";
 
 function App() {
   const { showOutlines } = useDebugContext();
+
   return (
     <div className="app" data-debug-outlines={showOutlines}>
+      <div className="background" />
       <Router />
     </div>
   );

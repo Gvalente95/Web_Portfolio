@@ -1,0 +1,10 @@
+.music-links {
+  position: absolute;
+  left: 100px;
+  top: 180px;
+}
+.music-link {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+}

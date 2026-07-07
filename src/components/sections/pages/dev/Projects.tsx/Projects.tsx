@@ -59,7 +59,7 @@ export function Projects() {
 
 function ProjectCard({ name, project }: { name: string; project: Project }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-
+	
   return (
     <div
       className={`project${project.video ? "" : " no-video"}`}

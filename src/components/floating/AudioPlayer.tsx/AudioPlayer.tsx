@@ -6,6 +6,7 @@ import PlayIcon from "@/assets/svg/play.svg?react";
 import EffronteIcon from "@/assets/svg/effronte.svg?react";
 import EfbackIcon from "@/assets/svg/efback.svg?react";
 import ShuffleIcon from "@/assets/svg/shuffle.svg?react";
+import MinimizeIcon from "@/assets/svg/minimize.svg?react";
 import CloseIcon from "@/assets/svg/close.svg?react";
 
 import { NavLink, useLocation } from "react-router-dom";
@@ -52,6 +53,7 @@ export function AudioPlayer() {
   const { diskRotation } = useAutoRotation();
   const { pathname } = useLocation();
   const lang = pathname.split("/")[1] || "en";
+  const [collapsed, setCollapsed] = useState(true);
 
   if (!currentTrack) return <div></div>;
 
@@ -64,13 +66,16 @@ export function AudioPlayer() {
   };
 
   const node = (
-    <div className={`audio-player${isPlaying ? " playing" : ""}`}>
+    <div className={`audio-player${isPlaying ? " playing" : ""}${collapsed ? " collapsed" : ""}`}>
       <div className="player-box">
         <div className="disk-wrap">
-          <div className="disk" style={{ "--disk-rotation": `${diskRotation}deg` } as React.CSSProperties}>
-            <img src={currentTrack.albumIcon}></img>
-            <NavLink to={`/${lang}/music`} className="nav-icon" aria-label="Go to music page" />
-          </div>
+          {!collapsed && (
+            <div className="disk" style={{ "--disk-rotation": `${diskRotation}deg` } as React.CSSProperties}>
+              <img src={currentTrack.albumIcon}></img>
+              <NavLink to={`/${lang}/music`} className="nav-icon" aria-label="Go to music page" />
+            </div>
+          )}
+
           <div className="player-control">
             <EfbackIcon className="icon" onClick={() => onTrackSkip("left")} />
             {isPlaying ? <PauseIcon className="icon play-icon" onClick={() => onTrackPause()} /> : <PlayIcon className="icon play-icon" onClick={() => onTrackStart()} />}
@@ -79,22 +84,26 @@ export function AudioPlayer() {
           </div>
         </div>
 
-        <div className="track-info">
-          <div className="artist-label">{currentTrack?.artistName}</div>
+        {collapsed && <div className="collapsed-track-label">{currentTrack.name}</div>}
+        {!collapsed && (
+          <div className="track-info">
+            <div className="artist-label">{currentTrack?.artistName}</div>
 
-          <div className="album-label">{currentTrack?.albumName}</div>
-          <div className="track-label">{currentTrack?.name}</div>
+            <div className="album-label">{currentTrack?.albumName}</div>
+            <div className="track-label">{currentTrack?.name}</div>
 
-          <div className="track-progress-row">
-            <div className="track-progress--info">{formatTime(playtime)}</div>
-            <div ref={dragRef} className="track-progress">
-              <div className="track-progress--fill" style={{ width: `${trackProgress}%` }} />
+            <div className="track-progress-row">
+              <div className="track-progress--info">{formatTime(playtime)}</div>
+              <div ref={dragRef} className="track-progress">
+                <div className="track-progress--fill" style={{ width: `${trackProgress}%` }} />
+              </div>
+              <div className="track-progress--info">{formatTime(duration)}</div>
             </div>
-            <div className="track-progress--info">{formatTime(duration)}</div>
           </div>
-        </div>
+        )}
       </div>
-      <CloseIcon className="icon close" onClick={() => onClose()} />
+      {!collapsed && <CloseIcon className="icon close" onClick={() => onClose()} />}
+      <MinimizeIcon className="icon collapse" onClick={() => setCollapsed(!collapsed)} />
     </div>
   );
 

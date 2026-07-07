@@ -1,0 +1,31 @@
+.gear-icon {
+  position: absolute;
+  width: 64px;
+  height: auto;
+  color: var(--accent-light);
+  transform: rotate(calc(var(--gear-rotation, 0deg) * var(--gear-direction)));
+}
+
+.gear-icon.controllable:hover {
+  filter: brightness(2);
+  cursor: pointer;
+}
+
+.gear-icon.automated {
+  transform: none;
+  animation: rotate-gear var(--gear-rotation--speed, 8s) infinite linear;
+}
+
+.gear-icon.automated.rev {
+  animation: rotate-gear var(--gear-rotation--speed, 8s) infinite linear reverse;
+}
+
+@keyframes rotate-gear {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

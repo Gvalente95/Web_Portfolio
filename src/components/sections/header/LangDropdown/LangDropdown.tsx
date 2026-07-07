@@ -5,7 +5,7 @@ import worldIcon from "@/assets/svg/world.svg";
 
 import "./style.css";
 
-export function LanguageDropdown() {
+export function LanguageDropdown({ onChange }: { onChange?: () => void }) {
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const [selected, setSelected] = useState(false);
@@ -36,13 +36,21 @@ export function LanguageDropdown() {
     <div ref={ref} className={`lang-dropdown${selected ? " active" : ""}`}>
       <button onClickCapture={() => setSelected((prev) => !prev)}>
         <img src={worldIcon} alt="world"></img>
-        {`${t("language")} ▼`}
+        {<span style={{ color: "black" }}>{`${t("language")} ▼`}</span>}
       </button>
 
       {selected && (
         <div className="content">
           {Object.entries(languages).map(([key, value]) => (
-            <NavLink onClick={() => setSelected(false)} className={`${value === t("language") ? "active" : ""}`} key={key} to={pathname.replace(t("langPath"), `/${key}`)}>
+            <NavLink
+              onClick={() => {
+                setSelected(false);
+                onChange?.();
+              }}
+              className={`${value === t("language") ? "active" : ""}`}
+              key={key}
+              to={pathname.replace(t("langPath"), `/${key}`)}
+            >
               {value}
             </NavLink>
           ))}

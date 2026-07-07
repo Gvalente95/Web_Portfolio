@@ -42,7 +42,7 @@ i18n.use(initReactI18next).init({
         header: {
           pages: {
             dev: "Developper",
-            audio: "Audio-engineer",
+            // audio: "Audio-engineer",
             music: "Music",
           },
           languages: {
@@ -81,7 +81,7 @@ i18n.use(initReactI18next).init({
         header: {
           pages: {
             dev: "Developpeur",
-            audio: "Ingénieur son",
+            // audio: "Ingénieur son",
             music: "Musique",
           },
           languages: {
@@ -120,7 +120,7 @@ i18n.use(initReactI18next).init({
         header: {
           pages: {
             dev: "Sviluppatore Informatico",
-            audio: "Ingeniere Audio",
+            // audio: "Ingeniere Audio",
             music: "Musica",
           },
           languages: {

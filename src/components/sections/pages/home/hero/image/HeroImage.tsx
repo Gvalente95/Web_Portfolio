@@ -5,7 +5,9 @@ import "./style.css";
 export function HeroImage() {
   return (
     <div className="hero-image">
-      <img src={meIcon} />
+      <div className="image-container">
+        <img src={meIcon}></img>
+      </div>
     </div>
   );
 }
