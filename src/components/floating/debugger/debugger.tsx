@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useDebugContext } from "../../contexts/DebugContext";
-import { NeonButton } from "../shared/ui/neonButton/NeonButton";
+import { useDebugContext } from "../../../contexts/DebugContext";
+import { NeonButton } from "../../shared/ui/neonButton/NeonButton";
 
 import "./style.css";
 export function Debugger() {

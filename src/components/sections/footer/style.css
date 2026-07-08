@@ -69,3 +69,12 @@
     font-size: 13px;
   }
 }
+
+.simple-footer {
+  position: relative;
+  text-align: center;
+}
+
+.simple-footer > div {
+  margin-bottom: 20px;
+}

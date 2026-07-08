@@ -1,7 +1,7 @@
 import { HashRouter, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import i18n from "../i18n";
 import { PageContainer, type PageType } from "./sections/PageContainer";
-import { Debugger } from "./debugger/debugger";
+import { Debugger } from "./floating/debugger/debugger";
 import { FloatingElements } from "./floating/FloatingElements";
 import { useEffect } from "react";
 

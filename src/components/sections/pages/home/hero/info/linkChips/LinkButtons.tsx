@@ -1,6 +1,8 @@
 import GithubIcon from "@/assets/svg/github.svg?react";
 import YoutubeIcon from "@/assets/svg/youtube.svg?react";
 import InstagramIcon from "@/assets/svg/instagram.svg?react";
+import LinkedinIcon from "@/assets/svg/linkedin.svg?react";
+import MailIcon from "@/assets/svg/email.svg?react";
 
 import "./style.css";
 
@@ -9,6 +11,8 @@ export function LinkChips() {
     github: { url: "https://github.com/Gvalente95", icon: GithubIcon },
     youtube: { url: "https://www.youtube.com/@lesonnar6722", icon: YoutubeIcon },
     instagram: { url: "https://www.instagram.com/giulio.valente95/", icon: InstagramIcon },
+    linkedin: { url: "", icon: LinkedinIcon },
+    mail: { url: "", icon: MailIcon },
   };
 
   return (

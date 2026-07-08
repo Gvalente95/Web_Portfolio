@@ -8,12 +8,12 @@
   font-size: clamp(48px, 7vw, 82px);
   font-weight: 500;
   letter-spacing: -0.05em;
+  line-height: 1.03;
 }
 
 .hero-info > span {
-  font-family: "JetBrains, Mono", monospace;
-  font-weight: 20;
-  letter-spacing: -0.05em;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 100;
 }
 
 .hero-info strong {
@@ -29,9 +29,9 @@
 .hero-info strong::after {
   position: absolute;
   content: "";
-  top: 0px;
+  top: 5%;
   left: 0px;
-  height: 100%;
+  height: 95%;
   width: 0px;
   background-color: var(--accent-strong);
   z-index: -1;
@@ -159,5 +159,110 @@
 
   .link-chip {
     width: var(--chip-size);
+  }
+}
+
+.hero-info > .intro,
+.paragraph {
+  opacity: 0;
+  animation: text-ready 0.3s ease forwards;
+}
+.hero-info > .intro {
+  animation-delay: 100ms;
+}
+.paragraph {
+  animation-delay: 100ms;
+}
+
+@keyframes text-ready {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.greeting,
+.greeting-2 {
+  opacity: 0;
+  animation: fade-rise 1s ease forwards;
+}
+.greeting {
+  animation-delay: 100ms;
+}
+.greeting-2 {
+  animation-delay: 100ms;
+}
+@keyframes slight-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-info > * {
+  overflow: hidden;
+}
+
+.hero-info .link-row {
+  transform: translateY(120%);
+  overflow: hidden;
+  animation: reveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.hero-info .link-row {
+  animation-delay: 300ms;
+}
+
+@keyframes reveal {
+  to {
+    transform: translateY(0);
   }
 }

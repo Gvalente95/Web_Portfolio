@@ -2,46 +2,48 @@ header {
   position: relative;
   display: flex;
   flex-direction: row;
+  min-height: 80px;
   height: 80px;
   padding: 30px;
   align-items: center;
   gap: 10px;
   font-family: "JetBrains Mono", monospace;
   z-index: 9999;
-  background: rgba(20, 20, 20, 0.327);
+}
+
+header:before {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  transition:
+    width 2s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 2s cubic-bezier(0.22, 1, 0.36, 1),
+    border-bottom 2s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
   backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+header.ready:before {
+  width: 100%;
+  opacity: 0.5;
   border-bottom: 1px solid rgb(77, 77, 77);
 }
 
-header > .home {
+.header-overlay.ready {
+  width: 100px;
+}
+
+.home-button {
   position: relative;
   text-decoration: none;
   color: white;
   background-color: transparent;
   font-size: 30px;
   border: none;
-}
-
-header > .home::after {
-  position: absolute;
-  content: "";
-  left: -5%;
-  top: -5%;
-  width: 110%;
-  height: 110%;
-  z-index: -1;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  scale: 1;
-
-  transition:
-    border 0.3s ease,
-    scale 0.3s ease;
-}
-
-header > .home:hover::after {
-  border: 1px solid white;
-  scale: 1.1;
 }
 
 header > .right-section {
@@ -70,6 +72,18 @@ header > .right-section {
   transition: color 0.1s ease;
 }
 
+.header-button,
+.home-button,
+.language-dropdown {
+  opacity: 0;
+}
+
+.header-button.ready,
+.home-button.ready,
+.language-dropdown.ready {
+  animation: ready 03s ease forwards;
+}
+
 .header-button.selected,
 .header-button:hover {
   color: var(--accent-strong);
@@ -91,4 +105,20 @@ header > .right-section {
 .header-button.selected::after {
   left: 0;
   width: 100%;
+}
+
+@keyframes ready {
+  0% {
+    opacity: 0;
+    transform: translateY(33px);
+  }
+
+  20% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

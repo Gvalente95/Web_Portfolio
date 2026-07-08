@@ -23,8 +23,10 @@ i18n.use(initReactI18next).init({
           greeting: "Hello! I'm ",
           brief: {
             character: "Patient, passionate, pragmatic",
-            spec: "ui/ux, sound-design, software architecture",
+            spec: "UI/UX, sound-design, software architecture",
           },
+          contact: "Contact me",
+          resume: "Read My Resume",
         },
         about: {
           title: "Audio engineer and Frontend developer.",
@@ -36,7 +38,7 @@ i18n.use(initReactI18next).init({
           p0: "From metal to ambient, and everything in between.",
         },
         skills: {},
-        projects: {},
+        dev: { intro: "My journey as a developper started in 2019 through various Unity projects. In 2022 I started a 42 curriculum which I succesfully finished in 2024  " },
         contact: {},
         footer: {},
         header: {
@@ -62,8 +64,10 @@ i18n.use(initReactI18next).init({
           greeting: "Salut! Moi c'est ",
           brief: {
             character: "Patient, Passioné, pragmatique",
-            spec: "ui/ux, sound-design, architecture de software",
+            spec: "UI/UX, sound-design, architecture de software",
           },
+          contact: "Prendre contact",
+          resume: "Lire mon CV",
         },
         about: {
           title: "Audio engineer et developpeur frontend.",
@@ -75,7 +79,7 @@ i18n.use(initReactI18next).init({
           p0: "Du metal à l'ambient, en passant par de nombreux autres styles.",
         },
         skills: {},
-        projects: {},
+        dev: { intro: "" },
         contact: {},
         footer: {},
         header: {
@@ -101,8 +105,10 @@ i18n.use(initReactI18next).init({
           greeting: "Ciao! Sono",
           brief: {
             character: "Paziente, Apassionato, pragmatico",
-            spec: "ui/ux, sound-design, software architecture",
+            spec: "UI/UX, sound-design, software architecture",
           },
+          contact: "Contattami",
+          resume: "Leggi il mio CV",
         },
         about: {
           title: "Audio engineer e Frontend developer.",
@@ -114,7 +120,7 @@ i18n.use(initReactI18next).init({
           p0: "Dal metal all'ambient, passando per molti altri generi.",
         },
         skills: {},
-        projects: {},
+        dev: { intro: "" },
         contact: {},
         footer: {},
         header: {

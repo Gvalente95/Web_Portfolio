@@ -14,11 +14,26 @@
   font-size: 40px;
 }
 
+.musician-page .page-intro {
+  opacity: 0;
+  animation: fade-rise 1s forwards;
+}
+
 @media (max-width: 700px) {
   .musician-page .page-intro {
     width: 90%;
   }
   .musician-page .page-intro > h3 {
     font-size: 24px;
+  }
+}
+
+@keyframes intro-spawn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

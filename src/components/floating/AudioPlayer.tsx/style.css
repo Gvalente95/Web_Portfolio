@@ -32,7 +32,7 @@
 }
 
 .audio-player.collapsed {
-  width: min(calc(360px * var(--player-scale)), calc(100vw - 32px));
+  width: min(calc(200px * var(--player-scale)), calc(100vw - 32px));
   min-height: 0;
   height: auto;
   padding: calc(8px * var(--player-scale)) calc(42px * var(--player-scale)) calc(8px * var(--player-scale)) calc(10px * var(--player-scale));

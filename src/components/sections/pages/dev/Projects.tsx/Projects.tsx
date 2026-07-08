@@ -32,26 +32,43 @@ export function Projects() {
   return (
     <div className="projects">
       {allEntries.map(([name, project]) => (
-        <>
+        <div className="project-container" key={name}>
+          <ProjectCard name={name} project={project} />
+
           <div className="project-info">
+            <h2>{name}</h2>
+
+            {project.tags.length ? (
+              <div className="project-tags">
+                <div className="project-tags-intro">Made With: </div>
+                {project.language.split(" ").map((tag) => {
+                  return <span>{tag} </span>;
+                })}
+              </div>
+            ) : null}
+            <div className="project-tags">
+              {project.tags.split(" ").map((tag) => {
+                return <span>{tag} </span>;
+              })}
+            </div>
+
+            <p>{lang === "fr" ? project.info.fr : lang === "it" ? project.info.it : project.info.en}</p>
+
             <div className="link-row">
-              <h2>{name}</h2>
               {project.github && (
                 <a className="link-chip github" href={project.github} target="_blank" rel="noopener noreferrer">
                   Github <GithubIcon className="project-icon" />
                 </a>
               )}
+
               {project.url && (
                 <a className="link-chip open" href={project.url} target="_blank" rel="noopener noreferrer">
                   Open
                 </a>
               )}
             </div>
-            <p>{lang === "fr" ? project.info.fr : lang === "it" ? project.info.it : project.info.en}</p>
-
-            <ProjectCard key={name} name={name} project={project} />
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
@@ -59,7 +76,7 @@ export function Projects() {
 
 function ProjectCard({ name, project }: { name: string; project: Project }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-	
+
   return (
     <div
       className={`project${project.video ? "" : " no-video"}`}

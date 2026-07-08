@@ -1,0 +1,84 @@
+.lateral-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lateral-bar .bar {
+  height: 0px;
+  width: 5px;
+  background-color: var(--accent-secondary);
+  opacity: 0;
+  transition:
+    height 0.3s ease-in,
+    opacity 0.3s ease-in-out;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.lateral-bar.ready > .bar {
+  position: relative;
+  opacity: 1;
+  height: 80px;
+}
+
+.lateral-bar .bar-links {
+  position: absolute;
+  left: -12px;
+  top: -230px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  gap: 20px;
+}
+
+.lateral-bar .orb-chip {
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lateral-bar .orb-chip.ready {
+  opacity: 1;
+  animation: 0.3s ease-out bump-up;
+}
+
+.orb-chip {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--accent-secondary-dark);
+}
+
+.orb-chip svg,
+.orb-chip .bar-chip {
+  max-width: 32px;
+  max-height: 32px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.orb-chip:hover {
+  color: var(--accent-secondary-light);
+  scale: 1.2;
+}
+
+@keyframes bump-up {
+  0% {
+    transform: translateY(48px);
+  }
+
+  80% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

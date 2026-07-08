@@ -16,7 +16,8 @@
   --accent-dark: #866b13;
 
   --text: white;
-  --bg: #0e0e0f;
+  --bg-clr: #0f0d0f;
+  --vignette-clr: rgb(1, 1, 1);
 
   --hero-clr-web: var(--accent);
   --hero-clr-audio: var(--green);
@@ -55,7 +56,7 @@ body.dropdown-open .lang-dropdown * {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  font-family: "JetBrain Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
 
   --hex-size: 329px;
   --grid-small: calc(var(--hex-size) / 5);
@@ -67,20 +68,16 @@ body.dropdown-open .lang-dropdown * {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-position: center;
-  /* background-image:
-    linear-gradient(rgb(33, 33, 33) 1px, transparent 1px), linear-gradient(90deg, rgb(33, 33, 33) 1px, transparent 1px), linear-gradient(rgb(33, 33, 33) 2px, transparent 2px),
-    linear-gradient(90deg, rgb(33, 33, 33) 2px, transparent 2px); */
+  background-color: var(--bg-clr);
+}
 
-  background-size:
-    var(--grid-small) var(--grid-small),
-    var(--grid-small) var(--grid-small),
-    var(--hex-size) var(--hex-size),
-    var(--hex-size) var(--hex-size);
-
-  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-  background-color: rgb(23, 25, 26);
+.app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
 }
 
 .background {
@@ -89,23 +86,18 @@ body.dropdown-open .lang-dropdown * {
   min-height: 100%;
   z-index: -1;
 
-  background: url("/colored-exagons.jpg") repeat;
-  background-size: 800px auto;
+  /* background: url("/bgr4.jpg") repeat;
 
-  opacity: 0.1;
+  background-size: 80% auto; */
 
-  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 55%, rgba(0, 0, 0, 0.8) 70%, transparent 100%);
-}
+  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
 
-.app::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.1;
-  background-image: url("/noise.jpg");
-  mix-blend-mode: overlay;
+  background-size: 24px 24px;
+
+  opacity: 1;
+
+  -webkit-mask-image: radial-gradient(ellipse at center, black 55%, var(--vignette-clr) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 55%, var(--vignette-clr) 70%, transparent 100%);
 }
 
 p {

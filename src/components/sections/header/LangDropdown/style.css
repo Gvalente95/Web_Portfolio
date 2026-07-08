@@ -12,7 +12,7 @@
   gap: 5px;
   padding: 10px;
   cursor: pointer;
-  font-family: "JetBrain Mono", monospace;
+  font-family: "JetBrains Mono", monospace;
   border-radius: 20px;
   background-color: var(--accent);
   min-width: 140px;

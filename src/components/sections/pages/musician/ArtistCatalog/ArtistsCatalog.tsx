@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import data from "../../../../../data/audio.json";
 import { AlbumDisplay } from "./AlbumDisplay/AlbumDisplay";
 
-import "./style.css";
 import { useAudioPlayer } from "../../../../../contexts/AudioPlayerContext";
 import { isMobile } from "@/utils/navigation";
+
+import "./style.css";
 
 export type AudioAlbum = {
   name?: string;
@@ -66,7 +67,6 @@ export function ArtistCatalogs() {
     <div className="artist-catalogs">
       {artists.map((artist) => (
         <div key={artist.id} className="artist" onClick={() => {}}>
-          {/* <h2>{artist.name}</h2> */}
           <div className="albums">
             {artist.albums.map((album) => (
               <AlbumDisplay artistName={artist.name} key={album.name} album={album} isGhost={false} onOpen={setGhostStartRect} />

@@ -35,7 +35,7 @@
       "url": "https://gvalente95.github.io/FallingSand/",
       "github": "https://github.com/Gvalente95/FallingSand/",
       "language": "JS",
-      "tags": ""
+      "tags": "Cellular Automata"
     },
     "Logic Gates": {
       "info": {
@@ -48,7 +48,7 @@
       "url": "https://gvalente95.github.io/LogicGateSynth/",
       "github": "https://github.com/Gvalente95/LogicGateSynth/",
       "language": "JS",
-      "tags": ""
+      "tags": "Transistors Logic Nodes"
     },
     "Marbles": {
       "info": {
@@ -61,7 +61,7 @@
       "url": "https://gvalente95.github.io/Marbles/",
       "github": "https://github.com/Gvalente95/Marbles/",
       "language": "JS",
-      "tags": ""
+      "tags": "Physics-Simulation Zen Sound"
     }
   }
 }

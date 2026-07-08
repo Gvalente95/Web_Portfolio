@@ -131,6 +131,7 @@ export function useSpinObject({
     };
 
     const handlePointerMove = (e: PointerEvent) => {
+      e.preventDefault();
       if (!dragging.current || !ref.current) return;
 
       const dx = e.clientX - lastPos.current.x;
