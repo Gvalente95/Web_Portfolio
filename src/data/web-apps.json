@@ -14,16 +14,16 @@
   "content": {
     "Camagru": {
       "info": {
-        "en": "A modern IRC-inspired chat platform built around channels, rooms and communities.",
-        "fr": "App de chat type IRC moderne (Discord) avec authentification et données persistantes.",
-        "it": "Applicazione di chat tipo IRC moderno (Discord) con auth e database."
+        "en": "A full-stack photo booth and image sharing platform.",
+        "fr": "Une plateforme full-stack de photomaton et de partage d’images.",
+        "it": "Una piattaforma full-stack per creare e condividere immagini."
       },
       "image": "/image/screenshot/Camagru.png",
-      "video": "/video/Chatter.mp4",
-      "preview": "/video_short/Chatter.mp4",
+      "video": "/video/Camagru.mp4",
+      "preview": "/video_short/Camagru.mp4",
       "url": "",
       "github": "https://github.com/Gvalente95/camagru",
-      "language": "PHP SQLite HTML CSS js",
+      "language": "PHP SQLite HTML CSS JavaScript",
       "tags": "Fullstack",
       "mobile": true
     },
@@ -41,19 +41,6 @@
       "language": "Typescript Express.js Socket.io MongoDb",
       "tags": "Fullstack",
       "mobile": true
-    },
-    "Webserv": {
-      "info": {
-        "en": "A fully functional Nginx-like HTTP/1.1 server written from scratch in C++98.",
-        "fr": "Un server HTTP/1.1 basé sur Nginx et écrit en C++98.",
-        "it": "Un server HTTP/1.1 basato su Nginx e scritto in C++98"
-      },
-      "image": "/image/screenshot/Webserv.png",
-      "video": "/video/Webserv.mp4",
-      "preview": "/video_short/Webserv.mp4",
-      "github": "https://github.com/LilBoooopp/Webserv",
-      "language": "C++98 bash Html css",
-      "tags": "Server HTTP Nginx"
     },
     "Ropes": {
       "info": {

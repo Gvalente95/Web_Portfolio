@@ -25,9 +25,10 @@ export function ProjectContainer({ name, project, lang }: { name: string; projec
 
 export function DevProjects() {
   const webAppEntries = Object.entries((webApps as ProjectsData).content);
-  const gameEntries = Object.entries((games as ProjectsData).content);
   const audioEntries = Object.entries((audioApps as ProjectsData).content);
-  const allEntries = [...audioEntries, ...webAppEntries, ...gameEntries];
+  const gameEntries = Object.entries((games as ProjectsData).content);
+
+  const allEntries = [...webAppEntries, ...audioEntries, ...gameEntries];
   const { lang } = useParams();
 
   return (

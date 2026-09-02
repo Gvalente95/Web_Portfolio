@@ -20,7 +20,7 @@ export function FeaturedWork() {
   const gameEntries = Object.entries((games as ProjectsData).content);
   const audioEntries = Object.entries((audioApps as ProjectsData).content);
 
-  const allEntries = [...audioEntries, ...webAppEntries, ...gameEntries];
+  const allEntries = [...webAppEntries, ...audioEntries, ...gameEntries];
   const loopEntries = [...allEntries, ...allEntries];
 
   return (

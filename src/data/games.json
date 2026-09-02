@@ -78,6 +78,19 @@
       "language": "C#",
       "tags": "Unity 2D"
     },
+    "Webserv": {
+      "info": {
+        "en": "A fully functional Nginx-like HTTP/1.1 server written from scratch in C++98.",
+        "fr": "Un server HTTP/1.1 basé sur Nginx et écrit en C++98.",
+        "it": "Un server HTTP/1.1 basato su Nginx e scritto in C++98"
+      },
+      "image": "/image/screenshot/Webserv.png",
+      "video": "/video/Webserv.mp4",
+      "preview": "/video_short/Webserv.mp4",
+      "github": "https://github.com/LilBoooopp/Webserv",
+      "language": "C++98 bash Html css",
+      "tags": "Server HTTP Nginx"
+    },
     "Ascii Run": {
       "info": {
         "en": "A side-scrolling platformer rendered in ASCII and playable in a terminal.",
