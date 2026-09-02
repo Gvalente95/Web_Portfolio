@@ -19,23 +19,29 @@
       "info": {
         "en": "A music-making tool built by connecting audio nodes inside a React Flow graph.",
         "fr": "Un outil de création musicale basé sur des nœuds audio reliés dans un graphe React Flow.",
-        "it": "Uno strumento per creare musica collegando nodi audio all'interno di un grafo React Flow."
+        "it": "Web-app per creare musica collegando nodi audio all'interno di un grafo React Flow."
       },
       "image": "/image/screenshot/Audio-nodes.png",
       "github": "https://github.com/gvalente95/AudioBlocks/",
+      "url": "https://gvalente95.github.io/AudioBlocks/",
       "language": "React Typescript JS CSS Html Tone.js",
-      "tags": "Audio-Developper"
+      "tags": "Audio-Developper",
+      "video": "/video/Audio_Blocks.mp4",
+      "preview": "/video_short/Audio_Blocks.mp4"
     },
     "Web DAW": {
       "info": {
-        "en": "A complete browser-based digital audio workstation built from scratch.",
+        "en": "A complete browser-based digital audio workstation built from scratch in React.",
         "fr": "Une station audionumérique complète fonctionnant directement dans le navigateur.",
         "it": "Una workstation audio digitale completa che funziona direttamente nel browser."
       },
       "image": "/image/screenshot/Webdaw.png",
       "github": "https://github.com/gvalente95/GiuDaw/",
+      "url": "https://gvalente95.github.io/GiuDaw/",
       "language": "React Typescript JS CSS Html Tone.js",
-      "tags": "Audio Engineering"
+      "tags": "Audio-Developper",
+      "video": "/video/Web_Daw.mp4",
+      "preview": "/video_short/Web_Daw.mp4"
     }
   }
 }

@@ -1,21 +1,222 @@
 {
-  "C": { "info": "", "image": "/badge/c.svg", "stars": 4, "projectsCount": 47 },
-  "C++": { "info": "", "image": "/badge/c++.svg", "stars": 4, "projectsCount": 8 },
-  "C#": { "info": "", "image": "/badge/csharp.svg", "stars": 4, "projectsCount": 17 },
-  "JavaScript": { "info": "", "image": "/badge/js.svg", "stars": 5, "projectsCount": 20 },
-  "TypeScript": { "info": "", "image": "/badge/ts.svg", "stars": 5, "projectsCount": 20 },
-  "Python": { "info": "", "image": "/badge/py.svg", "stars": 3, "projectsCount": 3 },
-  "css": { "info": "", "image": "/badge/css.svg", "stars": 3, "projectsCount": 13 },
-  "Html": { "info": "", "image": "/badge/html.svg", "stars": 4, "projectsCount": 13 },
-  "React": { "info": "", "image": "/badge/react.svg", "stars": 5, "projectsCount": 8 },
-  "Bash": { "info": "", "image": "/badge/bash.svg", "stars": 3, "projectsCount": 18 },
-  "Git": { "info": "", "image": "/badge/git.svg", "stars": 4, "projectsCount": 48 },
-  "Docker": { "info": "", "image": "/badge/docker.svg", "stars": 3, "projectsCount": 6 },
-  "npm": { "info": "", "image": "/badge/npm.svg", "stars": 5, "projectsCount": 13 },
-  "Unity": { "info": "", "image": "/badge/unity.svg", "stars": 5, "projectsCount": 17 },
-  "Photoshop": { "info": "", "image": "/badge/ps.svg", "stars": 4, "projectsCount": 32 },
-  "Blender": { "info": "", "image": "/badge/blender.svg", "stars": 3, "projectsCount": 12 },
-  "Logic Pro X": { "info": "", "image": "/badge/logic.ico", "stars": 5, "projectsCount": 129 },
-  "Ableton": { "info": "", "image": "/badge/ableton.svg", "stars": 3, "projectsCount": 14 },
-  "Wwise": { "info": "", "image": "/badge/wwise.svg", "stars": 4, "projectsCount": 2 }
+  "C": {
+    "tags": [],
+    "info": {
+      "en": "I learned C through the 42 curriculum, where it became my primary programming language. I've used it extensively for systems programming, networking, graphics, multithreading and algorithm-heavy projects.",
+      "fr": "J'ai appris le C au sein du cursus de 42, où il est devenu mon principal langage de programmation. Je l'ai utilisé pour des projets de programmation système, réseau, graphique, multithreading et algorithmique.",
+      "it": "Ho imparato il linguaggio C durante il percorso di 42, dove è diventato il mio principale linguaggio di programmazione. L'ho utilizzato per progetti di programmazione di sistema, networking, grafica, multithreading e algoritmi."
+    },
+    "image": "/badge/c.svg",
+    "stars": 4.5,
+    "projectsCount": 42
+  },
+  "C++": {
+    "tags": [],
+    "info": {
+      "en": "I mainly use C++ for object-oriented programming and larger software projects. Through the 42 modules, I became familiar with templates, STL containers, inheritance and modern C++ design.",
+      "fr": "J'utilise principalement le C++ pour la programmation orientée objet et les projets logiciels plus importants. Le cursus 42 m'a permis d'acquérir une bonne maîtrise des templates, de la STL, de l'héritage et du C++ moderne.",
+      "it": "Utilizzo principalmente il C++ per la programmazione orientata agli oggetti e per progetti software di maggiore dimensione. Il percorso di 42 mi ha permesso di acquisire esperienza con template, STL, ereditarietà e C++ moderno."
+    },
+    "image": "/badge/c++.svg",
+    "stars": 2.8,
+    "projectsCount": 8
+  },
+  "C#": {
+    "tags": ["Game-Dev"],
+    "info": {
+      "en": "C# was my first programming language and introduced me to software development through Unity. I used it to build numerous gameplay systems, tools and prototypes.",
+      "fr": "Le C# a été mon premier langage de programmation et m'a initié au développement logiciel avec Unity. Je l'ai utilisé pour créer de nombreux systèmes de gameplay, outils et prototypes.",
+      "it": "Il C# è stato il mio primo linguaggio di programmazione e mi ha introdotto allo sviluppo software tramite Unity. L'ho utilizzato per realizzare numerosi sistemi di gameplay, strumenti e prototipi."
+    },
+    "image": "/badge/csharp.svg",
+    "stars": 4.5,
+    "projectsCount": 23
+  },
+  "JavaScript": {
+    "tags": ["Web-Applications"],
+    "info": {
+      "en": "JavaScript introduced me to modern web development. It allowed me to understand the foundations of interactive web applications before moving to TypeScript.",
+      "fr": "JavaScript m'a permis de découvrir le développement web moderne. Il m'a donné les bases nécessaires avant de passer à TypeScript.",
+      "it": "JavaScript mi ha introdotto allo sviluppo web moderno, fornendomi le basi prima del passaggio a TypeScript."
+    },
+    "image": "/badge/js.svg",
+    "stars": 4.8,
+    "projectsCount": 20
+  },
+  "TypeScript": {
+    "tags": ["Web-Applications"],
+    "info": {
+      "en": "TypeScript is now my preferred language for web development. I use it daily with React to build robust, maintainable and strongly typed applications.",
+      "fr": "TypeScript est aujourd'hui mon langage de prédilection pour le développement web. Je l'utilise quotidiennement avec React afin de créer des applications robustes et maintenables.",
+      "it": "TypeScript è oggi il mio linguaggio preferito per lo sviluppo web. Lo utilizzo quotidianamente con React per creare applicazioni robuste e facilmente mantenibili."
+    },
+    "image": "/badge/ts.svg",
+    "stars": 4.5,
+    "projectsCount": 20
+  },
+  "Python": {
+    "tags": [],
+    "info": {
+      "en": "I use Python for smaller projects and rapid prototyping. My experience includes simple games with PyGame, a basic web scraper and a lightweight web server.",
+      "fr": "J'utilise Python pour de petits projets et du prototypage rapide. Mon expérience comprend quelques jeux réalisés avec PyGame, un scraper web et un serveur web simple.",
+      "it": "Utilizzo Python per piccoli progetti e prototipazione rapida. Ho realizzato alcuni giochi con PyGame, un semplice web scraper e un piccolo server web."
+    },
+    "image": "/badge/py.svg",
+    "stars": 2,
+    "projectsCount": 3
+  },
+  "css": {
+    "tags": [],
+    "info": {
+      "en": "CSS allows me to transform interfaces into polished user experiences. I've developed responsive layouts, animations and reusable styling systems across numerous React projects.",
+      "fr": "Le CSS me permet de transformer une interface en une expérience utilisateur soignée. J'ai développé des interfaces responsives, des animations et des systèmes de styles réutilisables dans de nombreux projets React.",
+      "it": "Il CSS mi permette di trasformare un'interfaccia in un'esperienza utente curata. Ho sviluppato layout responsive, animazioni e sistemi di stile riutilizzabili in numerosi progetti React."
+    },
+    "image": "/badge/css.svg",
+    "stars": 3.5,
+    "projectsCount": 13
+  },
+  "Html": {
+    "tags": [],
+    "info": {
+      "en": "HTML provides the foundation for every web interface I build. I focus on semantic structure, accessibility and clean component organization.",
+      "fr": "HTML constitue la base de toutes les interfaces web que je développe. Je privilégie une structure sémantique, l'accessibilité et une organisation claire des composants.",
+      "it": "HTML rappresenta la base di ogni interfaccia web che realizzo. Presto particolare attenzione alla struttura semantica, all'accessibilità e all'organizzazione dei componenti."
+    },
+    "image": "/badge/html.svg",
+    "stars": 4,
+    "projectsCount": 13
+  },
+  "React": {
+    "tags": [],
+    "info": {
+      "en": "React is my primary framework for modern web development. I've built interactive portfolios, audio software and custom tools using reusable components and custom hooks.",
+      "fr": "React est mon framework principal pour le développement web moderne. Je l'utilise pour créer des portfolios interactifs, des logiciels audio et divers outils personnalisés grâce à des composants réutilisables.",
+      "it": "React è il mio framework principale per lo sviluppo web moderno. Lo utilizzo per realizzare portfolio interattivi, software audio e strumenti personalizzati basati su componenti riutilizzabili."
+    },
+    "image": "/badge/react.svg",
+    "stars": 4.5,
+    "projectsCount": 8
+  },
+  "Vue.js": {
+    "tags": [],
+    "info": {
+      "en": "I've recently started learning Vue.js after hearing many good things about it, after dozens of React projects I must say it felt good.",
+      "fr": "npm est mon gestionnaire de paquets principal pour les projets JavaScript et TypeScript. Je l'utilise quotidiennement pour gérer dépendances et outils de développement.",
+      "it": "npm è il mio gestore di pacchetti principale per i progetti JavaScript e TypeScript. Lo utilizzo quotidianamente per gestire dipendenze e strumenti di sviluppo."
+    },
+    "image": "/badge/vue.svg",
+    "stars": 2,
+    "projectsCount": 2
+  },
+  "Bash": {
+    "tags": [],
+    "info": {
+      "en": "I regularly use Bash to automate development workflows, create testing scripts and simplify repetitive tasks across Linux and macOS environments.",
+      "fr": "J'utilise régulièrement Bash pour automatiser mes flux de travail, créer des scripts de test et simplifier les tâches répétitives sous Linux et macOS.",
+      "it": "Utilizzo regolarmente Bash per automatizzare il flusso di lavoro, creare script di test e semplificare attività ripetitive su Linux e macOS."
+    },
+    "image": "/badge/bash.svg",
+    "stars": 3,
+    "projectsCount": 18
+  },
+  "Git": {
+    "tags": [],
+    "info": {
+      "en": "Git is an essential part of my daily workflow. I use it extensively for version control, collaboration and project management across individual and team projects.",
+      "fr": "Git fait partie intégrante de mon quotidien. Je l'utilise pour le versioning, le travail collaboratif et la gestion de projets individuels comme en équipe.",
+      "it": "Git è uno strumento fondamentale del mio lavoro quotidiano. Lo utilizzo per il controllo di versione, la collaborazione e la gestione dei progetti."
+    },
+    "image": "/badge/git.svg",
+    "stars": 4,
+    "projectsCount": 48
+  },
+  "Gitlab": {
+    "tags": [],
+    "info": {
+      "en": "I primarily used GitLab throughout the 42 curriculum for collaborative development, code reviews and project organization.",
+      "fr": "J'ai principalement utilisé GitLab durant le cursus 42 pour le développement collaboratif, les revues de code et l'organisation des projets.",
+      "it": "Ho utilizzato principalmente GitLab durante il percorso di 42 per lo sviluppo collaborativo, le revisioni del codice e l'organizzazione dei progetti."
+    },
+    "image": "/badge/gitlab.svg",
+    "stars": 3.5,
+    "projectsCount": 2
+  },
+  "Docker": {
+    "tags": [],
+    "info": {
+      "en": "I use Docker to create reproducible development environments and deploy multi-service applications, particularly during backend and infrastructure projects.",
+      "fr": "J'utilise Docker pour créer des environnements de développement reproductibles et déployer des applications composées de plusieurs services.",
+      "it": "Utilizzo Docker per creare ambienti di sviluppo riproducibili e distribuire applicazioni composte da più servizi."
+    },
+    "image": "/badge/docker.svg",
+    "stars": 3,
+    "projectsCount": 6
+  },
+
+  "Unity": {
+    "tags": [],
+    "info": {
+      "en": "Unity was my entry point into game development. I've used it to create numerous prototypes, gameplay systems and complete student projects using C#.",
+      "fr": "Unity a été mon point d'entrée dans le développement de jeux vidéo. Je l'ai utilisé pour créer de nombreux prototypes, systèmes de gameplay et projets étudiants en C#.",
+      "it": "Unity è stato il mio punto d'ingresso nello sviluppo di videogiochi. L'ho utilizzato per realizzare numerosi prototipi, sistemi di gameplay e progetti completi in C#."
+    },
+    "image": "/badge/unity.svg",
+    "stars": 4.5,
+    "projectsCount": 17
+  },
+  "Photoshop": {
+    "tags": [],
+    "info": {
+      "en": "I use Photoshop to create album artwork, edit photographs, design thumbnails, icons and various visual assets for both music and software projects.",
+      "fr": "J'utilise Photoshop pour créer des pochettes d'albums, retoucher des photos, réaliser des miniatures, des icônes et divers éléments graphiques pour mes projets.",
+      "it": "Utilizzo Photoshop per creare copertine di album, modificare fotografie, realizzare miniature, icone e altre risorse grafiche per i miei progetti."
+    },
+    "image": "/badge/ps.svg",
+    "stars": 3.8,
+    "projectsCount": 32
+  },
+  "Blender": {
+    "tags": [],
+    "info": {
+      "en": "Blender allows me to create and edit 3D assets for games and interactive experiences. I mainly use it for modeling, scene composition and asset preparation.",
+      "fr": "Blender me permet de créer et modifier des ressources 3D pour les jeux et expériences interactives. Je l'utilise principalement pour la modélisation et la préparation des assets.",
+      "it": "Blender mi permette di creare e modificare risorse 3D per giochi ed esperienze interattive. Lo utilizzo principalmente per la modellazione e la preparazione degli asset."
+    },
+    "image": "/badge/blender.svg",
+    "stars": 3.5,
+    "projectsCount": 12
+  },
+  "Logic Pro X": {
+    "tags": [],
+    "info": {
+      "en": "Logic Pro has been my main digital audio workstation for years. I use it for composition, recording, mixing, mastering and sound design across a wide variety of projects.",
+      "fr": "Logic Pro est ma station de travail audio principale depuis de nombreuses années. Je l'utilise pour la composition, l'enregistrement, le mixage, le mastering et le sound design.",
+      "it": "Logic Pro è la mia workstation audio principale da molti anni. Lo utilizzo per composizione, registrazione, mixaggio, mastering e sound design."
+    },
+    "image": "/badge/logic.ico",
+    "stars": 5,
+    "projectsCount": 129
+  },
+  "Ableton": {
+    "tags": [],
+    "info": {
+      "en": "I mainly use Ableton Live for electronic music production and experimentation. Its workflow makes it ideal for rapid composition and creative sound exploration.",
+      "fr": "J'utilise principalement Ableton Live pour la production de musique électronique et l'expérimentation sonore. Son workflow est idéal pour la composition rapide.",
+      "it": "Utilizzo principalmente Ableton Live per la produzione di musica elettronica e la sperimentazione sonora. Il suo workflow è ideale per una composizione rapida."
+    },
+    "image": "/badge/ableton.svg",
+    "stars": 3,
+    "projectsCount": 14
+  },
+  "Wwise": {
+    "info": {
+      "en": "I discovered Wwise during my sound engineering studies to integrate interactive audio into games. I used it to implement adaptive sound behaviors and real-time audio systems.",
+      "fr": "J'ai découvert Wwise durant mes études en ingénierie du son afin d'intégrer de l'audio interactif dans les jeux vidéo. Je l'ai utilisé pour mettre en place des comportements sonores adaptatifs.",
+      "it": "Ho scoperto Wwise durante gli studi di ingegneria del suono per integrare audio interattivo nei videogiochi. L'ho utilizzato per implementare comportamenti sonori adattivi e sistemi audio in tempo reale."
+    },
+    "image": "/badge/wwise.svg",
+    "stars": 3.5,
+    "projectsCount": 4
+  }
 }

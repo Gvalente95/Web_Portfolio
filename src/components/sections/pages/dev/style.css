@@ -4,7 +4,24 @@
 }
 
 .dev-intro {
-  margin: 30px;
+  margin-top: 60px;
   margin-bottom: 60px;
   font-weight: 100;
+  animation: 1s forwards fade-rise;
+}
+
+.dev-title {
+  width: 70%;
+}
+
+.dev-intro > p {
+  font-size: 20px;
+}
+
+.rotating-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 400px;
+  top: 100px;
 }

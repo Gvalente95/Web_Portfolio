@@ -8,9 +8,12 @@
 }
 
 .album-display-wrap {
+  transform: translate(0px, 20px);
   transition:
     transform 0.8s ease,
-    scale 0.3s ease;
+    scale 0.3s ease,
+    opacity 0.6s ease,
+    transform 1s ease;
 }
 
 .album-display-wrap:not(.active) {
@@ -27,8 +30,8 @@
     0 18px 50px rgba(0, 0, 0, 0.2);
 }
 
-.album-display-wrap.playing:not(.active) {
-  animation: float-3d 8s ease-in-out infinite;
+.album-display-wrap.playing {
+  animation: float-3d--light 8s ease-in-out infinite;
 }
 
 /* .album-display-wrap.playing:not(.active) {

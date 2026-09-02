@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 import { LanguageDropdown } from "./LangDropdown/LangDropdown";
-
-import "./style.css";
 import { useAnimate } from "@/hooks/useAnimate";
 import { useMemo } from "react";
 import { useTextEffect } from "@/hooks/useTextEffect";
 
+import "./style.css";
+
 export function Header() {
   const { t } = useTranslation();
-  const name = useTextEffect({ target: t("common.name"), type: "_", duration: 300, delay: 200 });
+  const homeButtonText = useTextEffect({ target: t("common.homeButton"), type: "_", duration: 300, delay: 200 });
 
   const { pathname } = useLocation();
   const lang = pathname.split("/")[1] || "en";
@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className={`${timers[0].done ? "ready" : ""}`}>
       <NavLink className={`home-button${timers[1].done ? " ready" : ""}`} to={`/${lang}/`}>
-        {name.text}
+        {homeButtonText.text}
       </NavLink>
 
       <div className="right-section">

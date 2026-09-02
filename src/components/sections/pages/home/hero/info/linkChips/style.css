@@ -1,41 +1,74 @@
-.link-chips {
+.link-row {
+  --chip-size: 40px;
+  margin-top: clamp(24px, 8vh, 80px);
   display: flex;
-  gap: 10px;
-  height: 100%;
   align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  font-size: 16px;
+  line-height: 1;
+  height: var(--chip-size);
 }
 
-.link-chip {
+.link-button {
+  height: var(--chip-size);
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  align-items: center;
   justify-content: center;
+  text-align: center;
+  align-items: center;
 
+  width: auto;
   height: 100%;
-  aspect-ratio: 1;
 
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  letter-spacing: 0.1rem;
+  text-decoration: none;
   box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
 
-  border: 1px solid var(--accent-strong);
-  border-radius: 50%;
-  background: black;
-  color: var(--accent-strong);
+  background-color: black;
+  border: 1px solid var(--accent-secondary-light);
+  color: var(--accent-secondary);
+  border-radius: 20px;
 
   transition:
     background 0.2s ease,
     color 0.2s ease;
+  font-size: 16px;
 }
 
-.link-chip > .icon {
-  width: 100%;
-  height: 100%;
-}
-
-.link-chip:hover {
-  background: var(--accent-strong);
+.link-button:hover {
+  background-color: var(--accent-secondary-light);
+  border: 1px solid var(--accent-secondary-dark);
   color: black;
-  --secondary-color: var(--accent-strong);
   transition: none;
+}
+
+@media (max-width: 700px) {
+  .link-button {
+    font-size: 13px;
+  }
+  .link-row {
+    --chip-size: 38px;
+    height: auto;
+    min-height: var(--chip-size);
+    margin-top: clamp(16px, 4vh, 32px);
+    flex-wrap: wrap;
+  }
+
+  .link-chips {
+    height: var(--chip-size);
+  }
+
+  .link-row > *,
+  .link-chip {
+    height: var(--chip-size);
+  }
+
+  .link-chip {
+    width: var(--chip-size);
+  }
 }

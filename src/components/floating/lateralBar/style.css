@@ -9,12 +9,13 @@
 
 .lateral-bar .bar {
   height: 0px;
-  width: 5px;
-  background-color: var(--accent-secondary);
+  width: 4px;
+  background-color: var(--accent-secondary-dark);
   opacity: 0;
   transition:
     height 0.3s ease-in,
-    opacity 0.3s ease-in-out;
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -22,13 +23,13 @@
 .lateral-bar.ready > .bar {
   position: relative;
   opacity: 1;
-  height: 80px;
+  height: 50px;
 }
 
 .lateral-bar .bar-links {
   position: absolute;
-  left: -12px;
-  top: -230px;
+  left: -13px;
+  top: -210px;
   display: flex;
   flex-direction: column-reverse;
 
@@ -40,6 +41,7 @@
   height: 32px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .lateral-bar .orb-chip.ready {
@@ -64,7 +66,8 @@
   display: block;
 }
 
-.orb-chip:hover {
+.orb-chip:hover,
+.orb-chip.open {
   color: var(--accent-secondary-light);
   scale: 1.2;
 }
@@ -81,4 +84,58 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+.mail-sub-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  background-color: var(--accent-secondary-light);
+  width: 0px;
+  min-width: 0px;
+  height: fit-content;
+  border-radius: 20px;
+  left: 50px;
+  top: 100px;
+  padding: 10px;
+  transition:
+    width 0.4s ease,
+    opacity 0.2s ease;
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+  opacity: 0;
+  overflow: hidden;
+}
+
+.mail-sub-menu.open {
+  opacity: 1;
+  width: 240px;
+}
+
+.mail-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.mail-sub-menu > .copy-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.mail-sub-menu > .copy-icon:hover {
+  color: black;
+}
+
+.copy-icon--hint {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  opacity: 0;
+}
+
+.copy-icon--hint.visible {
+  opacity: 1;
 }

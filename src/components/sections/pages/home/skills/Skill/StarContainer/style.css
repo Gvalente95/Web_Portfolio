@@ -1,0 +1,11 @@
+.tooltip .stars-container {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+}
+
+.tooltip-stars {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

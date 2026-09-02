@@ -1,39 +1,35 @@
 .musician-page {
   display: flex;
   flex-direction: column;
+  animation: 1s forwards fade-rise;
 }
 
-.musician-page .page-intro {
-  margin-left: 30px;
-  margin-right: 30px;
-  width: 50%;
-  align-self: center;
+.musician-intro {
+  font-weight: 100;
+  margin-bottom: 100px;
 }
 
-.musician-page .page-intro > h3 {
-  font-size: 40px;
+.musician-title > h2 {
+  font-size: 60px;
 }
 
-.musician-page .page-intro {
-  opacity: 0;
-  animation: fade-rise 1s forwards;
+.musician-title {
+  width: 80%;
+}
+
+.musician-intro > p {
+  font-size: 20px;
 }
 
 @media (max-width: 700px) {
   .musician-page .page-intro {
     width: 90%;
   }
-  .musician-page .page-intro > h3 {
+  .musician-title > h2 {
     font-size: 24px;
   }
-}
 
-@keyframes intro-spawn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
+  .musician-intro {
+    margin-bottom: 40px;
   }
 }

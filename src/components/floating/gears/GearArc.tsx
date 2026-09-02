@@ -26,7 +26,7 @@ export function GearArc({
   sizeRatios = [],
   amount = 10,
   gearSize,
-  radius = 240,
+  radius,
   startAngle = 0,
   endAngle = 360,
   rotationSpeed = 8,
@@ -37,8 +37,7 @@ export function GearArc({
   const ratios = Array.from({ length: amount }, (_, idx) => sizeRatios[idx % sizeRatios.length] ?? 1);
   const arcRad = ((endAngle - startAngle) * Math.PI) / 180;
   const isClosed = Math.abs(Math.abs(endAngle - startAngle) - 360) < 0.001;
-
-  const spacingCount = isClosed ? amount : amount - 1;
+  const spacingCount = isClosed ? amount : Math.max(amount - 1, 1);
 
   const ratioDistanceSum = Array.from({ length: spacingCount }, (_, idx) => {
     const a = ratios[idx];
@@ -46,7 +45,8 @@ export function GearArc({
     return (a + b) / 2;
   }).reduce((sum, v) => sum + v, 0);
 
-  const baseSize = gearSize ?? (Math.abs(arcRad) * radius) / ratioDistanceSum;
+  const baseSize = gearSize ?? 48;
+  const computedRadius = radius ?? (Math.abs(arcRad) > 0 ? (baseSize * ratioDistanceSum) / Math.abs(arcRad) : 240);
 
   let currentAngle = (startAngle * Math.PI) / 180;
 
@@ -59,11 +59,11 @@ export function GearArc({
         if (idx > 0) {
           const prevRatio = ratios[idx - 1];
           const centerDistance = baseSize * ((prevRatio + ratio) / 2);
-          currentAngle += Math.sign(arcRad) * (centerDistance / radius);
+          currentAngle += Math.sign(arcRad || 1) * (centerDistance / computedRadius);
         }
 
-        const x = Math.cos(currentAngle) * radius - currentSize / 2;
-        const y = Math.sin(currentAngle) * radius - currentSize / 2;
+        const x = Math.cos(currentAngle) * computedRadius - currentSize / 2;
+        const y = Math.sin(currentAngle) * computedRadius - currentSize / 2;
 
         let direction = idx % 2 === 0 ? -1 : 1;
 

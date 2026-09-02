@@ -1,0 +1,44 @@
+.contact-cool {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.letter {
+  font-size: 58px;
+  color: white;
+  display: inline-block;
+  font-weight: 100;
+  cursor: text;
+  display: inline-flex;
+  justify-content: center;
+  min-width: 0.6em;
+}
+
+.letter.animated {
+  color: var(--accent-secondary-light);
+  animation: 8s ease infinite float forwards;
+  transition: translate 0.5s ease;
+  z-index: 2;
+}
+
+.letter.animated:hover {
+  filter: drop-shadow(5px 5px 10px rgb(113, 206, 0));
+}
+
+.contact-cool--intro {
+  text-wrap: balance;
+  font-variant-ligatures: none;
+}
+
+@media (max-width: 700px) {
+  .letter {
+    font-size: 28px;
+  }
+}

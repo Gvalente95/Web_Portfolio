@@ -2,6 +2,15 @@
   "Lesonnar": {
     "icon": "/band/lesonnar/Vapor Kid/cover.jpg",
     "name": "Lesonnar",
+    "intro": {
+      "en": "Lofi | Ambient | Folk. A solo project I started in 2019.",
+      "fr": "Un projet que j'ai commencé en solo en 2019, centré sur des morceaux Lofi, Ambient et Folk.",
+      "it": "Un progetto que ho lanciato in 2019, centrato su brani Lofi, ambient e folk"
+    },
+
+    "youtubeUrls": ["https://www.youtube.com/embed/0ALnnKYoytc?si=DWCoupPI7TdZwz4m"],
+    "soundCloudUrl": "https://soundcloud.com/giulio-valente-230535683",
+    "spotifyUrl": "https://open.spotify.com/intl-fr/artist/7vBqRAQvSzrHZKVh3Vdmr6?si=lWSH890tTq20UzKi4D8n9A",
     "albums": {
       "Name The User": {
         "path": "/band/lesonnar/Name The User/",
@@ -64,7 +73,16 @@
   },
   "dawn": {
     "icon": "",
-    "name": "Dawn",
+    "name": "DAWN.w",
+    "youtubeUrls": ["https://www.youtube.com/embed/lpihjGJ8xyQ?si=itUkErdzrFDcJHS6"],
+    "soundCloudUrl": "https://soundcloud.com/user-271373881",
+    "spotifyUrl": "https://open.spotify.com/intl-fr/artist/24WXaykATkIU7tYWaTyNhu?si=ZSNmwQsQQDuwEhTN9jDhaw",
+    "intro": {
+      "en": "Progressive rock | modern metal | Post-punk. I'm a composer and lead vocalist and guitarist for the band.",
+      "fr": "",
+      "it": ""
+    },
+
     "albums": {
       "Gravitational Pull": {
         "icon": "/band/dawn/Gravitational Pull/cover.jpg",

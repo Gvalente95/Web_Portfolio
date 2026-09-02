@@ -23,9 +23,23 @@
       },
       "image": "/image/screenshot/SoLong.png",
       "video": "/video/SoLong.mp4",
+      "preview": "/video_short/SoLong.mp4",
       "github": "https://github.com/Gvalente95/So_long",
       "language": "C",
       "tags": "Game-Design"
+    },
+
+    "Grid Fighter": {
+      "info": {
+        "en": "A 3D platformer with a range of classes and procedural terrain generation.",
+        "fr": "Un platformer 3D avec plusieurs classes et une génération procédurale du terrain.",
+        "it": "Un platformer 3D con diverse classi e generazione procedurale del terreno."
+      },
+      "image": "/image/screenshot/GridMiner.png",
+      "video": "/video/GridMiner.mp4",
+      "preview": "/video_short/GridMiner.mp4",
+      "language": "C# Unity Blender",
+      "tags": "Procedural 3D-Platformer rpg"
     },
     "Cube": {
       "info": {
@@ -35,9 +49,10 @@
       },
       "image": "/image/screenshot/Cube.png",
       "video": "/video/Cube.mp4",
+      "preview": "/video_short/Cube.mp4",
       "github": "https://github.com/Gvalente95/Cub3d_42",
       "language": "C",
-      "tags": "Raycasting Game-Engine"
+      "tags": "Raycasting Game-Engine Multithreading Mlx"
     },
     "Sudoku": {
       "info": {
@@ -47,6 +62,7 @@
       },
       "image": "/image/screenshot/Sudoku.png",
       "video": "/video/Sudoku.mp4",
+      "preview": "/video_short/Sudoku.mp4",
       "language": "C#",
       "tags": "Unity 2D"
     },
@@ -58,19 +74,9 @@
       },
       "image": "/image/screenshot/Chess.png",
       "video": "/video/Chess.mp4",
+      "preview": "/video_short/Chess.mp4",
       "language": "C#",
       "tags": "Unity 2D"
-    },
-    "Grid Miner": {
-      "info": {
-        "en": "A 3D platformer with a range of classes and procedural terrain generation.",
-        "fr": "Un platformer 3D avec plusieurs classes et une génération procédurale du terrain.",
-        "it": "Un platformer 3D con diverse classi e generazione procedurale del terreno."
-      },
-      "image": "/image/screenshot/GridMiner.png",
-      "video": "/video/GridMiner.mp4",
-      "language": "C#",
-      "tags": "Unity 3D"
     },
     "Ascii Run": {
       "info": {
@@ -80,6 +86,7 @@
       },
       "image": "/image/screenshot/Ascii_Run.png",
       "video": "/video/Ascii_Run.mp4",
+      "preview": "/video_short/Ascii_Run.mp4",
       "language": "C",
       "tags": "Ascii Terminal"
     },
@@ -91,6 +98,7 @@
       },
       "image": "/image/screenshot/Ascii_Fight.png",
       "video": "/video/Ascii_Fight.mp4",
+      "preview": "/video_short/Ascii_Fight.mp4",
       "language": "C",
       "tags": "Ascii Terminal"
     },
@@ -102,6 +110,7 @@
       },
       "image": "/image/screenshot/Ascii_Jump.png",
       "video": "/video/Ascii_Jump.mp4",
+      "preview": "/video_short/Ascii_Jump.mp4",
       "language": "C",
       "tags": "Ascii Terminal"
     },
@@ -113,6 +122,7 @@
       },
       "image": "/image/screenshot/Ascii_Space.png",
       "video": "/video/Ascii_Space.mp4",
+      "preview": "/video_short/Ascii_Space.mp4",
       "language": "C",
       "tags": "Ascii Terminal"
     },
@@ -124,6 +134,7 @@
       },
       "image": "/image/screenshot/Philosophers.png",
       "video": "/video/Philosophers.mp4",
+      "preview": "/video_short/Philosophers.mp4",
       "github": "https://github.com/Gvalente95/philosophers_42",
       "language": "C",
       "tags": "Ascii Terminal Multithreading"

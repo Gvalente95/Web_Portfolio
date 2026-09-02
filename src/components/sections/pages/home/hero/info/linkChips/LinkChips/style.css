@@ -1,0 +1,55 @@
+.link-chips {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  align-items: center;
+}
+
+.link-chip {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  aspect-ratio: 1;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--accent-strong);
+  border-radius: 50%;
+  background: black;
+  color: var(--accent-strong);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.link-chip > .icon {
+  width: 100%;
+  height: 100%;
+}
+
+.link-chip:hover {
+  background: var(--accent-strong);
+  color: black;
+  --secondary-color: var(--accent-strong);
+  transition: none;
+}
+
+.link-chips {
+  display: flex;
+  gap: 10px;
+  height: var(--chip-size);
+  align-items: center;
+}
+
+.link-chip {
+  width: var(--chip-size);
+  height: var(--chip-size);
+  aspect-ratio: auto;
+  padding: 10px;
+}

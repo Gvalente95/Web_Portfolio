@@ -8,8 +8,10 @@ export function MusicianPage() {
 
   return (
     <div className="page musician-page">
-      <div className="page-intro">
-        <h3>{t("musician.intro")}</h3>
+      <div className="musician-intro">
+        <div className="musician-title">
+          <h2>{t("musician.intro")}</h2>
+        </div>
         <p>{t("musician.p0")}</p>
       </div>
       <ArtistCatalogs />

@@ -1,12 +1,12 @@
 import type { AudioAlbum } from "../ArtistsCatalog";
-import { useAudioPlayer } from "../../../../../../contexts/AudioPlayerContext";
+import { useAudioPlayer } from "@/contexts/AudioPlayerContext";
 import { useTextEffect } from "@/hooks/useTextEffect";
 import { isMobile } from "@/utils/navigation";
 import { AlbumTrack } from "./AlbumTrack.tsx/AlbumTrack";
 import { formatAudioFileName } from "./utils";
+import { useEffect } from "react";
 
 import "./style.css";
-import { useEffect, useState } from "react";
 
 export function AlbumBottomDisplay({ albumName, trackName, isAlbumPlaying }: { albumName: string; trackName: string; isAlbumPlaying: boolean }) {
   const { text } = useTextEffect({ target: trackName + " ", type: "loop", stepDuration: 100, autoStart: true });
@@ -24,9 +24,8 @@ type AlbumDisplayProps = {
 export function AlbumDisplay({ album, artistName, isGhost, onOpen, startRect }: AlbumDisplayProps) {
   const { onToggleAlbum, isAlbumOpen, currentTrack, isPlaying } = useAudioPlayer();
 
-  const [ready, setReady] = useState(false);
   const mobile = isMobile();
-  const active = !ready || ((!mobile || isGhost) && isAlbumOpen(album.name));
+  const active = (!mobile || isGhost) && isAlbumOpen(album.name);
   const isAlbumSelected = currentTrack && currentTrack.albumName === album.name;
   const isAlbumPlaying = isAlbumSelected && isPlaying ? true : false;
 
@@ -40,9 +39,7 @@ export function AlbumDisplay({ album, artistName, isGhost, onOpen, startRect }: 
       onToggleAlbum(album.name, false);
     }
     isGhost && window.addEventListener("scroll", closeOnScroll);
-    setTimeout(() => {
-      setReady(true);
-    }, 100);
+
     return () => {
       window.removeEventListener("scroll", closeOnScroll);
     };
@@ -67,7 +64,7 @@ export function AlbumDisplay({ album, artistName, isGhost, onOpen, startRect }: 
           <img className="album-icon" src={album.icon} alt={"File not found " + album.icon} />
           <div className="album-info">
             {album.files.map((f) => (
-              <AlbumTrack fileName={f} artistName={artistName} albumIcon={album.icon} albumName={album.name} albumPath={album.path} />
+              <AlbumTrack key={f} fileName={f} artistName={artistName} albumIcon={album.icon} albumName={album.name} albumPath={album.path} />
             ))}
           </div>
 

@@ -41,9 +41,19 @@ header.ready:before {
   position: relative;
   text-decoration: none;
   color: white;
-  background-color: transparent;
+  background-color: var(--accent-secondary-dark);
+  padding: 10px;
+  border-radius: 20px;
   font-size: 30px;
   border: none;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.home-button:hover {
+  background-color: white;
+  color: var(--accent-strong);
 }
 
 header > .right-section {

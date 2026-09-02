@@ -1,7 +1,7 @@
 {
   "title": "Interactive Web Applications",
   "description": {
-    "en": "2D simulations, cellular automata, and other experiments. Built in pure JavaScript and rendered on the HTML canvas with no external libraries.",
+    "en": "2D simulations, cellular-automata, and other experiments. Built in pure JavaScript and rendered on the HTML canvas with no external libraries.",
     "fr": "Simulations 2D, automates cellulaires et autres expériences. Développées en JavaScript pur et rendues sur un canvas HTML sans bibliothèques externes.",
     "it": "Simulazioni 2D, automi cellulari e altri esperimenti. Sviluppati in JavaScript puro e renderizzati su canvas HTML senza librerie esterne."
   },
@@ -10,15 +10,60 @@
     "fr": "Une collection d'applications web modernes.",
     "it": "Una raccolta di moderne applicazioni web."
   },
+
   "content": {
+    "Camagru": {
+      "info": {
+        "en": "A modern IRC-inspired chat platform built around channels, rooms and communities.",
+        "fr": "App de chat type IRC moderne (Discord) avec authentification et données persistantes.",
+        "it": "Applicazione di chat tipo IRC moderno (Discord) con auth e database."
+      },
+      "image": "/image/screenshot/Camagru.png",
+      "video": "/video/Chatter.mp4",
+      "preview": "/video_short/Chatter.mp4",
+      "url": "",
+      "github": "https://github.com/Gvalente95/camagru",
+      "language": "PHP SQLite HTML CSS js",
+      "tags": "Fullstack",
+      "mobile": true
+    },
+    "Chatter": {
+      "info": {
+        "en": "A modern IRC-inspired chat platform built around channels, rooms and communities.",
+        "fr": "App de chat type IRC moderne (Discord) avec authentification et données persistantes.",
+        "it": "Applicazione di chat tipo IRC moderno (Discord) con auth e database."
+      },
+      "image": "/image/screenshot/Chatter.png",
+      "video": "/video/Chatter.mp4",
+      "preview": "/video_short/Chatter.mp4",
+      "url": "",
+      "github": "",
+      "language": "Typescript Express.js Socket.io MongoDb",
+      "tags": "Fullstack",
+      "mobile": true
+    },
+    "Webserv": {
+      "info": {
+        "en": "A fully functional Nginx-like HTTP/1.1 server written from scratch in C++98.",
+        "fr": "Un server HTTP/1.1 basé sur Nginx et écrit en C++98.",
+        "it": "Un server HTTP/1.1 basato su Nginx e scritto in C++98"
+      },
+      "image": "/image/screenshot/Webserv.png",
+      "video": "/video/Webserv.mp4",
+      "preview": "/video_short/Webserv.mp4",
+      "github": "https://github.com/LilBoooopp/Webserv",
+      "language": "C++98 bash Html css",
+      "tags": "Server HTTP Nginx"
+    },
     "Ropes": {
       "info": {
-        "en": "An interactive rope simulation built from scratch in JavaScript using Verlet integration.",
+        "en": "An interactive physics simulation focused on ropes through use of Verlet integration.",
         "fr": "Une simulation interactive de cordes développée en JavaScript avec l'intégration de Verlet.",
         "it": "Una simulazione interattiva di corde sviluppata in JavaScript con integrazione di Verlet."
       },
       "image": "/image/screenshot/Ropes.png",
       "video": "/video/Ropes.mp4",
+      "preview": "/video_short/Ropes.mp4",
       "url": "https://gvalente95.github.io/Ropes/",
       "github": "https://github.com/Gvalente95/Ropes/",
       "language": "Vanilla JS",
@@ -26,18 +71,20 @@
     },
     "Falling Sand": {
       "info": {
-        "en": "A cellular automata featuring emergent interactions between materials.",
+        "en": "A cellular-automata featuring emergent interactions between materials.",
         "fr": "Un automate cellulaire mettant en scène des interactions émergentes entre différents matériaux.",
         "it": "Un automa cellulare con interazioni emergenti tra diversi materiali."
       },
       "image": "/image/screenshot/Falling-sand.png",
       "video": "/video/FallingSand.mp4",
+      "preview": "/video_short/FallingSand.mp4",
       "url": "https://gvalente95.github.io/FallingSand/",
       "github": "https://github.com/Gvalente95/FallingSand/",
       "language": "JS",
-      "tags": "Cellular Automata"
+      "tags": "Cellular-Automata Pixels Canvas",
+      "mobile": true
     },
-    "Logic Gates": {
+    "Mini Gates": {
       "info": {
         "en": "A visual node-based logic simulator drawn on an HTML canvas.",
         "fr": "Un simulateur logique visuel basé sur des nœuds dessiné sur un canvas HTML.",
@@ -45,10 +92,11 @@
       },
       "image": "/image/screenshot/Gates.png",
       "video": "/video/Gates.mp4",
+      "preview": "/video_short/Gates.mp4",
       "url": "https://gvalente95.github.io/LogicGateSynth/",
       "github": "https://github.com/Gvalente95/LogicGateSynth/",
       "language": "JS",
-      "tags": "Transistors Logic Nodes"
+      "tags": "Nodes Transistors Logic Synth Canvas"
     },
     "Marbles": {
       "info": {
@@ -58,10 +106,12 @@
       },
       "image": "/image/screenshot/Marbles.png",
       "video": "/video/Marbles.mp4",
+      "preview": "/video_short/Marbles.mp4",
       "url": "https://gvalente95.github.io/Marbles/",
       "github": "https://github.com/Gvalente95/Marbles/",
       "language": "JS",
-      "tags": "Physics-Simulation Zen Sound"
+      "tags": "Physics-Simulation Zen Sound",
+      "mobile": true
     }
   }
 }

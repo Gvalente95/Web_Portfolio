@@ -4,6 +4,8 @@
   height: auto;
   color: var(--accent-light);
   transform: rotate(calc(var(--gear-rotation, 0deg) * var(--gear-direction)));
+  pointer-events: all;
+  z-index: 999;
 }
 
 .gear-icon.controllable:hover {

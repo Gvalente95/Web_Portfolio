@@ -3,17 +3,21 @@ import i18n from "../i18n";
 import { PageContainer, type PageType } from "./sections/PageContainer";
 import { Debugger } from "./floating/debugger/debugger";
 import { FloatingElements } from "./floating/FloatingElements";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const supportedLangs = ["en", "fr", "it"] as const;
 
 export function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto",
+  useLayoutEffect(() => {
+    const html = document.documentElement;
+
+    html.style.setProperty("scroll-behavior", "auto", "important");
+    window.scrollTo(0, 0);
+
+    requestAnimationFrame(() => {
+      html.style.setProperty("scroll-behavior", "sooth", "important");
     });
   }, [pathname]);
 
@@ -46,7 +50,6 @@ export function Router() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to="/en" replace />} />
-        <Route path="/:lang" element={<LangRoute />} />
         <Route path="/:lang/:page?" element={<LangRoute />} />
       </Routes>
     </HashRouter>

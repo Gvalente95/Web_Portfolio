@@ -44,81 +44,6 @@
   width: calc(100% + 10px);
 }
 
-.link-row {
-  margin-top: clamp(24px, 8vh, 80px);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 40px;
-  font-size: 16px;
-  line-height: 1;
-}
-
-.link-row > a {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-  width: auto;
-  height: 100%;
-
-  padding-left: 15px;
-  padding-right: 15px;
-
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "JetBrains Mono", monospace;
-
-  background-color: black;
-  border: 1px solid var(--accent-secondary-light);
-  color: var(--accent-secondary);
-  border-radius: 20px;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.link-row > a:hover {
-  background-color: var(--accent-secondary-light);
-  border: 1px solid var(--accent-secondary-dark);
-  color: black;
-  transition: none;
-}
-
-.link-row {
-  --chip-size: 40px;
-
-  margin-top: clamp(24px, 8vh, 80px);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  height: var(--chip-size);
-  font-size: 16px;
-  line-height: 1;
-}
-
-.link-row > a {
-  height: var(--chip-size);
-}
-
-.link-chips {
-  display: flex;
-  gap: 10px;
-  height: var(--chip-size);
-  align-items: center;
-}
-
-.link-chip {
-  width: var(--chip-size);
-  height: var(--chip-size);
-  aspect-ratio: auto;
-  padding: 10px;
-}
-
 @media (max-width: 700px) {
   .hero-info {
     justify-content: flex-start;
@@ -138,27 +63,6 @@
     font-size: clamp(14px, 4vw, 16px);
     line-height: 1.35;
     letter-spacing: 0;
-  }
-
-  .link-row {
-    --chip-size: 38px;
-    height: auto;
-    min-height: var(--chip-size);
-    margin-top: clamp(16px, 4vh, 32px);
-    flex-wrap: wrap;
-  }
-
-  .link-chips {
-    height: var(--chip-size);
-  }
-
-  .link-row > a,
-  .link-chip {
-    height: var(--chip-size);
-  }
-
-  .link-chip {
-    width: var(--chip-size);
   }
 }
 

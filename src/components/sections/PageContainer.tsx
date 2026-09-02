@@ -18,7 +18,8 @@ export function PageContainer({ page }: { page?: PageType }) {
     <div className="page-content">
       {isMobile() ? <HeaderMobile /> : <Header />}
       {page === "audio" ? <AudioEngineerPage /> : page === "dev" ? <DevPage /> : page === "music" ? <MusicianPage /> : <HomePage />}
-      <BorderArrow dir="top" /> <BorderArrow dir="bottom" />
+      <BorderArrow dir="top" />
+      {!isMobile() ? <BorderArrow dir="bottom" /> : null}
       {!isMobile() ? <LateralBar /> : null}
       <SimpleFooter />
     </div>

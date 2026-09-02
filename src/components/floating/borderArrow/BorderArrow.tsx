@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.css";
 
 export function BorderArrow({ dir }: { dir: "top" | "bottom" }) {
   const [active, setActive] = useState(true);
+  const hasScrolledRef = useRef(false);
+
   useEffect(() => {
     function onScroll() {
-      if (dir === "top") setActive(window.scrollY <= 0);
+      hasScrolledRef.current = true;
+      if (dir === "top") setActive(window.scrollY <= 0 || (!hasScrolledRef.current && window.scrollY - window.innerHeight < window.outerWidth));
       else setActive(window.scrollY > window.outerHeight);
     }
     window.addEventListener("scroll", onScroll);
@@ -16,8 +19,9 @@ export function BorderArrow({ dir }: { dir: "top" | "bottom" }) {
   if (!active) return <></>;
 
   function handleClick() {
-    if (dir === "top") window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-    else window.scrollTo({ top: 0, behavior: "smooth" });
+    if (dir === "top") {
+      window.scrollTo({ top: window.scrollY + window.innerHeight, behavior: "smooth" });
+    } else window.scrollTo({ top: 0, behavior: "smooth" });
   }
   let path = dir === "top" ? "M20 35 L50 65 L80 35" : "M20 65 L50 35 L80 65";
 

@@ -1,7 +1,9 @@
 .about-section {
   width: 100%;
-  padding: 140px 24px;
-  padding-bottom: 20px;
+  margin-top: 280px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 80px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -11,7 +13,6 @@
 
 .about-card {
   width: min(1100px, 100%);
-  padding: 42px;
   border-radius: 28px;
   border: 1px solid var(--header-border);
   /* box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22); */
@@ -55,15 +56,10 @@
 
 @media (max-width: 700px) {
   .about-section {
-    width: 100%;
-    padding: 50px 10px;
-    padding-bottom: 0px;
-    margin-top: 140px;
-  }
-
-  .about-card {
-    width: 100%;
-    padding: 0px;
+    width: 90%;
+    margin-top: 240px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .about-intro {

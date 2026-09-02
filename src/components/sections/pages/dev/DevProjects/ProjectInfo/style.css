@@ -1,0 +1,130 @@
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(16px, 2vw, 20px);
+  color: white;
+}
+
+.link-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.project-info > h2 {
+  margin: 0px;
+  margin-right: auto;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  color: var(--accent-strong);
+}
+
+.project-info p {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.65;
+  transform: translateY(26px);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.project-tags > * {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.project-tags span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--accent-light);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.project-tags.tag span {
+  color: var(--accent--secondary-light);
+  background: color-mix(in srgb, var(--accent-secondary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-secondary) 28%, transparent);
+}
+
+.project-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.link-chip:hover {
+  transform: translateY(-1px);
+}
+
+.link-chip.open {
+  background: var(--accent);
+  color: black;
+  border: 1px solid var(--accent-dark);
+}
+
+.link-chip.open,
+.link-chip.github {
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.link-chip.open:hover {
+  background: var(--accent);
+  color: black;
+}
+
+.link-chip.github {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.link-chip.github:hover {
+  border-color: black;
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .project-info {
+    padding: 24px;
+  }
+
+  .link-row {
+    flex-wrap: wrap;
+  }
+
+  .link-row h2 {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}

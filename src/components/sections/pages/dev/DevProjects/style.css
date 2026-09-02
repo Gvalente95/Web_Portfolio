@@ -1,0 +1,36 @@
+.dev-projects {
+  display: grid;
+  gap: 80px;
+  margin-block: 60px;
+}
+
+.dev-project-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 200px;
+  border-radius: 18px;
+}
+
+.dev-project-container:after {
+  position: absolute;
+  bottom: -30px;
+
+  content: "";
+  height: 2px;
+  width: 80%;
+  transform: translateX(10%);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 700px) {
+  .dev-projects {
+    gap: 56px;
+    padding-block: 60px;
+  }
+
+  .dev-project-container {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+}

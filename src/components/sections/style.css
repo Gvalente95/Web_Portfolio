@@ -9,19 +9,17 @@
 .page {
   width: auto;
   height: auto;
-
   margin-left: 100px;
   margin-right: 100px;
-  margin-bottom: 100px;
-
+  margin-bottom: 80px;
   min-height: 0;
-
   z-index: 0;
 }
 
 @media (max-width: 700px) {
   .page {
-    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
   }
