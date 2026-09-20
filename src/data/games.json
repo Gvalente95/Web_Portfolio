@@ -75,8 +75,8 @@
       "image": "/image/screenshot/Chess.png",
       "video": "/video/Chess.mp4",
       "preview": "/video_short/Chess.mp4",
-      "lang": ["csharp.svg"],
-      "tags": ["Unity", "2D"]
+      "lang": ["csharp.svg", "unity.svg"],
+      "tags": []
     },
     "Webserv": {
       "info": {
@@ -88,7 +88,7 @@
       "video": "/video/Webserv.mp4",
       "preview": "/video_short/Webserv.mp4",
       "github": "https://github.com/LilBoooopp/Webserv",
-      "lang": ["c++.svg", "bash.svg", "html.svg", "css.svg"],
+      "lang": ["c++.svg", "bash.svg"],
       "tags": ["Server", "HTTP", "Nginx"]
     },
     "Ascii Run": {
