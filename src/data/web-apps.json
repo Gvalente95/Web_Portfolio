@@ -12,6 +12,18 @@
   },
 
   "content": {
+    "42Graph": {
+      "info": {
+        "en": "A web app for comparing 42 users across the 42 Network.",
+        "fr": "Une application web pour explorer et visualiser les utilisateurs, campus, progressions et compétences du réseau 42.",
+        "it": "Un'app web per esplorare e visualizzare utenti, campus, progressi e competenze della rete 42."
+      },
+      "image": "/image/screenshot/42Graph.png",
+      "video": "/video/42Graph.mp4",
+      "preview": "/video_short/42Graph.mp4",
+      "language": "React Express.js Postgresql Prisma",
+      "tags": "Full-stack Data-visualization 42-API"
+    },
     "Camagru": {
       "info": {
         "en": "A full-stack photo booth and image sharing platform.",

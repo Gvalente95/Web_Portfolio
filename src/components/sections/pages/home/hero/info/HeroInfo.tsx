@@ -12,8 +12,11 @@ export function HeroInfo() {
       <span className={"intro"}>Front-end developper</span>
       <div className="hero-greeting">
         <div className={"greeting"}>{t("hero.greeting")}</div>
-        <strong  className={"greeting"}>
-          {t("common.name")}
+        <strong className={"greeting"}>
+          <strong className="name-highlight">
+            <span>Giulio</span>
+            <span>Valente</span>
+          </strong>
         </strong>
         <p className={"paragraph"}>
           {t("hero.brief.character")} | {t("hero.brief.spec")}

@@ -40,8 +40,6 @@ export function FeaturedWork() {
               className="vitrine-chip"
               style={
                 {
-                  //   "--chip-offset": `${[-18, 10, -6, 18, -12][index % 5]}px`,
-                  //   "--chip-rotation": `${[-.7, 0.4, -0.3, 1, -0.6][index % 5]}deg`,
                   "--chip-delay": `${-(index % allEntries.length) * 0.7}s`,
                 } as React.CSSProperties
               }
