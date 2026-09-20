@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
     "all": "npm run deploy && git add . && git commit -m 'auto' && git push",
-	"convert": "./public/video-converter.sh ./public/convert ./public/converted"
+	"convert": "./src/scripts/video-converter.sh ./public/convert ./public/converted"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

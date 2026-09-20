@@ -39,9 +39,9 @@ i18n.use(initReactI18next).init({
           resume: "Read My Resume",
         },
         about: {
-          title: "Software Engineer & Front-end Developer.",
-          p0: "I've started my programming journey in 2022, and didn't slow down one bit since then.",
-          p1: "Here you'll be able to experience some of it.",
+          title: "My journey",
+          p0: "I started programming in 2022, driven mostly by curiosity and a desire to understand how things work.",
+          p1: "Joining 42 Lausanne in 2024 turned that curiosity into a much deeper commitment: two intensive years of learning through projects, challenges, mistakes, and collaboration, culminating in the completion of the Common Core in 2026. Along the way, I grew increasingly drawn to web development, building everything from small experiments to full-stack applications, interactive tools, and a collaborative browser-based digital audio workstation. Each project has been an opportunity to push a little further, learn something new, and become a more thoughtful developer.",
         },
         musician: {
           intro: "Explore a selection of the music I've released over the years.",
@@ -103,9 +103,9 @@ i18n.use(initReactI18next).init({
           action: "Explorer",
         },
         about: {
-          title: "Audio engineer et developpeur front-end.",
-          p0: "Je conçois des applications et pages web interactives en mettant l'accent sur des interfaces soignées, les animations, l'audio et des systèmes techniques ludiques.",
-          p1: "Ma formation en ingénierie audio m'apporte une approche créative du développement logiciel : j'aime concevoir des outils, des interfaces et des expériences qui sont réactifs, soignés et vivants.",
+          title: "Mon parcours",
+          p0: "J'ai commencé à programmer en 2022, principalement par curiosité et par envie de comprendre comment les choses fonctionnent.",
+          p1: "Mon arrivée à 42 Lausanne en 2024 a transformé cette curiosité en un engagement bien plus profond : deux années intensives d'apprentissage par les projets, les défis, les erreurs et la collaboration, jusqu'à l'achèvement du Common Core en 2026. Au fil de ce parcours, je me suis progressivement tourné vers le développement web, en passant de petites expérimentations à des applications full-stack, des outils interactifs et une station audionumérique collaborative fonctionnant directement dans le navigateur. Chaque projet a été l'occasion d'aller un peu plus loin, d'apprendre quelque chose de nouveau et de devenir un développeur plus réfléchi.",
         },
         musician: {
           intro: "Découvrez une sélection de la musique que j'ai publiée au fil des années.",
@@ -167,7 +167,7 @@ i18n.use(initReactI18next).init({
           action: "Esplorare",
         },
         about: {
-          title: "Audio engineer e front-end developer.",
+          title: "Il mio percorso",
           p0: "Realizzo pagine e applicazioni web interattive con una forte attenzione a interfacce curate, animazioni, audio e sistemi tecnici creativi.",
           p1: "La mia formazione in ingegneria del suono mi ha permesso di costruire un approccio creativo allo sviluppo software: mi piace creare strumenti, interfacce ed esperienze che siano reattivi, curati e coinvolgenti.",
         },
@@ -177,8 +177,8 @@ i18n.use(initReactI18next).init({
         },
         skills: {},
         dev: {
-          intro: "Creo esperienze interattive, un sistema alla volta.",
-          p0: "Quello che è iniziato con piccoli esperimenti su Unity si è gradualmente trasformato in una passione per lo sviluppo software. Da allora ho esplorato ambiti che spaziano dallo sviluppo di videogiochi e dalle simulazioni fisiche fino alle workstation audio digitali basate su browser, sempre guidato dalla curiosità e dal desiderio di capire come funzionano le cose al di sotto della superficie.",
+          intro: "Entrare a 42 Lausanne nel 2024 ha trasformato questa curiosità in un impegno molto più profondo.",
+          p0: "due anni intensivi di apprendimento attraverso progetti, sfide, errori e collaborazione, fino al completamento del Common Core nel 2026. Durante questo percorso mi sono avvicinato sempre di più allo sviluppo web, passando da piccoli esperimenti ad applicazioni full-stack, strumenti interattivi e una workstation audio digitale collaborativa interamente nel browser. Ogni progetto è stato un'occasione per spingermi un po' oltre, imparare qualcosa di nuovo e diventare uno sviluppatore più consapevole.",
           open: "Apri nel navigatore",
         },
         contact: {

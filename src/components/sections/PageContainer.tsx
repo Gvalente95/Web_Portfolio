@@ -9,7 +9,6 @@ import { BorderArrow } from "../floating/borderArrow/BorderArrow";
 import { LateralBar } from "../floating/lateralBar/LateralBar";
 
 import "./style.css";
-import { SimpleFooter } from "./footer/SimpleFooter";
 
 export type PageType = "audio" | "music" | "dev" | "home";
 
@@ -21,7 +20,6 @@ export function PageContainer({ page }: { page?: PageType }) {
       <BorderArrow dir="top" />
       {!isMobile() ? <BorderArrow dir="bottom" /> : null}
       {!isMobile() ? <LateralBar /> : null}
-      <SimpleFooter />
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { DevProjects } from "./DevProjects/DevProjects";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { isMobile } from "@/utils/navigation";
 
 import "./style.css";
 
@@ -12,15 +15,24 @@ export function DevIntro() {
         <div className="dev-title">
           <h1>{t("dev.intro")}</h1>
         </div>
-        <>
-          <p>{t("dev.p0")}</p>
-        </>
+        <>{isMobile() ? null : <p>{t("dev.p0")}</p>}</>
       </div>
     </div>
   );
 }
 
 export function DevPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.state?.scrollTo) return;
+
+    document.getElementById(location.state.scrollTo)?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, [location.state]);
+
   return (
     <div className="page dev-page">
       <DevIntro />

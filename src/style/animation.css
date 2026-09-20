@@ -19,16 +19,6 @@
   }
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;

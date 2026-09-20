@@ -111,8 +111,12 @@ p {
   line-height: 1.3;
   font-size: 1.2rem;
   font-weight: 120;
-  font-family: "JetBrains Mono", monospace;
   letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+span {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 h1 {
@@ -153,20 +157,20 @@ strong {
 .text-musician {
   color: var(--hero-clr-musician);
 }
-
+/* 
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition:
     opacity 0.4s ease,
     transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
+} */
 
-.reveal--slow {
+/* .reveal--slow {
   transition-duration: 1.2s;
 }
 
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
-}
+} */

@@ -6,6 +6,7 @@ import { FloatingElements } from "./floating/FloatingElements";
 import { useLayoutEffect } from "react";
 
 const supportedLangs = ["en", "fr", "it"] as const;
+export type SupportedLangType = "en" | "fr" | "it";
 
 export function ScrollToTop() {
   const { pathname } = useLocation();
@@ -27,7 +28,7 @@ export function ScrollToTop() {
 function LangRoute() {
   const { lang, page } = useParams();
 
-  if (!supportedLangs.includes(lang as any)) {
+  if (!supportedLangs.includes(lang as SupportedLangType)) {
     return <Navigate to="/en" replace />;
   }
 

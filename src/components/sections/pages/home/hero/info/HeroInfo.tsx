@@ -9,7 +9,7 @@ export function HeroInfo() {
 
   return (
     <div className="hero-info">
-      <span className={"intro"}>Front-end developper</span>
+      <span className={"intro"}>Full-stack Developer</span>
       <div className="hero-greeting">
         <div className={"greeting"}>{t("hero.greeting")}</div>
         <strong className={"greeting"}>

@@ -13,7 +13,15 @@ export function LinkRow() {
       <a className="link-button" href={resume} target="_blank" rel="noopener noreferrer">
         {t("hero.resume")}
       </a>
-      <button onClick={() => window.scrollTo({ top: 99999, behavior: "auto" })} className="link-button">
+      <button
+        onClick={() =>
+          window.scrollTo({
+            top: document.documentElement.scrollHeight - window.innerHeight,
+            behavior: "auto",
+          })
+        }
+        className="link-button"
+      >
         {t("hero.contact")}
       </button>
     </div>

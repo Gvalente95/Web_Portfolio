@@ -19,12 +19,6 @@ export const Contact = () => {
     setStatus("sending");
 
     try {
-      const data = {
-        name: String(formData.get("name") ?? ""),
-        email: String(formData.get("email") ?? ""),
-        message: String(formData.get("message") ?? ""),
-      };
-
       const response = await fetch("https://formspree.io/f/mrewyagp", {
         method: "POST",
         headers: {
@@ -41,7 +35,6 @@ export const Contact = () => {
       if (!response.ok) throw new Error();
 
       form.reset();
-      console.log("Contact form submitted:", data);
       setStatus("sent");
       form.reset();
     } catch {

@@ -11,7 +11,13 @@
 }
 
 .dev-title {
-  width: 70%;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .dev-title {
+    width: 100%;
+  }
 }
 
 .dev-intro > p {

@@ -1,8 +1,7 @@
 import webApps from "@/data/web-apps.json";
 import games from "@/data/games.json";
-import audioApps from "@/data/audio-apps.json";
 import type { Project } from "../../dev/DevProjects/ProjectCard/ProjectCard";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "./style.css";
@@ -15,12 +14,12 @@ export function FeaturedWork() {
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const lang = pathname.split("/")[1] || "en";
+  const navigate = useNavigate();
 
   const webAppEntries = Object.entries((webApps as ProjectsData).content);
   const gameEntries = Object.entries((games as ProjectsData).content);
-  const audioEntries = Object.entries((audioApps as ProjectsData).content);
 
-  const allEntries = [...webAppEntries, ...audioEntries, ...gameEntries];
+  const allEntries = [...webAppEntries, ...gameEntries];
   const loopEntries = [...allEntries, ...allEntries];
 
   return (
@@ -36,6 +35,7 @@ export function FeaturedWork() {
         <div className="vitrine-track">
           {loopEntries.map(([key, project], index) => (
             <div
+              onClick={() => navigate(`/${lang}/dev/`, { state: { scrollTo: key } })}
               key={`${key}-${index}`}
               className="vitrine-chip"
               style={

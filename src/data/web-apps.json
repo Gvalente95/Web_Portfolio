@@ -24,21 +24,6 @@
       "language": "React Express.js Postgresql Prisma",
       "tags": "Full-stack Data-visualization 42-API"
     },
-    "Camagru": {
-      "info": {
-        "en": "A full-stack photo booth and image sharing platform.",
-        "fr": "Une plateforme full-stack de photomaton et de partage d’images.",
-        "it": "Una piattaforma full-stack per creare e condividere immagini."
-      },
-      "image": "/image/screenshot/Camagru.png",
-      "video": "/video/Camagru.mp4",
-      "preview": "/video_short/Camagru.mp4",
-      "url": "",
-      "github": "https://github.com/Gvalente95/camagru",
-      "language": "PHP SQLite HTML CSS JavaScript",
-      "tags": "Fullstack",
-      "mobile": true
-    },
     "Chatter": {
       "info": {
         "en": "A modern IRC-inspired chat platform built around channels, rooms and communities.",
@@ -54,6 +39,50 @@
       "tags": "Fullstack",
       "mobile": true
     },
+    "Camagru": {
+      "info": {
+        "en": "A full-stack photo booth and image sharing platform.",
+        "fr": "Une plateforme full-stack de photomaton et de partage d’images.",
+        "it": "Una piattaforma full-stack per creare e condividere immagini."
+      },
+      "image": "/image/screenshot/Camagru.png",
+      "video": "/video/Camagru.mp4",
+      "preview": "/video_short/Camagru.mp4",
+      "url": "",
+      "github": "https://github.com/Gvalente95/camagru",
+      "language": "PHP SQLite HTML CSS JavaScript",
+      "tags": "Fullstack",
+      "mobile": true
+    },
+    "Audio Blocks": {
+      "info": {
+        "en": "A music-making tool built by connecting audio nodes inside a React Flow graph.",
+        "fr": "Un outil de création musicale basé sur des nœuds audio reliés dans un graphe React Flow.",
+        "it": "Web-app per creare musica collegando nodi audio all'interno di un grafo React Flow."
+      },
+      "image": "/image/screenshot/Audio-nodes.png",
+      "github": "https://github.com/gvalente95/AudioBlocks/",
+      "url": "https://gvalente95.github.io/AudioBlocks/",
+      "language": "React Typescript JS CSS Html Tone.js",
+      "tags": "Audio-Developper",
+      "video": "/video/Audio_Blocks.mp4",
+      "preview": "/video_short/Audio_Blocks.mp4"
+    },
+    "Web DAW": {
+      "info": {
+        "en": "A complete browser-based digital audio workstation built from scratch in React.",
+        "fr": "Une station audionumérique complète fonctionnant directement dans le navigateur.",
+        "it": "Una workstation audio digitale completa che funziona direttamente nel browser."
+      },
+      "image": "/image/screenshot/Webdaw.png",
+      "github": "https://github.com/gvalente95/GiuDaw/",
+      "url": "https://gvalente95.github.io/GiuDaw/",
+      "language": "React Typescript JS CSS Html Tone.js",
+      "tags": "Audio-Developper",
+      "video": "/video/Web_Daw.mp4",
+      "preview": "/video_short/Web_Daw.mp4"
+    },
+
     "Ropes": {
       "info": {
         "en": "An interactive physics simulation focused on ropes through use of Verlet integration.",

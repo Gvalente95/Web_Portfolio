@@ -52,7 +52,6 @@ header.ready:before {
 }
 
 .home-button:hover {
-  background-color: white;
   color: var(--accent-strong);
 }
 
