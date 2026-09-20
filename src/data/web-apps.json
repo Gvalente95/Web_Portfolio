@@ -21,8 +21,11 @@
       "image": "/image/screenshot/42Graph.png",
       "video": "/video/42Graph.mp4",
       "preview": "/video_short/42Graph.mp4",
-      "language": "React Express.js Postgresql Prisma",
-      "tags": "Full-stack Data-visualization 42-API"
+
+      "frontend": ["vite.svg", "react.svg", "html.svg", "css.svg"],
+      "backend": ["node.png", "express.png"],
+      "database": ["postgresql.svg", "prisma.svg"],
+      "tags": ["Data-visualization", "42-API"]
     },
     "Chatter": {
       "info": {
@@ -33,10 +36,11 @@
       "image": "/image/screenshot/Chatter.png",
       "video": "/video/Chatter.mp4",
       "preview": "/video_short/Chatter.mp4",
-      "url": "",
-      "github": "",
-      "language": "Typescript Express.js Socket.io MongoDb",
-      "tags": "Fullstack",
+
+      "frontend": ["vite.svg", "react.svg", "ts.svg", "html.svg", "css.svg"],
+      "backend": ["node.png", "express.png", "socketio.svg"],
+      "database": ["mongodb.svg", "mongoose.png"],
+
       "mobile": true
     },
     "Camagru": {
@@ -50,8 +54,11 @@
       "preview": "/video_short/Camagru.mp4",
       "url": "",
       "github": "https://github.com/Gvalente95/camagru",
-      "language": "PHP SQLite HTML CSS JavaScript",
-      "tags": "Fullstack",
+
+      "frontend": ["html.svg", "css.svg", "js.svg"],
+      "backend": ["php.svg"],
+      "database": ["sqlite.svg"],
+
       "mobile": true
     },
     "Audio Blocks": {
@@ -63,8 +70,11 @@
       "image": "/image/screenshot/Audio-nodes.png",
       "github": "https://github.com/gvalente95/AudioBlocks/",
       "url": "https://gvalente95.github.io/AudioBlocks/",
-      "language": "React Typescript JS CSS Html Tone.js",
-      "tags": "Audio-Developper",
+
+      "frontend": ["vite.svg", "react.svg", "ts.svg", "css.svg", "html.svg", "tone.png"],
+      "backend": ["express.png"],
+
+      "tags": ["Audio-Developper"],
       "video": "/video/Audio_Blocks.mp4",
       "preview": "/video_short/Audio_Blocks.mp4"
     },
@@ -77,8 +87,11 @@
       "image": "/image/screenshot/Webdaw.png",
       "github": "https://github.com/gvalente95/GiuDaw/",
       "url": "https://gvalente95.github.io/GiuDaw/",
-      "language": "React Typescript JS CSS Html Tone.js",
-      "tags": "Audio-Developper",
+
+      "frontend": ["vite.svg", "react.svg", "ts.svg", "html.svg", "css.svg", "tone.png"],
+      "backend": ["node.png", "express.png"],
+
+      "tags": ["Audio-Developper"],
       "video": "/video/Web_Daw.mp4",
       "preview": "/video_short/Web_Daw.mp4"
     },
@@ -94,8 +107,8 @@
       "preview": "/video_short/Ropes.mp4",
       "url": "https://gvalente95.github.io/Ropes/",
       "github": "https://github.com/Gvalente95/Ropes/",
-      "language": "Vanilla JS",
-      "tags": "Graphics-design Physics-simulation"
+      "lang": ["js.svg"],
+      "tags": ["Graphics-design", "Physics-simulation"]
     },
     "Falling Sand": {
       "info": {
@@ -108,8 +121,8 @@
       "preview": "/video_short/FallingSand.mp4",
       "url": "https://gvalente95.github.io/FallingSand/",
       "github": "https://github.com/Gvalente95/FallingSand/",
-      "language": "JS",
-      "tags": "Cellular-Automata Pixels Canvas",
+      "badges": ["js.svg"],
+      "tags": ["Cellular-Automata", "Pixels", "Canvas"],
       "mobile": true
     },
     "Mini Gates": {
@@ -123,8 +136,8 @@
       "preview": "/video_short/Gates.mp4",
       "url": "https://gvalente95.github.io/LogicGateSynth/",
       "github": "https://github.com/Gvalente95/LogicGateSynth/",
-      "language": "JS",
-      "tags": "Nodes Transistors Logic Synth Canvas"
+      "lang": ["js.svg"],
+      "tags": ["Nodes", "Transistors", "Logic", "Synth", "Canvas"]
     },
     "Marbles": {
       "info": {
@@ -137,8 +150,8 @@
       "preview": "/video_short/Marbles.mp4",
       "url": "https://gvalente95.github.io/Marbles/",
       "github": "https://github.com/Gvalente95/Marbles/",
-      "language": "JS",
-      "tags": "Physics-Simulation Zen Sound",
+      "lang": ["js.svg"],
+      "tags": ["Physics-Simulation", "Zen", "Sound"],
       "mobile": true
     }
   }

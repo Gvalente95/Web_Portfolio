@@ -17,7 +17,7 @@ export function ProjectContainer({ name, project, lang }: { name: string; projec
   return (
     <div id={name} ref={ref} className={`dev-project-container reveal${isIntersecting ? " in-view" : ""}`}>
       <ProjectCard name={name} project={project} />
-      <ProjectInfo name={name} project={project} lang={lang} />
+      <ProjectInfo name={name} project={project} language={lang} />
     </div>
   );
 }

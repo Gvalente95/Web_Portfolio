@@ -1,0 +1,46 @@
+.project-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 30px;
+}
+
+.project-badge-row + .project-badge-row {
+  margin-top: 6px;
+}
+
+.project-badge-label {
+  width: 72px;
+  flex-shrink: 0;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: color-mix(in srgb, white 55%, transparent);
+}
+
+.project-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.project-badges > img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 100px;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.project-badges > img:hover {
+  transform: translateY(-2px);
+}

@@ -25,8 +25,8 @@
       "video": "/video/SoLong.mp4",
       "preview": "/video_short/SoLong.mp4",
       "github": "https://github.com/Gvalente95/So_long",
-      "language": "C",
-      "tags": "Game-Design"
+      "lang": ["c.svg"],
+      "tags": ["Game-Design"]
     },
 
     "Grid Fighter": {
@@ -38,8 +38,8 @@
       "image": "/image/screenshot/GridMiner.png",
       "video": "/video/GridMiner.mp4",
       "preview": "/video_short/GridMiner.mp4",
-      "language": "C# Unity Blender",
-      "tags": "Procedural 3D-Platformer rpg"
+      "lang": ["csharp.svg", "unity.svg", "blender.svg"],
+      "tags": ["Procedural", "3D-Platformer", "rpg"]
     },
     "Cube": {
       "info": {
@@ -51,8 +51,8 @@
       "video": "/video/Cube.mp4",
       "preview": "/video_short/Cube.mp4",
       "github": "https://github.com/Gvalente95/Cub3d_42",
-      "language": "C",
-      "tags": "Raycasting Game-Engine Multithreading Mlx"
+      "lang": ["c.svg"],
+      "tags": ["Raycasting", "Game-Engine", "Multithreading", "Mlx"]
     },
     "Sudoku": {
       "info": {
@@ -63,8 +63,8 @@
       "image": "/image/screenshot/Sudoku.png",
       "video": "/video/Sudoku.mp4",
       "preview": "/video_short/Sudoku.mp4",
-      "language": "C#",
-      "tags": "Unity 2D"
+      "lang": ["csharp.svg"],
+      "tags": ["Unity", "2D"]
     },
     "Chess": {
       "info": {
@@ -75,8 +75,8 @@
       "image": "/image/screenshot/Chess.png",
       "video": "/video/Chess.mp4",
       "preview": "/video_short/Chess.mp4",
-      "language": "C#",
-      "tags": "Unity 2D"
+      "lang": ["csharp.svg"],
+      "tags": ["Unity", "2D"]
     },
     "Webserv": {
       "info": {
@@ -88,8 +88,8 @@
       "video": "/video/Webserv.mp4",
       "preview": "/video_short/Webserv.mp4",
       "github": "https://github.com/LilBoooopp/Webserv",
-      "language": "C++98 bash Html css",
-      "tags": "Server HTTP Nginx"
+      "lang": ["c++.svg", "bash.svg", "html.svg", "css.svg"],
+      "tags": ["Server", "HTTP", "Nginx"]
     },
     "Ascii Run": {
       "info": {
@@ -100,8 +100,8 @@
       "image": "/image/screenshot/Ascii_Run.png",
       "video": "/video/Ascii_Run.mp4",
       "preview": "/video_short/Ascii_Run.mp4",
-      "language": "C",
-      "tags": "Ascii Terminal"
+      "lang": ["c.svg"],
+      "tags": ["Ascii", "Terminal"]
     },
     "Ascii Fight": {
       "info": {
@@ -112,8 +112,9 @@
       "image": "/image/screenshot/Ascii_Fight.png",
       "video": "/video/Ascii_Fight.mp4",
       "preview": "/video_short/Ascii_Fight.mp4",
-      "language": "C",
-      "tags": "Ascii Terminal"
+      "lang": ["c.svg"],
+
+      "tags": ["Ascii", "Terminal"]
     },
     "Ascii Jump": {
       "info": {
@@ -124,8 +125,9 @@
       "image": "/image/screenshot/Ascii_Jump.png",
       "video": "/video/Ascii_Jump.mp4",
       "preview": "/video_short/Ascii_Jump.mp4",
-      "language": "C",
-      "tags": "Ascii Terminal"
+      "lang": ["c.svg"],
+
+      "tags": ["Ascii", "Terminal"]
     },
     "Ascii Space": {
       "info": {
@@ -136,8 +138,9 @@
       "image": "/image/screenshot/Ascii_Space.png",
       "video": "/video/Ascii_Space.mp4",
       "preview": "/video_short/Ascii_Space.mp4",
-      "language": "C",
-      "tags": "Ascii Terminal"
+      "lang": ["c.svg"],
+
+      "tags": ["Ascii", "Terminal"]
     },
     "Philosophers": {
       "info": {
@@ -149,8 +152,9 @@
       "video": "/video/Philosophers.mp4",
       "preview": "/video_short/Philosophers.mp4",
       "github": "https://github.com/Gvalente95/philosophers_42",
-      "language": "C",
-      "tags": "Ascii Terminal Multithreading"
+      "lang": ["c.svg"],
+
+      "tags": ["Ascii", "Terminal", "Multithreading"]
     }
   }
 }

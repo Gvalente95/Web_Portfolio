@@ -7,12 +7,15 @@ import { isMobile } from "@/utils/navigation";
 export type Project = {
   info: { it: string; en: string; fr: string };
   image: string;
-  video?: string;
-  preview?: string;
+  video: string;
+  preview: string;
   url?: string;
   github?: string;
-  language: string;
-  tags: string;
+  lang?: string[];
+  frontend?: string[];
+  backend?: string[];
+  database?: string[];
+  tags?: string[];
   mobile?: boolean;
 };
 
