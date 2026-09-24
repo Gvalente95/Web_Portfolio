@@ -40,11 +40,11 @@
   transform: scale(1.06) rotate(1deg);
   filter: brightness(0.9);
 }
-
+/* 
 .image-container.changing > img {
   opacity: 0;
   transform: scale(0.94) rotate(-2deg);
-}
+} */
 
 .image-switch-hint {
   position: absolute;
