@@ -9,39 +9,89 @@
 
 .image-container {
   position: relative;
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  place-items: center;
+  width: min(80vw, 420px);
+  height: min(80vw, 420px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgb(131, 131, 131);
+  cursor: pointer;
+
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 250ms ease;
 }
 
 .image-container > img {
-  width: min(80vw, 420px);
-  height: auto;
-  border-radius: 50%;
-  border: 2px solid rgb(131, 131, 131);
-  cursor: pointer;
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition:
+    opacity 180ms ease,
+    transform 350ms ease,
+    filter 250ms ease;
 }
 
-.image-container .gear-container {
+.image-container:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.image-container:hover > img {
+  transform: scale(1.06) rotate(1deg);
+  filter: brightness(0.9);
+}
+
+.image-container.changing > img {
+  opacity: 0;
+  transform: scale(0.94) rotate(-2deg);
+}
+
+.image-switch-hint {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 0;
+  inset: 0;
+  z-index: 3;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0;
+
+  transition: opacity 250ms ease;
+  pointer-events: none;
+}
+
+.image-switch-hint span {
+  display: grid;
+  place-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+
+  color: white;
+  font-size: 30px;
+
+  transform: rotate(-40deg) scale(0.7);
+  transition: transform 300ms ease;
+}
+
+.image-container:hover .image-switch-hint {
+  opacity: 1;
+}
+
+.image-container:hover .image-switch-hint span {
+  transform: rotate(0deg) scale(1);
 }
 
 @media (max-width: 700px) {
-  .image-container > img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .hero-image {
-    margin-top: 0px;
+  @media (max-width: 700px) {
+    .hero-image {
+      margin-top: 0;
+    }
   }
 }
 
