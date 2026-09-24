@@ -2,6 +2,7 @@ import icon0 from "@/assets/png/photos/0.png";
 import icon1 from "@/assets/png/photos/1.jpeg";
 import icon2 from "@/assets/png/photos/2.jpg";
 import icon3 from "@/assets/png/photos/3.jpg";
+import icon4 from "@/assets/png/photos/4.png";
 
 import "./style.css";
 import { useState } from "react";
@@ -9,7 +10,7 @@ import { useState } from "react";
 export function HeroImage() {
   const [index, setIndex] = useState(0);
   const [changing, setChanging] = useState(false);
-  const icons = [icon0, icon1, icon2, icon3];
+  const icons = [icon0, icon1, icon2, icon3, icon4];
 
   const nextImage = () => {
     if (changing) return;
