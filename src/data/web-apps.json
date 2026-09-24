@@ -72,7 +72,7 @@
       "url": "https://gvalente95.github.io/AudioBlocks/",
 
       "frontend": ["vite.svg", "react.svg", "ts.svg", "css.svg", "html.svg", "tone.png"],
-      "backend": ["express.png"],
+      "backend": ["node.png", "express.png"],
 
       "tags": ["Audio-Developper"],
       "video": "/video/Audio_Blocks.mp4",
@@ -121,7 +121,7 @@
       "preview": "/video_short/FallingSand.mp4",
       "url": "https://gvalente95.github.io/FallingSand/",
       "github": "https://github.com/Gvalente95/FallingSand/",
-      "badges": ["js.svg"],
+      "lang": ["js.svg", ".svg"],
       "tags": ["Cellular-Automata", "Pixels", "Canvas"],
       "mobile": true
     },

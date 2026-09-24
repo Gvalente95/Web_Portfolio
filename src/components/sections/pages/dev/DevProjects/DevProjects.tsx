@@ -29,6 +29,7 @@ export function DevProjects() {
   const allEntries = [...webAppEntries, ...gameEntries];
   const { lang } = useParams();
 
+  console.warn(webAppEntries);
   return (
     <div className="dev-projects">
       {allEntries.map(([name, project]) => (

@@ -28,19 +28,6 @@
       "lang": ["c.svg"],
       "tags": ["Game-Design"]
     },
-
-    "Grid Fighter": {
-      "info": {
-        "en": "A 3D platformer with a range of classes and procedural terrain generation.",
-        "fr": "Un platformer 3D avec plusieurs classes et une génération procédurale du terrain.",
-        "it": "Un platformer 3D con diverse classi e generazione procedurale del terreno."
-      },
-      "image": "/image/screenshot/GridMiner.png",
-      "video": "/video/GridMiner.mp4",
-      "preview": "/video_short/GridMiner.mp4",
-      "lang": ["csharp.svg", "unity.svg", "blender.svg"],
-      "tags": ["Procedural", "3D-Platformer", "rpg"]
-    },
     "Cube": {
       "info": {
         "en": "A custom multithreaded raycasting game engine written in C.",
@@ -54,6 +41,19 @@
       "lang": ["c.svg"],
       "tags": ["Raycasting", "Game-Engine", "Multithreading", "Mlx"]
     },
+    "Grid Fighter": {
+      "info": {
+        "en": "A 3D platformer with a range of classes and procedural terrain generation.",
+        "fr": "Un platformer 3D avec plusieurs classes et une génération procédurale du terrain.",
+        "it": "Un platformer 3D con diverse classi e generazione procedurale del terreno."
+      },
+      "image": "/image/screenshot/GridMiner.png",
+      "video": "/video/GridMiner.mp4",
+      "preview": "/video_short/GridMiner.mp4",
+      "lang": ["csharp.svg", "unity.svg", "blender.svg"],
+      "tags": ["Procedural", "3D-Platformer", "rpg"]
+    },
+
     "Sudoku": {
       "info": {
         "en": "A simple Sudoku game developed in Unity.",
