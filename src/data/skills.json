@@ -19,7 +19,7 @@
     },
     "image": "/badge/c++.svg",
     "stars": 2.8,
-    "projectsCount": 8
+    "projectsCount": 16
   },
   "C#": {
     "tags": ["Game-Dev"],
@@ -152,7 +152,7 @@
     },
     "image": "/badge/docker.svg",
     "stars": 3,
-    "projectsCount": 6
+    "projectsCount": 8
   },
 
   "Photoshop": {
@@ -176,7 +176,7 @@
     },
     "image": "/badge/logic.ico",
     "stars": 5,
-    "projectsCount": 129
+    "projectsCount": 128
   },
   "Ableton": {
     "tags": [],
