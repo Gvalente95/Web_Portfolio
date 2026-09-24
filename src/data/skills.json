@@ -32,6 +32,29 @@
     "stars": 4.5,
     "projectsCount": 23
   },
+
+  "Python": {
+    "tags": [],
+    "info": {
+      "en": "I use Python for smaller projects and rapid prototyping. My experience includes simple games with PyGame, a basic web scraper and a lightweight web server.",
+      "fr": "J'utilise Python pour de petits projets et du prototypage rapide. Mon expérience comprend quelques jeux réalisés avec PyGame, un scraper web et un serveur web simple.",
+      "it": "Utilizzo Python per piccoli progetti e prototipazione rapida. Ho realizzato alcuni giochi con PyGame, un semplice web scraper e un piccolo server web."
+    },
+    "image": "/badge/py.svg",
+    "stars": 2,
+    "projectsCount": 3
+  },
+  "Bash": {
+    "tags": [],
+    "info": {
+      "en": "I regularly use Bash to automate development workflows, create testing scripts and simplify repetitive tasks across Linux and macOS environments.",
+      "fr": "J'utilise régulièrement Bash pour automatiser mes flux de travail, créer des scripts de test et simplifier les tâches répétitives sous Linux et macOS.",
+      "it": "Utilizzo regolarmente Bash per automatizzare il flusso di lavoro, creare script di test e semplificare attività ripetitive su Linux e macOS."
+    },
+    "image": "/badge/bash.svg",
+    "stars": 3,
+    "projectsCount": 24
+  },
   "JavaScript": {
     "tags": ["Web-Applications"],
     "info": {
@@ -52,18 +75,7 @@
     },
     "image": "/badge/ts.svg",
     "stars": 4.5,
-    "projectsCount": 20
-  },
-  "Python": {
-    "tags": [],
-    "info": {
-      "en": "I use Python for smaller projects and rapid prototyping. My experience includes simple games with PyGame, a basic web scraper and a lightweight web server.",
-      "fr": "J'utilise Python pour de petits projets et du prototypage rapide. Mon expérience comprend quelques jeux réalisés avec PyGame, un scraper web et un serveur web simple.",
-      "it": "Utilizzo Python per piccoli progetti e prototipazione rapida. Ho realizzato alcuni giochi con PyGame, un semplice web scraper e un piccolo server web."
-    },
-    "image": "/badge/py.svg",
-    "stars": 2,
-    "projectsCount": 3
+    "projectsCount": 8
   },
   "css": {
     "tags": [],
@@ -87,6 +99,17 @@
     "stars": 4,
     "projectsCount": 13
   },
+  "SQL": {
+    "tags": ["CRUD", "JOINs", "Aggregation", "Relationships", "Constraints", "Transactions", "Indexes", "Parameterized Queries"],
+    "info": {
+      "en": "I use SQL to work with relational data in my backend projects. I've learned to design relationships, write joins and aggregations, enforce data integrity with constraints and transactions, and use indexes to improve query performance.",
+      "fr": "J'utilise SQL pour travailler avec des données relationnelles dans mes projets backend. J'ai appris à concevoir les relations, écrire des jointures et des agrégations, garantir l'intégrité des données avec des contraintes et des transactions, et utiliser des index pour améliorer les performances des requêtes.",
+      "it": "Utilizzo SQL per lavorare con dati relazionali nei miei progetti backend. Ho imparato a progettare relazioni, scrivere join e aggregazioni, garantire l'integrità dei dati con vincoli e transazioni e utilizzare gli indici per migliorare le prestazioni delle query."
+    },
+    "image": "/badge/sql.svg",
+    "stars": 4,
+    "projectsCount": 2
+  },
   "React": {
     "tags": [],
     "info": {
@@ -97,28 +120,6 @@
     "image": "/badge/react.svg",
     "stars": 4.5,
     "projectsCount": 8
-  },
-  "Vue.js": {
-    "tags": [],
-    "info": {
-      "en": "I've recently started learning Vue.js after hearing many good things about it, after dozens of React projects I must say it felt good.",
-      "fr": "npm est mon gestionnaire de paquets principal pour les projets JavaScript et TypeScript. Je l'utilise quotidiennement pour gérer dépendances et outils de développement.",
-      "it": "npm è il mio gestore di pacchetti principale per i progetti JavaScript e TypeScript. Lo utilizzo quotidianamente per gestire dipendenze e strumenti di sviluppo."
-    },
-    "image": "/badge/vue.svg",
-    "stars": 2,
-    "projectsCount": 2
-  },
-  "Bash": {
-    "tags": [],
-    "info": {
-      "en": "I regularly use Bash to automate development workflows, create testing scripts and simplify repetitive tasks across Linux and macOS environments.",
-      "fr": "J'utilise régulièrement Bash pour automatiser mes flux de travail, créer des scripts de test et simplifier les tâches répétitives sous Linux et macOS.",
-      "it": "Utilizzo regolarmente Bash per automatizzare il flusso di lavoro, creare script di test e semplificare attività ripetitive su Linux e macOS."
-    },
-    "image": "/badge/bash.svg",
-    "stars": 3,
-    "projectsCount": 18
   },
   "Git": {
     "tags": [],
@@ -154,17 +155,6 @@
     "projectsCount": 6
   },
 
-  "Unity": {
-    "tags": [],
-    "info": {
-      "en": "Unity was my entry point into game development. I've used it to create numerous prototypes, gameplay systems and complete student projects using C#.",
-      "fr": "Unity a été mon point d'entrée dans le développement de jeux vidéo. Je l'ai utilisé pour créer de nombreux prototypes, systèmes de gameplay et projets étudiants en C#.",
-      "it": "Unity è stato il mio punto d'ingresso nello sviluppo di videogiochi. L'ho utilizzato per realizzare numerosi prototipi, sistemi di gameplay e progetti completi in C#."
-    },
-    "image": "/badge/unity.svg",
-    "stars": 4.5,
-    "projectsCount": 17
-  },
   "Photoshop": {
     "tags": [],
     "info": {
@@ -176,17 +166,7 @@
     "stars": 3.8,
     "projectsCount": 32
   },
-  "Blender": {
-    "tags": [],
-    "info": {
-      "en": "Blender allows me to create and edit 3D assets for games and interactive experiences. I mainly use it for modeling, scene composition and asset preparation.",
-      "fr": "Blender me permet de créer et modifier des ressources 3D pour les jeux et expériences interactives. Je l'utilise principalement pour la modélisation et la préparation des assets.",
-      "it": "Blender mi permette di creare e modificare risorse 3D per giochi ed esperienze interattive. Lo utilizzo principalmente per la modellazione e la preparazione degli asset."
-    },
-    "image": "/badge/blender.svg",
-    "stars": 3.5,
-    "projectsCount": 12
-  },
+
   "Logic Pro X": {
     "tags": [],
     "info": {
@@ -208,6 +188,29 @@
     "image": "/badge/ableton.svg",
     "stars": 3,
     "projectsCount": 14
+  },
+
+  "Unity": {
+    "tags": [],
+    "info": {
+      "en": "Unity was my entry point into game development. I've used it to create numerous prototypes, gameplay systems and complete student projects using C#.",
+      "fr": "Unity a été mon point d'entrée dans le développement de jeux vidéo. Je l'ai utilisé pour créer de nombreux prototypes, systèmes de gameplay et projets étudiants en C#.",
+      "it": "Unity è stato il mio punto d'ingresso nello sviluppo di videogiochi. L'ho utilizzato per realizzare numerosi prototipi, sistemi di gameplay e progetti completi in C#."
+    },
+    "image": "/badge/unity.svg",
+    "stars": 4.5,
+    "projectsCount": 17
+  },
+  "Blender": {
+    "tags": [],
+    "info": {
+      "en": "Blender allows me to create and edit 3D assets for games and interactive experiences. I mainly use it for modeling, scene composition and asset preparation.",
+      "fr": "Blender me permet de créer et modifier des ressources 3D pour les jeux et expériences interactives. Je l'utilise principalement pour la modélisation et la préparation des assets.",
+      "it": "Blender mi permette di creare e modificare risorse 3D per giochi ed esperienze interattive. Lo utilizzo principalmente per la modellazione e la preparazione degli asset."
+    },
+    "image": "/badge/blender.svg",
+    "stars": 3.5,
+    "projectsCount": 12
   },
   "Wwise": {
     "info": {
