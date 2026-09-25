@@ -56,15 +56,15 @@
 
     "Sudoku": {
       "info": {
-        "en": "A simple Sudoku game developed in Unity.",
-        "fr": "Un jeu de Sudoku simple développé avec Unity.",
+        "en": "A simple Sudoku game developed in Unity, includes an optimized backtracing solver and a procedural level generator.",
+        "fr": "Un jeu de Sudoku simple développé avec Unity, incluant un solveur backtracing optimizé et un générateur procédural de niveau.",
         "it": "Un semplice gioco Sudoku sviluppato in Unity."
       },
       "image": "/image/screenshot/Sudoku.png",
       "video": "/video/Sudoku.mp4",
       "preview": "/video_short/Sudoku.mp4",
       "lang": ["csharp.svg", "unity.svg"],
-      "tags": []
+      "tags": ["Procedural", "Algorithm", "Backtracing"]
     },
     "Chess": {
       "info": {
