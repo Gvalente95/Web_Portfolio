@@ -121,7 +121,7 @@
       "preview": "/video_short/FallingSand.mp4",
       "url": "https://gvalente95.github.io/FallingSand/",
       "github": "https://github.com/Gvalente95/FallingSand/",
-      "lang": ["js.svg", ".svg"],
+      "lang": ["js.svg"],
       "tags": ["Cellular-Automata", "Pixels", "Canvas"],
       "mobile": true
     },
